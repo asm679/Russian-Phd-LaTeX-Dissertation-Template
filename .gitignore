@@ -276,3 +276,6 @@ TSWLatexianTemp*
 .Trashes
 ehthumbs.db
 Thumbs.db
+# ASMs generated support files
+UpdateTemplate.cmd
+
