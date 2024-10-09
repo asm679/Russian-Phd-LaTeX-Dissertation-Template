@@ -40,22 +40,34 @@
 \begin{table} [htbp]
 	\centering\small
 	\begin{threeparttable}% выравнивание подписи по границам таблицы
-		\captionof{table}{Эталонные приращения координат геодезических пунктов в СК ITRF 2014 }\label{tab:tab25}{
-			\begin{tabular}{|c|c|c|c|}
-				\hline
-				\textbf{Вектор)}			& \textbf{dX, м}	& \textbf{dY, м}	& \textbf{dZ, м}	\\ \hline
-				DMTR-LOBN					& $ 25685,616$		& $ 7382,794$		& $-16565,138$		\\ \hline
-				DMTR-MSK2					& $ 35633,005$		& $ 33537,351$		& $-32644,583$		\\ \hline
-				DMTR-RUZA					& $ 95816,757$		& $-31035,908$		& $-39067,104$		\\ \hline
-				DMTR-ZHDR					& $ 22847,474$		& $ 57797,072$		& $-35990,349$		\\ \hline
-				LOBN-MSK2					& $  9947,389$		& $ 26154,557$		& $-16079,445$		\\ \hline
-				LOBN-RUZA					& $ 70131,141$		& $-38418,702$		& $-22501,966$		\\ \hline
-				LOBN-ZHDR					& $ -2838,142$		& $ 50414,278$		& $-19425,211$		\\ \hline
-				MSK2-RUZA					& $ 60183,752$		& $-64573,259$		& $ -6422,521$		\\ \hline
-				MSK2-ZHDR					& $-12785,531$		& $ 24259,721$		& $ -3345,766$		\\ \hline
-				RUZA-ZHDR					& $-72969,283$		& $ 88832,980$		& $  3076,755$		\\ \hline
-			\end{tabular}
+		\captionof{table}{Эталонные приращения координат геодезических пунктов в системе координат ITRF 2014 }\label{tab:tab25}
+%		\renewcommand{\arraystretch}{1.6}
+		\setlength{\tabcolsep}{20pt}
+		\sisetup{
+			table-figures-integer = 6,
+			table-figures-decimal = 3
 		}
+		
+			\begin{tabular}{ l
+				             S[table-number-alignment = center]
+				             S[table-number-alignment = center]
+				             S[table-number-alignment = center] }
+			
+				
+				\toprule
+				\textbf{Вектор)}			& \textbf{dX, м}	& \textbf{dY, м}	& \textbf{dZ, м}	\\ \midrule
+				DMTR-LOBN					&  25685,616		&   7382,794		& -16565,138		\\ %\hline
+				DMTR-MSK2					&  35633,005		&  33537,351		& -32644,583		\\ %\hline
+				DMTR-RUZA					&  95816,757		& -31035,908		& -39067,104		\\ %\hline
+				DMTR-ZHDR					&  22847,474		&  57797,072		& -35990,349		\\ %\hline
+				LOBN-MSK2					&   9947,389		&  26154,557		& -16079,445		\\ %\hline
+				LOBN-RUZA					&  70131,141		& -38418,702		& -22501,966		\\ %\hline
+				LOBN-ZHDR					&  -2838,142		&  50414,278		& -19425,211		\\ %\hline
+				MSK2-RUZA					&  60183,752		& -64573,259		&  -6422,521		\\ %\hline
+				MSK2-ZHDR					& -12785,531		&  24259,721		&  -3345,766		\\ %\hline
+				RUZA-ZHDR					& -72969,283		&  88832,980		&   3076,755		\\ \bottomrule
+			\end{tabular}
+		
 	\end{threeparttable}
 \end{table}
 
