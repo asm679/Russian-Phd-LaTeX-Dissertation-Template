@@ -2,7 +2,7 @@
 
 \section{Исследование точности определения координат в диапазоне расстояний 5-100 км}\label{sec:ch3/sect1}
 
-\subsection{Исходные данные для спутниковой сети в диапазоне расстояний 0-100 км}\label{subsec:ch2/sec3/sub5}
+\subsection{Исходные данные для спутниковой сети в диапазоне расстояний 0-100 км}\label{subsec:ch3/sec1/sub1}
 
 В параграфе рассматривается геодезическая сеть, состоящая из 5 пунктов. Пункты равномерно расположены в диапазоне расстояний 5-100 км. RINEX-файлы с пунктов сети были получены с сайта базовых станций EFT COORS \cite{src55}. На рисунке \cref{fig:pic25}  приведена схема рассматриваемой сети.
 
@@ -74,9 +74,157 @@
 В инструкции \cite{src10,src19} сказано, что при построении геодезических сетей все линии сети должны быть определены независимо. Это требование важно, т.к. включение зависимых линий в обработку сети не позволяет правильно произвести оценку точности и надежности измерений. В случае спутниковых измерений независимыми измерениями считаются вектора, определенные в различный временной диапазон.
 
 
+\subsection{Уравнивание спутниковой сети в статике}\label{subsec:ch3/sec1/sub2}
+
+Согласно главе \cref{ch:ch2} минимальное время для получения точного решения при использовании одного приемника составляет не менее двух часов. Для формирования независимых измерений, сеансы проводились с 12 часовыми перерывами.
+
+В таблице \cref{tab:tab26} приведены сеансы измерений и определяемые в них вектора:
+
+\begin{table} [htbp]
+	\centering\small
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\captionof{table}{Распределение векторов по сеансам измерений }\label{tab:tab26}
+		%		\renewcommand{\arraystretch}{1.6}
+		\setlength{\tabcolsep}{20pt}
+		\sisetup{
+			table-figures-integer = 2,
+			table-figures-decimal = 0
+		}
+		
+		\begin{tabular}{ S c }
+			\toprule
+			\textbf{Сеанс}	& \textbf{Вектора}								\\ \midrule
+			1				&  LOBN-RUZA, DMTR-LOBN, DMTR-ZHDR, MSK2-ZHDR	\\ %\hline
+			2				&  LOBN-ZHDR, ZHDR-RUZA, RUZA-MSK2				\\ %\hline
+			3				&  RUZA-DMTR, DMTR-MSK2, LOBN-MSK2 				\\ \bottomrule
+		\end{tabular}	
+	\end{threeparttable}
+\end{table}
+
+На рисунке \cref{fig:pic26} приведены независимые сеансы измерений.
 
 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.99\linewidth]{images/pic26}
+	\caption{Независимые сеансы измерений }
+	\label{fig:pic26}
+\end{figure}
 
+Исходный пункт: LOBN, остальные --- определяемые. Продолжительность сеансов измерения составляла $1, 2, 3$ И $4$~часа, каждый раз формируя независимые вектора. Сначала была выполнена обработка одночасовых интервалов в статике с использованием программного обеспечения КРЕДО ГНСС. В таблице \cref{tab:tab27} приведены	приращения	координат,	полученных	при	обработке трёх независимых блоков, указанных выше.
+
+\begin{table} [htbp]
+	\centering\small
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\captionof{table}{приращения координат пунктов, полученные при обработке данных в статике при 1 часе }\label{tab:tab27}
+		\setlength{\tabcolsep}{20pt}
+		\sisetup{
+			table-figures-integer = 6,
+			table-figures-decimal = 3
+		}
+		
+		\begin{tabular}{ l
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			
+			\toprule
+			\textbf{Вектор)}			& \textbf{ΔX, м}	& \textbf{ΔY, м}	& \textbf{ΔZ, м}	\\ \midrule
+			LOBN-RUZA					&  70131,124		& -38418,657		& -22501,925		\\ %\hline
+			DMTR-LOBN					&  25685,641		&   7382,792		& -16565,180		\\ %\hline
+			DMTR-ZHDR					&  22847,524		&  57797,043		& -35990,348		\\ %\hline
+			MSK2-ZHDR					& -12785,551		&  24259,785		&  -3345,774		\\ %\hline
+			LOBN-ZHDR					&  -2838,158		&  50414,134		& -19425,163		\\ %\hline
+			ZHDR-RUZA					&  72969,257		& -88832,959		&  -3076,725		\\ %\hline
+			RUZA-MSK2					& -60183,863		&  64573,354		&   6422,525		\\ %\hline
+			RUZA-DMTR					& -95816,737		&  31035,897		&  39067,096		\\ %\hline
+			DMTR-MSK2					&  35632,970		&  33537,301		& -32644,604		\\ %\hline
+			LOBN-MSK2					&   9947,381		&  26154,528		& -16079,454		\\ \bottomrule
+		\end{tabular}
+		
+	\end{threeparttable}
+\end{table}
+
+Уравнивание упрощенным классическим способов можно записать в виде формулы~\cref{eq:eq3.1}
+
+\begin{equation}
+	\label{eq:eq3.1}
+		V = A d + L,
+\end{equation}
+где: 
+\begin{description}
+	\item[$V$] -- поправка; 
+	\item[$A$] -- исходная матрица, характеризующая параметр сети;
+	\item[$d$] -- вектор поправок;
+	\item[$L$] -- невязки.
+\end{description}
+
+Для начала происходит определение приближенных координат пунктов, указываемое в таблице~\cref{tab:tab28}:
+
+
+\begin{table} [htbp]
+	\centering\small
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\captionof{table}{приближенные координаты пунктов }\label{tab:tab28}
+		\setlength{\tabcolsep}{20pt}
+		\sisetup{
+			table-figures-integer = 7,
+			table-figures-decimal = 3
+		}
+		
+		\begin{tabular}{ l
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			
+			\toprule
+			\textbf{Станция (№)}		& \textbf{X, м}		& \textbf{Y, м}		& \textbf{Z, м}	\\ \midrule
+			LOBN (1)					&  2837136,604		&  2165621,902		&  5268527,919		\\ %\hline
+			RUZA (2)					&  2907267,742		&  2127203,214		&  5246025,992		\\ %\hline
+			DMTR (3)					&  2811451,038		&  2158239,136		&  5285093,053		\\ %\hline
+			MSK2 (4)					&  2847083,944		&  2191776,359		&  5252448,498		\\ %\hline
+			ZHDR (5)					&  2834298,496		&  2216036,339		&  5249102,679		\\ \bottomrule
+		\end{tabular}
+		
+	\end{threeparttable}
+\end{table}
+
+В дальнейшем находятся невязки измерений, приведенные в таблице 29
+
+
+\begin{table} [htbp]
+	\centering\small
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\captionof{table}{таблица L }\label{tab:tab29}
+		\setlength{\tabcolsep}{20pt}
+		\sisetup{
+			table-figures-integer = 6,
+			table-figures-decimal = 3
+		}
+		
+		\begin{tabular}{ l
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			
+			\toprule
+			\textbf{Вектор)}			& \textbf{ΔX, м}	& \textbf{ΔY, м}	& \textbf{ΔZ, м}	\\ \midrule
+			LOBN-RUZA					&  		& 		& 		\\ %\hline
+			DMTR-ZHDR					&  		&  		& 		\\ %\hline
+			MSK2-ZHDR					& 		&  		& 		\\ %\hline
+			LOBN-ZHDR					&  		&  		& 		\\ %\hline
+			ZHDR-RUZA					&  		&  		& 		\\ %\hline
+			RUZA-MSK2					& 		&  		& 		\\ %\hline
+			RUZA-DMTR					& 		&  		& 		\\ %\hline
+			DMTR-MSK2					&  		&  		& 		\\ %\hline
+			LOBN-MSK2					&   	&  		& 		\\ \bottomrule
+		\end{tabular}
+		
+	\end{threeparttable}
+\end{table}
 
 
 
