@@ -200,7 +200,7 @@
 		\captionof{table}{таблица L }\label{tab:tab29}
 		\setlength{\tabcolsep}{20pt}
 		\sisetup{
-			table-figures-integer = 6,
+			table-figures-integer = 1,
 			table-figures-decimal = 3
 		}
 		
@@ -212,24 +212,281 @@
 			
 			\toprule
 			\textbf{Вектор)}			& \textbf{ΔX, м}	& \textbf{ΔY, м}	& \textbf{ΔZ, м}	\\ \midrule
-			LOBN-RUZA					&  		& 		& 		\\ %\hline
-			DMTR-ZHDR					&  		&  		& 		\\ %\hline
-			MSK2-ZHDR					& 		&  		& 		\\ %\hline
-			LOBN-ZHDR					&  		&  		& 		\\ %\hline
-			ZHDR-RUZA					&  		&  		& 		\\ %\hline
-			RUZA-MSK2					& 		&  		& 		\\ %\hline
-			RUZA-DMTR					& 		&  		& 		\\ %\hline
-			DMTR-MSK2					&  		&  		& 		\\ %\hline
-			LOBN-MSK2					&   	&  		& 		\\ \bottomrule
+			LOBN-RUZA					&  0,000		&  0,000		&  0,000		\\ %\hline
+			DMTR-LOBN					&  0,000		&  0,000		&  0,000		\\ %\hline
+			DMTR-ZHDR					& -0,068 		&  0,159		& -0,030		\\ %\hline
+			MSK2-ZHDR					&  0,045		&  0,309		& -0,089		\\ %\hline
+			LOBN-ZHDR					&  0,000		&  0,000		&  0,000		\\ %\hline
+			ZHDR-RUZA					& -0,184 		&  0,088		& -0,011		\\ %\hline
+			RUZA-MSK2					& -0,430		&  0,052		& -0,264		\\ %\hline
+			RUZA-DMTR					&  0,032		&  0,042		& -0,759		\\ %\hline
+			DMTR-MSK2					& -0,175 		& -0,189 		&  0,133		\\ %\hline
+			LOBN-MSK2					&  0,000 		&  0,000		&  0,000		\\ \bottomrule
 		\end{tabular}
 		
 	\end{threeparttable}
 \end{table}
 
+Следующим этапом уравнивания является создание матрицы $A$, отвечающей за геометрию сети. В главных диагоналях матрицы могут быть $-1; 0; 1$. 
+\begin{description}
+	\item[$-1$] в том случае, если пункт находится в начале определяемого вектора;
+	\item[$ 0$] если пункты сети не входят в состав вектора;
+	\item[$ 1$] если в конце вектора.
+\end{description} 
+В таблице 30 приводится исходная матрица $A$.
+\begin{equation}
+	A =
+	\left(\begin{array}{cccccc}
+		& LOBN(1) & RUZA(2) & DMTR(3) & MSK2(4) & ZHDR(5)\\ \hline
+		LOBN-RUZA & \overbrace{\left\{ \begin{array}{rrr}
+				-1 & 0 & 0\\
+				0 & -1 & 0\\
+				0 & 0 & -1
+			\end{array}\right.} & \overbrace{\begin{array}{ccc}
+				1 & 0 & 0\\
+				0 & 1 & 0\\
+				0 & 0 & 1
+		\end{array}} & \overbrace{\begin{array}{rrr}
+				0 & 0 & 0\\
+				0 & 0 & 0\\
+				0 & 0 & 0
+		\end{array}} & \overbrace{\begin{array}{rrr}
+				0 & 0 & 0\\
+				0 & 0 & 0\\
+				0 & 0 & 0
+		\end{array}} & \overbrace{\begin{array}{rrr}
+				0 & 0 & 0\\
+				0 & 0 & 0\\
+				0 & 0 & 0
+		\end{array}}\\  \hline
+		DMTR-LOBN & \left\{ \begin{array}{rrr}
+			1 & 0 & 0\\
+			0 & 1 & 0\\
+			0 & 0 & 1
+		\end{array}\right. & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			-1 & 0 & 0\\
+			0 & -1 & 0\\
+			0 & 0 & -1
+		\end{array} & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array}\\
+		DMTR-ZHDR & \left\{ \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array}\right. & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			1 & 0 & 0\\
+			0 & 1 & 0\\
+			0 & 0 & 1
+		\end{array} & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			-1 & 0 & 0\\
+			0 & -1 & 0\\
+			0 & 0 & -1
+		\end{array}\\
+		MSK2-ZHDR & \left\{ \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array}\right. & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			-1 & 0 & 0\\
+			0 & -1 & 0\\
+			0 & 0 & -1
+		\end{array} & \begin{array}{rrr}
+			1 & 0 & 0\\
+			0 & 1 & 0\\
+			0 & 0 & 1
+		\end{array}\\
+		LOBN-ZHDR & \left\{ \begin{array}{rrr}
+			-1 & 0 & 0\\
+			0 & -1 & 0\\
+			0 & 0 & -1
+		\end{array}\right. & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			1 & 0 & 0\\
+			0 & 1 & 0\\
+			0 & 0 & 1
+		\end{array}\\
+		ZHDR-RUZA & \left\{ \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array}\right. & \begin{array}{rrr}
+			1 & 0 & 0\\
+			0 & 1 & 0\\
+			0 & 0 & 1
+		\end{array} & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			-1 & 0 & 0\\
+			0 & -1 & 0\\
+			0 & 0 & -1
+		\end{array}\\
+		RUZA-MSK2 & \left\{ \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array}\right. & \begin{array}{rrr}
+			-1 & 0 & 0\\
+			0 & -1 & 0\\
+			0 & 0 & -1
+		\end{array} & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			1 & 0 & 0\\
+			0 & 1 & 0\\
+			0 & 0 & 1
+		\end{array} & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array}\\
+		RUZA-DMTR & \left\{ \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array}\right. & \begin{array}{rrr}
+			-1 & 0 & 0\\
+			0 & -1 & 0\\
+			0 & 0 & -1
+		\end{array} & \begin{array}{rrr}
+			1 & 0 & 0\\
+			0 & 1 & 0\\
+			0 & 0 & 1
+		\end{array} & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array}\\
+		DMTR-MSK2 & \left\{ \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array}\right. & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			-1 & 0 & 0\\
+			0 & -1 & 0\\
+			0 & 0 & -1
+		\end{array} & \begin{array}{rrr}
+			1 & 0 & 0\\
+			0 & 1 & 0\\
+			0 & 0 & 1
+		\end{array} & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array}\\
+		LOBN-MSK2 & \left\{ \begin{array}{rrr}
+			-1 & 0 & 0\\
+			0 & -1 & 0\\
+			0 & 0 & -1
+		\end{array}\right. & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array} & \begin{array}{rrr}
+			1 & 0 & 0\\
+			0 & 1 & 0\\
+			0 & 0 & 1
+		\end{array} & \begin{array}{rrr}
+			0 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 0
+		\end{array}
+	\end{array}\right)
+\end{equation}
 
+\begin{equation}
 
+A=\begin{array}{c}
+	\begin{array}{ccccc}
+		\rotatebox{90}{LOBN(1)} & 
+		\rotatebox{90}{RUZA (2)} & 
+		\rotatebox{90}{DMTR (3)} & 
+		\rotatebox{90}{MSK2 (4)} & 
+		\rotatebox{90}{ZHDR (5)}		
+	\end{array}\;\hphantom{DMTR-LOBN}\\
+	\left[\begin{array}{rrrrr}
+		-E_{3} & E_{3} & Z_{3} & Z_{3} & Z_{3}\\
+		E_{3} & Z_{3} & -E_{3} & Z_{3} & Z_{3}\\
+		Z_{3} & Z_{3} & E_{3} & Z_{3} & -E_{3}\\
+		Z_{3} & Z_{3} & Z_{3} & -E_{3} & E_{3}\\
+		-E_{3} & Z_{3} & Z_{3} & Z_{3} & E_{3}\\
+		Z_{3} & E_{3} & Z_{3} & Z_{3} & -E_{3}\\
+		Z_{3} & -E_{3} & Z_{3} & E_{3} & Z_{3}\\
+		Z_{3} & -E_{3} & E_{3} & Z_{3} & Z_{3}\\
+		Z_{3} & Z_{3} & -E_{3} & E_{3} & Z_{3}\\
+		-E_{3} & Z_{3} & Z_{3} & E_{3} & Z_{3}
+	\end{array}\right]\;\begin{array}{c}
+		LOBN-RUZA\\
+		DMTR-LOBN\\
+		DMTR-ZHDR\\
+		MSK2-ZHDR\\
+		LOBN-ZHDR\\
+		ZHDR-RUZA\\
+		RUZA-MSK2\\
+		RUZA-DMTR\\
+		DMTR-MSK2\\
+		LOBN-MSK2
+	\end{array}
+\end{array}
 
-
+\end{equation}
 
 
 
