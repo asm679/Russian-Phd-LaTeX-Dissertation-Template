@@ -1,16 +1,16 @@
-\chapter{ИССЛЕДОВАНИЕ ТОЧНОСТИ ПОСТРОЕНИЯ ГЕОДЕЗИЧЕСКИХ СЕТЕЙ ПРИ УРАВНИВАНИИ СЕТЕЙ В ДИАПАЗОНАХ РАССТОЯНИЙ 5-700 КМ}\label{ch:ch3}
+\chapter{ИССЛЕДОВАНИЕ ТОЧНОСТИ ПОСТРОЕНИЯ ГЕОДЕЗИЧЕСКИХ СЕТЕЙ ПРИ УРАВНИВАНИИ СЕТЕЙ В ДИАПАЗОНАХ РАССТОЯНИЙ ОТ~5 ДО 700~КМ}\label{ch:ch3}
 
-\section{Исследование точности определения координат в диапазоне расстояний 5-100 км}\label{sec:ch3/sect1}
+\section{Исследование точности определения координат в диапазоне расстояний от~5 до 100~км}\label{sec:ch3/sect1}
 
-\subsection{Исходные данные для спутниковой сети в диапазоне расстояний 0-100 км}\label{subsec:ch3/sec1/sub1}
+\subsection{Исходные данные для спутниковой сети в диапазоне расстояний от~0 до 100~км}\label{subsec:ch3/sec1/sub1}
 
-В параграфе рассматривается геодезическая сеть, состоящая из 5 пунктов. Пункты равномерно расположены в диапазоне расстояний 5-100 км. RINEX-файлы с пунктов сети были получены с сайта базовых станций EFT COORS \cite{src55}. На рисунке \cref{fig:pic25}  приведена схема рассматриваемой сети.
+В параграфе рассматривается геодезическая сеть, состоящая из пяти пунктов. Пункты равномерно расположены в диапазоне расстояний от~5 до 100~км. RINEX-файлы с пунктов сети были получены с сайта базовых станций EFT COORS \cite{src55}. На рисунке \cref{fig:pic25}  приведена схема рассматриваемой сети.
 
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.99\linewidth]{images/pic25}
-	\caption{Cпутниковая сеть в диапазоне расстояний 0-100 км }
+	\caption{Cпутниковая сеть в диапазоне расстояний от~0 до 100~км }
 	\label{fig:pic25}
 \end{figure}
 
@@ -111,12 +111,12 @@
 	\label{fig:pic26}
 \end{figure}
 
-Исходный пункт: LOBN, остальные --- определяемые. Продолжительность сеансов измерения составляла $1, 2, 3$ И $4$~часа, каждый раз формируя независимые вектора. Сначала была выполнена обработка одночасовых интервалов в статике с использованием программного обеспечения КРЕДО ГНСС. В таблице \cref{tab:tab27} приведены	приращения	координат,	полученных	при	обработке трёх независимых блоков, указанных выше.
+Исходный пункт: LOBN, остальные --- определяемые. Продолжительность сеансов измерения составляла $1, 2, 3$ и $4$~часа, каждый раз формируя независимые вектора. Сначала была выполнена обработка одночасовых интервалов в статике с использованием программного обеспечения КРЕДО ГНСС. В таблице \cref{tab:tab27} приведены	приращения	координат,	полученных	при	обработке трёх независимых блоков, указанных выше.
 
 \begin{table} [htbp]
 	\centering\small
 	\begin{threeparttable}% выравнивание подписи по границам таблицы
-		\captionof{table}{приращения координат пунктов, полученные при обработке данных в статике при 1 часе }\label{tab:tab27}
+		\captionof{table}{Приращения координат пунктов, полученные при обработке данных в статике,  $\mathbf{t_\text{изм.}=1\,\text{ч}}$ }\label{tab:tab27}
 		\setlength{\tabcolsep}{20pt}
 		\sisetup{
 			table-figures-integer = 6,
@@ -146,10 +146,11 @@
 	\end{threeparttable}
 \end{table}
 
-Уравнивание упрощенным классическим способов можно записать в виде формулы~\cref{eq:eq3.1}
+\label{УКС}
+Уравнивание упрощённым классическим способом можно записать в виде формулы~\cref{eq:eq3.6}
 
 \begin{equation}
-	\label{eq:eq3.1}
+	\label{eq:eq3.6}
 		V = A d + L,
 \end{equation}
 где: 
@@ -160,13 +161,13 @@
 	\item[$L$] -- невязки.
 \end{description}
 
-Для начала происходит определение приближенных координат пунктов, указываемое в таблице~\cref{tab:tab28}:
+Для начала происходит определение приближённых координат пунктов, указываемое в таблице~\cref{tab:tab28}:
 
 
 \begin{table} [htbp]
 	\centering\small
 	\begin{threeparttable}% выравнивание подписи по границам таблицы
-		\captionof{table}{приближенные координаты пунктов }\label{tab:tab28}
+		\captionof{table}{Приближённые координаты пунктов }\label{tab:tab28}
 		\setlength{\tabcolsep}{20pt}
 		\sisetup{
 			table-figures-integer = 7,
@@ -191,13 +192,13 @@
 	\end{threeparttable}
 \end{table}
 
-В дальнейшем находятся невязки измерений, приведенные в таблице 29
+В дальнейшем находятся невязки измерений, приведённые в таблице~\cref{tab:tab29}
 
 
 \begin{table} [htbp]
 	\centering\small
 	\begin{threeparttable}% выравнивание подписи по границам таблицы
-		\captionof{table}{таблица L }\label{tab:tab29}
+		\captionof{table}{Невязки измерений}\label{tab:tab29}
 		\setlength{\tabcolsep}{20pt}
 		\sisetup{
 			table-figures-integer = 1,
@@ -227,252 +228,55 @@
 	\end{threeparttable}
 \end{table}
 
-Следующим этапом уравнивания является создание матрицы $A$, отвечающей за геометрию сети. В главных диагоналях матрицы могут быть $-1; 0; 1$. 
-\begin{description}
-	\item[$-1$] в том случае, если пункт находится в начале определяемого вектора;
-	\item[$ 0$] если пункты сети не входят в состав вектора;
-	\item[$ 1$] если в конце вектора.
+\newpage
+
+Следующим этапом уравнивания является составление матрицы $A$, описывающей геометрию сети. 
+
+\newcommand{\ph}[1]{\phantom{#1}}
+\newcommand{\phmb}[1]{\ph{\boldsymbol{#1}}}
+\newcommand{\phm}{\phmb{-}}
+\newcommand{\mbs}[1]{\boldsymbol{#1}}
+\newcommand{\fit}{DDD}
+
+Она имеет блочную структуру и состоит из квадратных блоков третьего порядка: 
+	$$\mbs{O_{3}}=\begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}, \quad%
+	\mbs{E_3}=\begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \text{и} \quad%
+	\mbs{-E_3}=-1\cdot\mbs{E_3} \..$$
+Блоки образуют матрицу по следующему принципу:
+\begin{description} 
+	\item[$\mbs{-E_3}$] используется в том случае, если пункт, которому соответствует блок, является началом определяемого вектора;
+	\item[$\phm\mbs{E_3}$] используется в том случае, если соответствующий блоку пункт является окончанием определяемого вектора;
+	\item[$\phm\mbs{O_{3}}$] применяется, если пункт не входит в состав определяемого вектора.
 \end{description} 
-В таблице 30 приводится исходная матрица $A$.
-\begin{equation}
-	A =
-	\left(\begin{array}{cccccc}
-		& LOBN(1) & RUZA(2) & DMTR(3) & MSK2(4) & ZHDR(5)\\ \hline
-		LOBN-RUZA & \overbrace{\left\{ \begin{array}{rrr}
-				-1 & 0 & 0\\
-				0 & -1 & 0\\
-				0 & 0 & -1
-			\end{array}\right.} & \overbrace{\begin{array}{ccc}
-				1 & 0 & 0\\
-				0 & 1 & 0\\
-				0 & 0 & 1
-		\end{array}} & \overbrace{\begin{array}{rrr}
-				0 & 0 & 0\\
-				0 & 0 & 0\\
-				0 & 0 & 0
-		\end{array}} & \overbrace{\begin{array}{rrr}
-				0 & 0 & 0\\
-				0 & 0 & 0\\
-				0 & 0 & 0
-		\end{array}} & \overbrace{\begin{array}{rrr}
-				0 & 0 & 0\\
-				0 & 0 & 0\\
-				0 & 0 & 0
-		\end{array}}\\  \hline
-		DMTR-LOBN & \left\{ \begin{array}{rrr}
-			1 & 0 & 0\\
-			0 & 1 & 0\\
-			0 & 0 & 1
-		\end{array}\right. & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			-1 & 0 & 0\\
-			0 & -1 & 0\\
-			0 & 0 & -1
-		\end{array} & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array}\\
-		DMTR-ZHDR & \left\{ \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array}\right. & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			1 & 0 & 0\\
-			0 & 1 & 0\\
-			0 & 0 & 1
-		\end{array} & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			-1 & 0 & 0\\
-			0 & -1 & 0\\
-			0 & 0 & -1
-		\end{array}\\
-		MSK2-ZHDR & \left\{ \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array}\right. & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			-1 & 0 & 0\\
-			0 & -1 & 0\\
-			0 & 0 & -1
-		\end{array} & \begin{array}{rrr}
-			1 & 0 & 0\\
-			0 & 1 & 0\\
-			0 & 0 & 1
-		\end{array}\\
-		LOBN-ZHDR & \left\{ \begin{array}{rrr}
-			-1 & 0 & 0\\
-			0 & -1 & 0\\
-			0 & 0 & -1
-		\end{array}\right. & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			1 & 0 & 0\\
-			0 & 1 & 0\\
-			0 & 0 & 1
-		\end{array}\\
-		ZHDR-RUZA & \left\{ \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array}\right. & \begin{array}{rrr}
-			1 & 0 & 0\\
-			0 & 1 & 0\\
-			0 & 0 & 1
-		\end{array} & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			-1 & 0 & 0\\
-			0 & -1 & 0\\
-			0 & 0 & -1
-		\end{array}\\
-		RUZA-MSK2 & \left\{ \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array}\right. & \begin{array}{rrr}
-			-1 & 0 & 0\\
-			0 & -1 & 0\\
-			0 & 0 & -1
-		\end{array} & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			1 & 0 & 0\\
-			0 & 1 & 0\\
-			0 & 0 & 1
-		\end{array} & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array}\\
-		RUZA-DMTR & \left\{ \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array}\right. & \begin{array}{rrr}
-			-1 & 0 & 0\\
-			0 & -1 & 0\\
-			0 & 0 & -1
-		\end{array} & \begin{array}{rrr}
-			1 & 0 & 0\\
-			0 & 1 & 0\\
-			0 & 0 & 1
-		\end{array} & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array}\\
-		DMTR-MSK2 & \left\{ \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array}\right. & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			-1 & 0 & 0\\
-			0 & -1 & 0\\
-			0 & 0 & -1
-		\end{array} & \begin{array}{rrr}
-			1 & 0 & 0\\
-			0 & 1 & 0\\
-			0 & 0 & 1
-		\end{array} & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array}\\
-		LOBN-MSK2 & \left\{ \begin{array}{rrr}
-			-1 & 0 & 0\\
-			0 & -1 & 0\\
-			0 & 0 & -1
-		\end{array}\right. & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array} & \begin{array}{rrr}
-			1 & 0 & 0\\
-			0 & 1 & 0\\
-			0 & 0 & 1
-		\end{array} & \begin{array}{rrr}
-			0 & 0 & 0\\
-			0 & 0 & 0\\
-			0 & 0 & 0
-		\end{array}
-	\end{array}\right)
-\end{equation}
 
-\begin{equation}
+Формула~\cref{eq:eq3.30} показывает вид исходной матрицы $A$.
 
-A=\begin{array}{c}
+\begin{equation} \label{eq:eq3.30}		%\label{tab:tab30}
+\begin{array}{c}
 	\begin{array}{ccccc}
+		\phmb{-E_{3}fill} & \phmb{-E_{3}} & \phmb{-E_{3}} & \phmb{-E_{3}} & \phmb{-E_{3}} \\
+		\ph{\fit}
 		\rotatebox{90}{LOBN(1)} & 
 		\rotatebox{90}{RUZA (2)} & 
 		\rotatebox{90}{DMTR (3)} & 
 		\rotatebox{90}{MSK2 (4)} & 
 		\rotatebox{90}{ZHDR (5)}		
 	\end{array}\;\hphantom{DMTR-LOBN}\\
-	\left[\begin{array}{rrrrr}
-		-E_{3} & E_{3} & Z_{3} & Z_{3} & Z_{3}\\
-		E_{3} & Z_{3} & -E_{3} & Z_{3} & Z_{3}\\
-		Z_{3} & Z_{3} & E_{3} & Z_{3} & -E_{3}\\
-		Z_{3} & Z_{3} & Z_{3} & -E_{3} & E_{3}\\
-		-E_{3} & Z_{3} & Z_{3} & Z_{3} & E_{3}\\
-		Z_{3} & E_{3} & Z_{3} & Z_{3} & -E_{3}\\
-		Z_{3} & -E_{3} & Z_{3} & E_{3} & Z_{3}\\
-		Z_{3} & -E_{3} & E_{3} & Z_{3} & Z_{3}\\
-		Z_{3} & Z_{3} & -E_{3} & E_{3} & Z_{3}\\
-		-E_{3} & Z_{3} & Z_{3} & E_{3} & Z_{3}
-	\end{array}\right]\;\begin{array}{c}
+A=	\begin{pmatrix}
+%	\left(\begin{array}{rrrrr}
+		\mbs{-E_{3}} & \phm\mbs{E_{3}} & \phm O_{3} & \phm O_{3} & \phm O_{3}\\
+		\phm\mbs{E_{3}} & \phm O_{3} & \mbs{-E_{3}} & \phm O_{3} & \phm O_{3}\\
+		\phm O_{3} & \phm O_{3} & \phm\mbs{E_{3}} & \phm O_{3} & \mbs{-E_{3}}\\
+		\phm O_{3} & \phm O_{3} & \phm O_{3} & \mbs{-E_{3}} & \phm\mbs{E_{3}}\\
+		\mbs{-E_{3}} & \phm O_{3} & \phm O_{3} & \phm O_{3} & \phm\mbs{E_{3}}\\
+		\phm O_{3} & \phm\mbs{E_{3}} & \phm O_{3} & \phm O_{3} & \mbs{-E_{3}}\\
+		\phm O_{3} & \mbs{-E_{3}} & \phm O_{3} & \phm\mbs{E_{3}} & \phm O_{3}\\
+		\phm O_{3} & \mbs{-E_{3}} & \phm\mbs{E_{3}} & \phm O_{3} & \phm O_{3}\\
+		\phm O_{3} & \phm O_{3} & \mbs{-E_{3}} & \phm\mbs{E_{3}} & \phm O_{3}\\
+		\mbs{-E_{3}} & \phm O_{3} & \phm O_{3} & \phm\mbs{E_{3}} & \phm O_{3}
+%	\end{array}\right)\;
+	\end{pmatrix}
+	\begin{array}{c}
 		LOBN-RUZA\\
 		DMTR-LOBN\\
 		DMTR-ZHDR\\
@@ -485,328 +289,1839 @@ A=\begin{array}{c}
 		LOBN-MSK2
 	\end{array}
 \end{array}
+\end{equation}
 
+Далее вычисляется обратная матрица для произведения $A^{T}A$. %После этого найдена обратная матрица $(A^{T}A)^{-1}$. 
+Полученные результаты представлены формулами~\cref{eq:eq3.31,eq:eq3.32}.
+
+\setcounter{MaxMatrixCols}{20}
+
+\begin{equation} \label{eq:eq3.31}		%\label{tab:tab31}
+A^{T}\cdot A= \begin{pmatrix*}[r] %
+			 4 & 0 & 0 & -1 & 0 & 0 & -1 & 0 & 0 & -1 & 0 & 0 \\ 
+			 0 & 4 & 0 & 0 & -1 & 0 & 0 & -1 & 0 & 0 & -1 & 0 \\ 
+			 0 & 0 & 4 & 0 & 0 & -1 & 0 & 0 & -1 & 0 & 0 & -1 \\ 
+			 -1 & 0 & 0 & 4 & 0 & 0 & -1 & 0 & 0 & -1 & 0 & 0 \\ 
+			 0 & -1 & 0 & 0 & 4 & 0 & 0 & -1 & 0 & 0 & -1 & 0 \\ 
+			 0 & 0 & -1 & 0 & 0 & 4 & 0 & 0 & -1 & 0 & 0 & -1 \\ 
+			 -1 & 0 & 0 & -1 & 0 & 0 & 4 & 0 & 0 & -1 & 0 & 0 \\ 
+			 0 & -1 & 0 & 0 & -1 & 0 & 0 & 4 & 0 & 0 & -1 & 0 \\ 
+			 0 & 0 & -1 & 0 & 0 & -1 & 0 & 0 & 4 & 0 & 0 & -1 \\ 
+			 -1 & 0 & 0 & -1 & 0 & 0 & -1 & 0 & 0 & 4 & 0 & 0 \\ 
+			 0 & -1 & 0 & 0 & -1 & 0 & 0 & -1 &  0& 0 & 4 & 0 \\ 
+			 0 & 0 & -1 & 0 & 0 & -1 & 0 & 0 & -1 & 0 & 0 & 4 \\ 
+		\end{pmatrix*}
+\end{equation}
+
+\begin{equation} \label{eq:eq3.32}		%\label{tab:tab32}
+	(A^{T}\cdot A)^{-1}= \begin{pmatrix*}[r] %
+		0,4 & 0 & 0 & 0,2 & 0 & 0 & 0,2 & 0 & 0 & 0,2 & 0 & 0 \\ 
+		0 & 0,4 & 0 & 0 & 0,2 & 0 & 0 & 0,2 & 0 & 0 & 0,2 & 0 \\ 
+		0 & 0 & 0,4 & 0 & 0 & 0,2 & 0 & 0 & 0,2 & 0 & 0 & 0,2 \\ 
+		0,2 & 0 & 0 & 0,4 & 0 & 0 & 0,2 & 0 & 0 & 0,2 & 0 & 0 \\ 
+		0 & 0,2 & 0 & 0 & 0,4 & 0 & 0 & 0,2 & 0 & 0 & 0,2 & 0 \\ 
+		0 & 0 & 0,2 & 0 & 0 & 0,4 & 0 & 0 & 0,2 & 0 & 0 & 0,2 \\ 
+		0,2 & 0 & 0 & 0,2 & 0 & 0 & 0,4 & 0 & 0 & 0,2 & 0 & 0 \\ 
+		0 & 0,2 & 0 & 0 & 0,2 & 0 & 0 & 0,4 & 0 & 0 & 0,2 & 0 \\ 
+		0 & 0 & 0,2 & 0 & 0 & 0,2 & 0 & 0 & 0,4 & 0 & 0 & 0,2 \\ 
+		0,2 & 0 & 0 & 0,2 & 0 & 0 & 0,2 & 0 & 0 & 0,4 & 0 & 0 \\ 
+		0 & 0,2 & 0 & 0 & 0,2 & 0 & 0 & 0,2 &  0& 0 & 0,4 & 0 \\ 
+		0 & 0 & 0,2 & 0 & 0 & 0,2 & 0 & 0 & 0,2 & 0 & 0 & 0,4 \\ 
+	\end{pmatrix*}
+\end{equation}
+
+Следующим этапом уравнивания является нахождение вектора поправок $d$ по формуле~\cref{eq:eq3.7}:
+
+\begin{equation} \label{eq:eq3.7}
+	d = (A^T\cdot A)^{-1}\cdot (-A^TL) = -1\cdot (A^T\cdot A)^{-1}\cdot (A^TL),
+\end{equation}
+ для чего вычисляется произведение $A^TL$. Значения $A^TL$ и вектора поправок представлены в~\cref{eq:eq3.33}:
+\begin{equation} \label{eq:eq3.33}	%\label{tab:tab33}
+ 	A^TL = \begin{pmatrix*}[r] 0,214 \\ -0,006 \\ 1,012 \\ 0,139 \\ 0,390 \\ -0,922 \\%
+ 						  -0,650 \\ -0,446 \\ -0,042 \\ 0,297 \\ 0,062 \\ -0,048 \end{pmatrix*},  \quad%
+ 	 b = \begin{pmatrix*}[r]   -0,043 \\ 0,001 \\ -0,202 \\ -0,028 \\ -0,078 \\ 0,184 \\%
+ 	 					   0,130 \\ 0,089 \\ 0,008 \\ -0,059 \\ -0,012 \\ 0,010чё \end{pmatrix*}
+\end{equation} 
+ 
+ 
+ На следующем шаге находится произведения матриц $A\cdot d$ и, используя формулу~\cref{eq:eq3.6}, поправки к приращениям координат. Данные матрицы представлены в~\cref{eq:eq3.34}.
+ 
+\begin{equation} \label{eq:eq3.34}	%\label{tab:tab34}
+	A^TL = \begin{pmatrix*}[r] 
+		 -0,043 \\ 0,001 \\ -0,202 \\ 0,028 \\ 0,078 \\ -0,184 \\%
+		  0,032 \\ -0,066 \\ 0,175 \\ -0,189 \\ -0,102 \\ 0,001 \\%
+		 -0,059 \\ 0,014 \\ -0,212 \\ 0,173 \\ 0,088 \\ 0,211 \\%
+		  0,015 \\ -0,079 \\ 0,387 \\ 0,158 \\ 0,167 \\ -0,176 \\%
+		  0,130 \\ 0,089 \\ 0,008 %
+	 \end{pmatrix*},  \qquad%
+	b = \begin{pmatrix*}[r]   
+		-0,043 \\ 0,001 \\ -0,202 \\ 0,028 \\ 0,078 \\ -0,184 \\%
+		-0,036 \\ 0,093 \\ 0,145 \\ -0,144 \\ 0,207 \\ -0,088 \\%
+		-0,059 \\ 0,102 \\ -0,223 \\ -0,257 \\ 0,140 \\ -0,053 \\%
+		 0,047 \\ -0,037 \\ -0,372 \\ -0,017 \\ -0,022 \\ -0,043 \\%
+		 0,130 \\ 0,089 \\ 0,008 %
+	\end{pmatrix*}
+\end{equation} 
+ 
+ После этого вычисляются исправленные приращения координат, приведённые в таблице~\cref{tab:tab35}.
+ 
+
+\begin{table} [htbp]
+	\centering\small
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\captionof{table}{Исправленные приращения координат из таблицы~\cref{tab:tab27} %
+			%пунктов, полученные при обработке данных в статике при $\mathbf{t_\text{изм.}=1\,\text{ч}}$ 
+			}\label{tab:tab35}
+		\setlength{\tabcolsep}{10pt}
+		\sisetup{
+			table-figures-integer = 6,
+			table-figures-decimal = 3
+		}
+		
+		\begin{tabular}{ l
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			
+			\toprule
+			\textbf{Вектор}				& \textbf{ΔX, м}	& \textbf{ΔY, м}	& \textbf{ΔZ, м}	\\ \midrule
+			LOBN-RUZA					&  70131,095		& -38418,687		& -22502,129		\\ %\hline
+			DMTR-LOBN					&  25685,594		&   7382,844		& -16565,318		\\ %\hline
+			DMTR-ZHDR					&  22847,490		&  57797,137		& -35990,199		\\ %\hline
+			MSK2-ZHDR					& -12785,637		&  24259,878		&  -3345,818		\\ %\hline
+			LOBN-ZHDR					&  -2838,167		&  50414,425		& -19425,230		\\ %\hline
+			ZHDR-RUZA					&  72969,263		& -88833,111		&  -3076,899		\\ %\hline
+			RUZA-MSK2					& -60183,625		&  64573,233		&   6422,717		\\ %\hline
+			RUZA-DMTR					& -95816,689		&  31035,843		&  39067,448		\\ %\hline
+			DMTR-MSK2					&  35633,064		&  33537,390		& -32644,731		\\ %\hline
+			LOBN-MSK2					&   9947,470		&  26154,546		& -16079,413		\\ \bottomrule
+		\end{tabular}
+		
+	\end{threeparttable}
+\end{table}
+
+ Затем происходит нахождение разности вычисленных и эталонных приращений координат. Результаты, полученные при продолжительности измерений $t_\text{изм.}=1, 2, 3\text{ и }4$ часа, приведены в таблицах~\cref{tab:tab36}.
+
+
+
+\begin{table} [htbp]
+	\centering\small
+	\captionof{table}{Разница вычисленных и эталонных приращений координат.}\label{tab:tab36}{
+%		\hfill
+		\begin{subtable}{.47\linewidth}	
+			\centering
+			\caption*{$\mathbf{t_\text{изм.}=1\,\text{ч}}$}
+		\begin{tabular}{ l
+		S[table-number-alignment = center]
+		S[table-number-alignment = center]
+		S[table-number-alignment = center] }
+	
+	
+	\hline
+	\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+	LOBN-RUZA					&     -0,046		& 	   0,015		&     -0,163		\\ %\hline
+	DMTR-LOBN					&     -0,022		&      0,050		&     -0,180		\\ %\hline
+	DMTR-ZHDR					&      0,016		&      0,065		&      0,150		\\ %\hline
+	MSK2-ZHDR					&     -0,106		&      0,157		&     -0,052		\\ %\hline
+	LOBN-ZHDR					&     -0,025		&      0,147		&     -0,019		\\ %\hline
+	ZHDR-RUZA					&     -0,020		&     -0,131		&     -0,144		\\ %\hline
+	RUZA-MSK2					&      0,127		&     -0,026		&      0,196		\\ %\hline
+	RUZA-DMTR					&      0,068		&     -0,065		&      0,344		\\ %\hline
+	DMTR-MSK2					&      0,059		&      0,039		&     -0,148		\\ %\hline
+	LOBN-MSK2					&      0,081		&     -0,011		&      0,032		\\ \hline
+
+		\end{tabular}
+	\end{subtable}%
+		\qquad%
+	\begin{subtable}{.47\linewidth}	
+	\centering
+	\caption*{$\mathbf{t_\text{изм.}=2\,\text{ч}}$}
+	\begin{tabular}{ l
+			S[table-number-alignment = center]
+			S[table-number-alignment = center]
+			S[table-number-alignment = center] }
+		
+		
+		\hline
+		\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+		LOBN-RUZA					&     -0,066		& 	   0,022		&     -0,153		\\ %\hline
+		DMTR-LOBN					&      0,041		&      0,065		&     -0,217		\\ %\hline
+		DMTR-ZHDR					&      0,101		&      0,068		&      0,111		\\ %\hline
+		MSK2-ZHDR					&     -0,099		&      0,214		&     -0,087		\\ %\hline
+		LOBN-ZHDR					&     -0,024		&      0,181		&     -0,036		\\ %\hline
+		ZHDR-RUZA					&     -0,042		&     -0,159		&     -0,117		\\ %\hline
+		RUZA-MSK2					&      0,141		&     -0,055		&      0,204		\\ %\hline
+		RUZA-DMTR					&      0,025		&     -0,087		&      0,370		\\ %\hline
+		DMTR-MSK2					&      0,116		&      0,032		&     -0,166		\\ %\hline
+		LOBN-MSK2					&      0,075		&     -0,033		&      0,051		\\ \hline
+		
+		
+	\end{tabular}
+\end{subtable}%
+ 
+\vspace{12pt}
+ 
+		\begin{subtable}{.47\linewidth}	
+	\centering
+	\caption*{$\mathbf{t_\text{изм.}=3\,\text{ч}}$}
+	\begin{tabular}{ l
+			S[table-number-alignment = center]
+			S[table-number-alignment = center]
+			S[table-number-alignment = center] }
+		
+		
+		\hline
+		\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+		LOBN-RUZA					&      0,023		& 	   0,003		&      0,015		\\ %\hline
+		DMTR-LOBN					&     -0,049		&     -0,032		&      0,013		\\ %\hline
+		DMTR-ZHDR					&     -0,036		&     -0,001		&      0,033		\\ %\hline
+		MSK2-ZHDR					&      0,017		&     -0,026		&      0,020		\\ %\hline
+		LOBN-ZHDR					&      0,005		&     -0,013		&      0,016		\\ %\hline
+		ZHDR-RUZA					&      0,018		&      0,017		&     -0,001		\\ %\hline
+		RUZA-MSK2					&     -0,035		&      0,009		&     -0,019		\\ %\hline
+		RUZA-DMTR					&      0,026		&      0,029		&     -0,028		\\ %\hline
+		DMTR-MSK2					&     -0,061		&     -0,020		&      0,009		\\ %\hline
+		LOBN-MSK2					&     -0,012		&      0,013		&     -0,004		\\ \hline
+		
+		
+	\end{tabular}
+\end{subtable}%
+%
+		\qquad
+		\begin{subtable}{.47\linewidth}	
+	\centering
+	\caption*{$\mathbf{t_\text{изм.}=4\,\text{ч}}$}
+	\begin{tabular}{ l
+			S[table-number-alignment = center]
+			S[table-number-alignment = center]
+			S[table-number-alignment = center] }
+		
+		
+		\hline
+		\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+		LOBN-RUZA					&      0,010		& 	   0,027		&      0,024		\\ %\hline
+		DMTR-LOBN					&     -0,062		&     -0,020		&      0,024		\\ %\hline
+		DMTR-ZHDR					&     -0,037		&     -0,039		&      0,056		\\ %\hline
+		MSK2-ZHDR					&      0,006		&     -0,036		&      0,034		\\ %\hline
+		LOBN-ZHDR					&      0,013		&     -0,027		&      0,044		\\ %\hline
+		ZHDR-RUZA					&     -0,003		&      0,054		&     -0,020		\\ %\hline
+		RUZA-MSK2					&     -0,002		&     -0,018		&     -0,014		\\ %\hline
+		RUZA-DMTR					&      0,052		&     -0,007		&     -0,048		\\ %\hline
+		DMTR-MSK2					&     -0,055		&     -0,011		&      0,034		\\ %\hline
+		LOBN-MSK2					&      0,007		&      0,009		&      0,010		\\ \hline
+		
+		
+	\end{tabular}
+\end{subtable}%
+\hfill%	
+	}
+\end{table}	
+
+Основываясь на результатах из таблиц~\cref{tab:tab36}  высчитываются $m_x$, $m_y$, $m_z$, $m_{xy}$, $m_{xyz}$, приведённые в таблице~\cref{tab:tab38}.
+
+
+\begin{table} [htbp]
+	\centering\small
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\captionof{table}{Зависимость СКО от продолжительности измерения}\label{tab:tab38}
+		\setlength{\tabcolsep}{5pt}
+		\sisetup{
+			table-figures-integer = 1,
+			table-figures-decimal = 5
+		}
+		
+		\begin{tabular}{ c
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			
+			\toprule
+			\textbf{Интервал}	& $\mathbf{m_x}$& $\mathbf{m_y}$& $\mathbf{m_z}$& $\mathbf{m_{xy}}$	& $\mathbf{m_{xyz}}$	\\ \midrule%
+			$\mathbf{1}$ ч		&  0,068		&  0,088		&  0,169		&	0,111			&	0,202		\\ %\hline
+			$\mathbf{2}$ ч		&  0,083		&  0,112		&  0,177		&	0,139			&	0,225		\\ %\hline
+			$\mathbf{3}$ ч		&  0,033 		&  0,019		&  0,018		&	0,038			&	0,042		\\ %\hline
+			$\mathbf{4}$ ч		&  0,034		&  0,029		&  0,034		&	0,044			&	0,055		\\ \bottomrule
+		\end{tabular}
+		
+	\end{threeparttable}
+\end{table}
+
+На рисунках~\cref{fig:pic27} и \cref{fig:pic28} графически проиллюстрировано изменение СКО с течением времени.
+
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.75\linewidth]{images/pic27}
+	\caption{Изменение СКО с течением времени }
+	\label{fig:pic27}
+\end{figure}
+
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.75\linewidth]{images/pic28}
+	\caption{Влияние продолжительности измерений на $m_{xy}$ и $m_s$ }
+	\label{fig:pic28}
+\end{figure}
+
+
+
+
+\subsection{Уравнивание спутниковой сети в статике посредством метода нелинейного программирования}\label{subsec:ch3/sec1/sub3}
+
+Наряду с классическими методами уравнивания спутниковых сетей используется методика уравнивания посредством применения методов нелинейного программирования \cite{src14,src16}. В спутниковых сетях в качестве измеренных величин принято рассматривать приращения координат между пунктами и на основании этого можно сформулировать ряд условий:
+
+\paragraph{1. Условие фигур.}\label{Условие_Фигур}
+
+
+Данное условие применимо в том случае, если в сети присутствует один исходный пункт. Его можно записать в виде системы \cref{eq:eq3.8}:
+
+\begin{equation}\label{eq:eq3.8}
+\!
+\begin{cases}
+\begin{aligned}
+	&(dX_{12} &&+ &&uX_{12}) &&+ &&(dX_{23} &&+ &&uX_{23}) &&- &&(dX_{31} &&+ &&uX_{31}) &&= &&0 \\
+	&(dY_{12} &&+ &&uY_{12}) &&+ &&(dY_{23} &&+ &&uY_{23}) &&- &&(dY_{31} &&+ &&uY_{31}) &&= &&0 \\
+	&(dZ_{12} &&+ &&uZ_{12}) &&+ &&(dZ_{23} &&+ &&uZ_{23}) &&- &&(dZ_{31} &&+ &&uZ_{31}) &&= &&0 \\
+\end{aligned}
+\end{cases},
+\end{equation}
+где: 
+\begin{description}
+	\item[$dX_{ij},$ $dY_{ij},$ $dZ_{ij}$] ---~ приращения координат; 
+	\item[$uX_{ij},$ $uY_{ij},$ $uZ_{ij}$] ---~ поправки к приращениям координат.
+\end{description}
+
+Аналогично происходит описание остальных фигур, входящих в состав сети: треугольники, четырехугольники, $\ldots (n-1)$-угольники –-- для сети, состоящей из $n$ пунктов.
+
+
+
+\paragraph{2. Условие ходов.}\label{Условие_Ходов}
+
+
+Данное условие возникает, если в исходной спутниковой сети более одного исходного пункта. 
+Условие приведено в виде системы формул \cref{eq:eq3.9}:
+
+
+\begin{equation}\label{eq:eq3.9}
+	\!
+	\begin{cases}
+		\begin{aligned}
+			&(dX_{12} &&+ &&uX_{12}) &&+ &&X_{1} &&- &&X_{2}  &&= &&0 \\
+			&(dY_{12} &&+ &&uY_{12}) &&+ &&Y_{1} &&- &&Y_{2}  &&= &&0 \\
+			&(dZ_{12} &&+ &&uZ_{12}) &&+ &&Z_{1} &&- &&Z_{2}  &&= &&0 \\
+		\end{aligned}
+	\end{cases},
+\end{equation}
+где: 
+\begin{description}
+	\item[$dX_{ij},$ $dY_{ij},$ $dZ_{ij}$] ---~ приращения координат; 
+	\item[$X_{i},$ $Y_{i},$ $Z_{i}$] ---~ эталонные координаты пунктов.
+\end{description}
+
+
+
+\paragraph{3. Условие координат (параметрический метод).}\label{Условие_Координат}
+
+
+Данное условие применимо в том случае, если в сети присутствует один исходный пункт. 
+Условие можно записать в виде системы~\cref{eq:eq3.10}:
+
+
+\begin{equation}\label{eq:eq3.10}
+	\!
+	\begin{cases}
+		\begin{aligned}
+			&(dX_{ij} &&+ &&uX_{ij}) &&+ &&(dX_{j} &&+ &&uX_{j}) &&- &&(dX_{i} &&+ &&uX_{i}) &&= &&0 \\
+			&(dY_{ij} &&+ &&uY_{ij}) &&+ &&(dY_{j} &&+ &&uY_{j}) &&- &&(dY_{i} &&+ &&uY_{i}) &&= &&0 \\
+			&(dZ_{ij} &&+ &&uZ_{ij}) &&+ &&(dZ_{j} &&+ &&uZ_{j}) &&- &&(dZ_{i} &&+ &&uZ_{i}) &&= &&0 \\
+		\end{aligned}
+	\end{cases},
+\end{equation}
+где: 
+\begin{description}
+	\item[$dX_{ij},$ $dY_{ij},$ $dZ_{ij}$] ---~ приращения координат; 
+	\item[$uX_{ij},$ $uY_{ij},$ $uZ_{ij}$] ---~ поправки к приращениям координат;
+	\item[$X_{k},$ $Y_{k},$ $Z_{k}$] ---~ приближенные координаты пунктов;
+	\item[$uX_{k},$ $uY_{k},$ $uZ_{k}$] ---~ поправки к координатам.
+\end{description}
+
+
+
+Таким образом происходит описание всех векторов, входящих в структуру сети.
+
+В дальнейшем вводится целевая функция (далее «ЦФ»). 
+\nomenclature{ЦФ}{целевая функция \nomrefpage}
+В случае спутниковых сетей ЦФ является сумма квадратов поправок к приращениям координат и к пунктам сети. Математически можно записать в виде формулы \cref{eq:eq3.11}.
+
+
+\begin{equation}\label{eq:eq3.11}
+	\text{ЦФ}=\sum(u_{dX}\cdot u_{dY}\cdot u_{dZ})^2 ,
+\end{equation}
+
+
+Как и в любой оптимизационной задаче, вводятся ограничения. В случае параметрической записи исходных данных сети можно сформулировать 2 ограничения:
+\begin{enumerate}
+	\item Невязки в векторе должны равняться нулю. 
+	\item Поправки к координатам исходного пункта также равны нулю.
+\end{enumerate}
+
+Первое ограничение представлено в формуле~\cref{eq:eq3.10} применяемой для параметрической формы записи оптимизационной задачи.
+
+Второе ограничение можно представить в виде формулы~\cref{eq:eq3.12}:
+
+
+\begin{equation}\label{eq:eq3.12}
+	\!
+	\begin{cases}
+		\begin{aligned}
+			&v_{X_\text{исх.}} &&= &&0 \\
+			&v_{Y_\text{исх.}} &&= &&0 \\
+			&v_{Z_\text{исх.}} &&= &&0 \\
+		\end{aligned}
+	\end{cases},
+\end{equation}
+
+Обработка данных происходит посредством надстройки «поиск решения» в ПО Microsoft Excel. На рисунке~\cref{fig:pic29} приведено основное меню, используемое для оптимизационного процесса (уравнивания).
+
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.75\linewidth]{images/pic29}
+	\caption{Основное меню надстройки «поиск решения» }
+	\label{fig:pic29}
+\end{figure}
+
+
+
+В процессе оптимизационного уравнивания находятся исправленные приращения координат. В качестве примера в таблице~\cref{tab:tab39} 39 приведены исправленные приращения на примере сети, сформированной при продолжительности измерений 1 час.
+
+
+\begin{table} [htbp]
+	\centering\small
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\captionof{table}{Исправленные приращения координат , полученные при обработке данных в статике %
+			$\mathbf{t_\text{изм.}=1\,\text{ч}}$ 
+		}\label{tab:tab39}
+		\setlength{\tabcolsep}{10pt}
+		\sisetup{
+			table-figures-integer = 6,
+			table-figures-decimal = 3
+		}
+		
+		\begin{tabular}{ l
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			
+			\toprule
+			\textbf{Вектор}				& \textbf{ΔX, м}	& \textbf{ΔY, м}	& \textbf{ΔZ, м}	\\ \midrule
+			LOBN-RUZA					&  70131,102		& -38418,687		& -22502,096		\\ %\hline
+			DMTR-LOBN					&  25685,612		&   7382,778		& -16565,278		\\ %\hline
+			DMTR-ZHDR					&  22847,477		&  57797,152		& -35990,500		\\ %\hline
+			MSK2-ZHDR					& -12785,583		&  24259,842		&  -3345,808		\\ %\hline
+			LOBN-ZHDR					&  -2838,135		&  50414,374		& -19425,222		\\ %\hline
+			ZHDR-RUZA					&  72969,237		& -88833,061		&  -3076,874		\\ %\hline
+			RUZA-MSK2					& -60183,654		&  64573,218		&   6422,682		\\ %\hline
+			RUZA-DMTR					& -95816,714		&  31035,909		&  39067,373		\\ %\hline
+			DMTR-MSK2					&  35633,060		&  33537,309		& -32644,692		\\ %\hline
+			LOBN-MSK2					&   9947,448		&  26154,531		& -16079,414		\\ \bottomrule
+		\end{tabular}
+		
+	\end{threeparttable}
+\end{table}
+
+
+Сравнивая таблицы~\cref{tab:tab36} и~\cref{tab:tab39} можно заметить, что данные отличаются на небольшие величины. В таблицах~\cref{tab:tab40} указаны разности приращений координат.
+
+
+
+
+\begin{table} [htbp]
+	\centering\small
+	\captionof{table}{Разности приращений координат.}\label{tab:tab40}{
+		%		\hfill
+		\begin{subtable}{.47\linewidth}	
+			\centering
+			\caption*{$\mathbf{t_\text{изм.}=1\,\text{ч}}$}
+			\begin{tabular}{ l
+					S[table-number-alignment = center]
+					S[table-number-alignment = center]
+					S[table-number-alignment = center] }
+				
+				
+				\hline
+				\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+				LOBN-RUZA					&     -0,039		& 	   0,015		&     -0,130		\\ %\hline
+				DMTR-LOBN					&     -0,004		&     -0,016		&     -0,140		\\ %\hline
+				DMTR-ZHDR					&      0,003		&      0,080		&     -0,151		\\ %\hline
+				MSK2-ZHDR					&     -0,052		&      0,121		&     -0,042		\\ %\hline
+				LOBN-ZHDR					&      0,007		&      0,096		&     -0,011		\\ %\hline
+				ZHDR-RUZA					&     -0,046		&     -0,081		&     -0,119		\\ %\hline
+				RUZA-MSK2					&      0,098		&     -0,041		&      0,161		\\ %\hline
+				RUZA-DMTR					&      0,043		&      0,001		&      0,269		\\ %\hline
+				DMTR-MSK2					&      0,055		&     -0,042		&     -0,109		\\ %\hline
+				LOBN-MSK2					&      0,059		&     -0,026		&      0,031		\\ \hline
+				
+			\end{tabular}
+		\end{subtable}%
+		\qquad%
+		\begin{subtable}{.47\linewidth}	
+			\centering
+			\caption*{$\mathbf{t_\text{изм.}=2\,\text{ч}}$}
+			\begin{tabular}{ l
+					S[table-number-alignment = center]
+					S[table-number-alignment = center]
+					S[table-number-alignment = center] }
+				
+				
+				\hline
+				\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+				LOBN-RUZA					&     -0,058		& 	   0,026		&     -0,121		\\ %\hline
+				DMTR-LOBN					&      0,035		&     -0,008		&     -0,164		\\ %\hline
+				DMTR-ZHDR					&      0,018		&      0,107		&     -0,175		\\ %\hline
+				MSK2-ZHDR					&     -0,072		&      0,159		&     -0,057		\\ %\hline
+				LOBN-ZHDR					&     -0,018		&      0,115		&     -0,011		\\ %\hline
+				ZHDR-RUZA					&     -0,041		&     -0,089		&     -0,110		\\ %\hline
+				RUZA-MSK2					&      0,113		&     -0,070		&      0,167		\\ %\hline
+				RUZA-DMTR					&      0,023		&     -0,018		&      0,285		\\ %\hline
+				DMTR-MSK2					&      0,090		&     -0,052		&     -0,117		\\ %\hline
+				LOBN-MSK2					&      0,054		&     -0,044		&      0,046		\\ \hline
+				
+				
+			\end{tabular}
+		\end{subtable}%
+		
+		\vspace{12pt}
+		
+		\begin{subtable}{.47\linewidth}	
+			\centering
+			\caption*{$\mathbf{t_\text{изм.}=3\,\text{ч}}$}
+			\begin{tabular}{ l
+					S[table-number-alignment = center]
+					S[table-number-alignment = center]
+					S[table-number-alignment = center] }
+				
+				
+				\hline
+				\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+				LOBN-RUZA					&      0,021		& 	   0,006		&      0,019		\\ %\hline
+				DMTR-LOBN					&     -0,033		&     -0,025		&      0,004		\\ %\hline
+				DMTR-ZHDR					&     -0,012		&     -0,029		&      0,008		\\ %\hline
+				MSK2-ZHDR					&      0,032		&     -0,011		&      0,009		\\ %\hline
+				LOBN-ZHDR					&      0,021		&     -0,004		&      0,004		\\ %\hline
+				ZHDR-RUZA					&      0,000		&      0,010		&      0,015		\\ %\hline
+				RUZA-MSK2					&     -0,032		&      0,002		&     -0,023		\\ %\hline
+				RUZA-DMTR					&      0,012		&      0,020		&     -0,023		\\ %\hline
+				DMTR-MSK2					&     -0,045		&     -0,018		&      0,000		\\ %\hline
+				LOBN-MSK2					&     -0,011		&      0,008		&     -0,005		\\ \hline
+				
+				
+			\end{tabular}
+		\end{subtable}%
+		%
+		\qquad
+		\begin{subtable}{.47\linewidth}	
+			\centering
+			\caption*{$\mathbf{t_\text{изм.}=4\,\text{ч}}$}
+			\begin{tabular}{ l
+					S[table-number-alignment = center]
+					S[table-number-alignment = center]
+					S[table-number-alignment = center] }
+				
+				
+				\hline
+				\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+				LOBN-RUZA					&      0,010		& 	   0,026		&      0,025		\\ %\hline
+				DMTR-LOBN					&     -0,045		&     -0,010		&      0,002		\\ %\hline
+				DMTR-ZHDR					&     -0,014		&     -0,024		&      0,024		\\ %\hline
+				MSK2-ZHDR					&      0,025		&     -0,020		&      0,014		\\ %\hline
+				LOBN-ZHDR					&      0,031		&     -0,014		&      0,022		\\ %\hline
+				ZHDR-RUZA					&     -0,021		&      0,039		&      0,003		\\ %\hline
+				RUZA-MSK2					&     -0,004		&     -0,019		&     -0,017		\\ %\hline
+				RUZA-DMTR					&      0,036		&     -0,015		&     -0,027		\\ %\hline
+				DMTR-MSK2					&     -0,039		&     -0,004		&      0,010		\\ %\hline
+				LOBN-MSK2					&      0,006		&      0,006		&      0,009		\\ \hline
+				
+				
+			\end{tabular}
+		\end{subtable}%
+		\hfill%	
+	}
+\end{table}	
+
+Основываясь на таблицах~\cref{tab:tab40} высчитываются $m_x$, $m_y$, $m_z$, $m_{xy}$, $m_{xyz}$, приведённые в таблице~\cref{tab:tab42}.
+
+
+\begin{table} [htbp]
+	\centering\small
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\captionof{table}{Зависимость СКО от продолжительности измерения}\label{tab:tab42}
+		\setlength{\tabcolsep}{5pt}
+		\sisetup{
+			table-figures-integer = 1,
+			table-figures-decimal = 5
+		}
+		
+		\begin{tabular}{ c
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			
+			\toprule
+			\textbf{Интервал}	& $\mathbf{m_x}$& $\mathbf{m_y}$& $\mathbf{m_z}$& $\mathbf{m_{xy}}$	& $\mathbf{m_{xyz}}$	\\ \midrule%
+			$\mathbf{1}$ ч		&  0,049		&  0,064		&  0,137		&	0,081			&	0,159		\\ %\hline
+			$\mathbf{2}$ ч		&  0,060		&  0,083		&  0,146		&	0,102			&	0,178		\\ %\hline
+			$\mathbf{3}$ ч		&  0,033 		&  0,016		&  0,018		&	0,030			&	0,033		\\ %\hline
+			$\mathbf{4}$ ч		&  0,027		&  0,020		&  0,014		&	0,034			&	0,038		\\ \bottomrule
+		\end{tabular}
+		
+	\end{threeparttable}
+\end{table}
+
+
+Сравнивая таблицы~\cref{tab:tab38} и~\cref{tab:tab42} можно заметить, что уравнивание методом нелинейного программирования даёт более точные результаты, чем при уравнивании классическим методом. На рисунках~\cref{fig:pic30a} и \cref{fig:pic30b} приведены графики влияния продолжительности измерений на получаемую точность определения координат.
+
+
+
+\begin{figure}[ht]
+	\centerfloat{
+		\hfill
+		\subcaptionbox[List-of-Figures entry]{$\mathbf{m_x,}\quad\mathbf{m_y,}\quad\mathbf{m_z}$\label{fig:pic30a}}{%
+			\includegraphics[width=0.383\linewidth]{images/pic30a}}
+		\hfill
+		\subcaptionbox{$\mathbf{m_{xy},}\quad\mathbf{m_{xyz}}$\label{fig:pic30b}}{%
+			\includegraphics[width=0.45\linewidth]{images/pic30b}}
+		\hfill
+	}
+%	\legend{$\bullet-\text{центр масс (ЦМ)}\qquad\circ-\text{фазовый центр (ФЦ)}$\\
+%	}
+	\caption[Изменение СКО с течением времени]{Изменение СКО с течением времени}\label{fig:pic30}
+\end{figure}
+
+
+
+
+\subsection{Уравнивание спутниковой сети с использованием КРЕДО ГНСС}\label{subsec:ch3/sec1/sub4}
+
+
+Для контроля точности уравнивания методом нелинейного программирования и упрощённым классическим методом было выполнено уравнивание с использованием программного обеспечения КРЕДО~ГНСС версии~$2.0$. В таблицах~\cref{tab:tab43} приводятся разности приращений координат между уравненными значениями и эталонными.
+\begin{table} [htbp]
+	\centering\small
+	\captionof{table}{Разности приращений координат.}\label{tab:tab43}{
+		%		\hfill
+		\begin{subtable}{.47\linewidth}	
+			\centering
+			\caption*{$\mathbf{t_\text{изм.}=1\,\text{ч}}$}
+			\begin{tabular}{ l
+					S[table-number-alignment = center]
+					S[table-number-alignment = center]
+					S[table-number-alignment = center] }
+				
+				
+				\hline
+				\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+				LOBN-RUZA					&      0,091		& 	  -0,119		&      0,027		\\ %\hline
+				DMTR-LOBN					&     -0,036		&     -0,012		&      0,007		\\ %\hline
+				DMTR-ZHDR					&     -0,031		&     -0,047		&      0,014		\\ %\hline
+				MSK2-ZHDR					&      0,026		&     -0,003		&      0,008		\\ %\hline
+				LOBN-ZHDR					&      0,005		&     -0,035		&      0,007		\\ %\hline
+				ZHDR-RUZA					&      0,086		&     -0,084		&      0,020		\\ %\hline
+				RUZA-MSK2					&     -0,112		&      0,087		&     -0,028		\\ %\hline
+				RUZA-DMTR					&     -0,055		&      0,131		&     -0,034		\\ %\hline
+				DMTR-MSK2					&     -0,057		&     -0,044		&      0,006		\\ %\hline
+				LOBN-MSK2					&     -0,021		&     -0,032		&     -0,001		\\ \hline
+				
+			\end{tabular}
+		\end{subtable}%
+		\qquad%
+		\begin{subtable}{.47\linewidth}	
+			\centering
+			\caption*{$\mathbf{t_\text{изм.}=2\,\text{ч}}$}
+			\begin{tabular}{ l
+					S[table-number-alignment = center]
+					S[table-number-alignment = center]
+					S[table-number-alignment = center] }
+				
+				
+				\hline
+				\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+				LOBN-RUZA					&      0,002		& 	  -0,036		&      0,050		\\ %\hline
+				DMTR-LOBN					&      0,003		&      0,033		&     -0,044		\\ %\hline
+				DMTR-ZHDR					&      0,007		&     -0,049		&     -0,011		\\ %\hline
+				MSK2-ZHDR					&      0,038		&      0,000		&      0,004		\\ %\hline
+				LOBN-ZHDR					&      0,004		&     -0,082		&      0,033		\\ %\hline
+				ZHDR-RUZA					&     -0,002		&      0,046		&      0,017		\\ %\hline
+				RUZA-MSK2					&     -0,036		&     -0,046		&     -0,021		\\ %\hline
+				RUZA-DMTR					&     -0,005		&      0,003		&     -0,006		\\ %\hline
+				DMTR-MSK2					&     -0,031		&     -0,049		&     -0,015		\\ %\hline
+				LOBN-MSK2					&     -0,034		&     -0,082		&      0,029		\\ \hline
+				
+				
+			\end{tabular}
+		\end{subtable}%
+	}
+\end{table}		
+%		\vspace{12pt}
+\begin{table}		
+		\ContinuedFloat
+		\centering\small
+		\centering\textit{(продолжение)}\\
+		\begin{subtable}{.47\linewidth}	
+			\centering
+			\caption*{$\mathbf{t_\text{изм.}=3\,\text{ч}}$}
+			\begin{tabular}{ l
+					S[table-number-alignment = center]
+					S[table-number-alignment = center]
+					S[table-number-alignment = center] }
+				
+				
+				\hline
+				\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+				LOBN-RUZA					&      0,008		& 	   0,001		&      0,016		\\ %\hline
+				DMTR-LOBN					&     -0,024		&     -0,021		&     -0,004		\\ %\hline
+				DMTR-ZHDR					&      0,020		&     -0,059		&     -0,005		\\ %\hline
+				MSK2-ZHDR					&      0,046		&     -0,024		&      0,005		\\ %\hline
+				LOBN-ZHDR					&      0,044		&     -0,038		&     -0,001		\\ %\hline
+				ZHDR-RUZA					&     -0,036		&      0,039		&      0,017		\\ %\hline
+				RUZA-MSK2					&     -0,010		&     -0,015		&     -0,022		\\ %\hline
+				RUZA-DMTR					&      0,016		&      0,020		&     -0,012		\\ %\hline
+				DMTR-MSK2					&     -0,026		&     -0,035		&     -0,010		\\ %\hline
+				LOBN-MSK2					&     -0,002		&     -0,014		&     -0,006		\\ \hline				
+			\end{tabular}
+		\end{subtable}%
+		%
+		\qquad
+		\begin{subtable}{.47\linewidth}	
+			\centering
+			\caption*{$\mathbf{t_\text{изм.}=4\,\text{ч}}$}
+			\begin{tabular}{ l
+					S[table-number-alignment = center]
+					S[table-number-alignment = center]
+					S[table-number-alignment = center] }
+				\hline
+				\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+				LOBN-RUZA					&      0,018		& 	   0,013		&      0,033		\\ %\hline
+				DMTR-LOBN					&     -0,040		&     -0,013		&     -0,010		\\ %\hline
+				DMTR-ZHDR					&     -0,016		&     -0,021		&      0,014		\\ %\hline
+				MSK2-ZHDR					&      0,022		&     -0,004		&      0,019		\\ %\hline
+				LOBN-ZHDR					&      0,024		&     -0,008		&      0,024		\\ %\hline
+				ZHDR-RUZA					&     -0,006		&      0,021		&      0,009		\\ %\hline
+				RUZA-MSK2					&     -0,016		&     -0,017		&     -0,028		\\ %\hline
+				RUZA-DMTR					&      0,022		&      0,000		&     -0,023		\\ %\hline
+				DMTR-MSK2					&     -0,038		&     -0,017		&     -0,005		\\ %\hline
+				LOBN-MSK2					&      0,002		&     -0,004		&      0,005		\\ \hline
+			\end{tabular}
+		\end{subtable}%
+		\hfill%	
+%	}
+\end{table}	
+
+Основываясь на данных из таблиц~\cref{tab:tab43} сформирована таблица~\cref{tab:tab45}, в которой представленны вычисленные значения $\mathbf{m_{\ldots}}$.
+
+
+\begin{table} [htbp]
+	\centering\small
+	\captionof{table}{Зависимость СКО от продолжительности измерения}\label{tab:tab45}
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\setlength{\tabcolsep}{5pt}
+		\sisetup{
+			table-figures-integer = 1,
+			table-figures-decimal = 5
+		}
+		
+		\begin{tabular}{ c
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			
+			\toprule
+			\textbf{Интервал}	& $\mathbf{m_x}$& $\mathbf{m_y}$& $\mathbf{m_z}$& $\mathbf{m_{xy}}$	& $\mathbf{m_{xyz}}$	\\ \midrule%
+			$\mathbf{1}$ ч		&  0,062		&  0,072		&  0,019		&	0,095			&	0,097		\\ %\hline
+			$\mathbf{2}$ ч		&  0,022		&  0,050		&  0,027		&	0,055			&	0,061		\\ %\hline
+			$\mathbf{3}$ ч		&  0,027 		&  0,031		&  0,019		&	0,041			&	0,043		\\ %\hline
+			$\mathbf{4}$ ч		&  0,023		&  0,014		&  0,012		&	0,027			&	0,033		\\ \bottomrule
+		\end{tabular}
+		
+	\end{threeparttable}
+\end{table}
+
+Основываясь на таблице~\cref{tab:tab45} были построены графики, представленные на рисунке~\cref{fig:pic31}.
+
+
+
+\begin{figure}[!hbt]
+	\centerfloat{
+		\hfill
+		\subcaptionbox[List-of-Figures entry]{$\mathbf{m_x,}\quad\mathbf{m_y,}\quad\mathbf{m_z}$\label{fig:pic31a}}{%
+			\includegraphics[width=0.40\linewidth]{images/pic31a}}
+		\hfill
+		\subcaptionbox{$\mathbf{m_{xy},}\quad\mathbf{m_{xyz}}$\label{fig:pic31b}}{%
+			\includegraphics[width=0.45\linewidth]{images/pic31b}}
+		\hfill
+	}
+	%	\legend{$\bullet-\text{центр масс (ЦМ)}\qquad\circ-\text{фазовый центр (ФЦ)}$\\
+		%	}
+	\caption[Изменение СКО с течением времени]{Изменение СКО с течением времени}\label{fig:pic31}
+\end{figure}
+
+
+
+
+
+\section{Методика построения геодезических сетей при использовании РРР-алгоритма}\label{subsec:ch3/sec2}
+
+
+В рамках кандидатской диссертации разработана методика построения Государственных Геодезических Сетей (далее «ГГС»)
+\nomenclature{ГГС}{Государственныхе Геодезические Сети \nomrefpage}
+ при использовании РРР-алгоритма. Ниже приводится разработанная методика.
+
+%\paragraph{1. Общие положения} \phantom{CRLF}
+\subsection{Общие положения}
+
+\begin{enumerate}
+	\item В настоящей методике описывается новый подход к построению ГГС, а именно при использовании методов высокоточных координатных определений (Precise Point Positioning)
+	\item Проектирование работ выполняют в соответствии с действующими локальными, региональными, федеральными, государственными нормативными актами. На сегодняшний день действуют(ГКИНП01-271- 03[]; ГОСТ Р 57372-2016[]; ГКИНП (ОНТА)-02-262-02[]; ГОСТ 33472- 2015[]; ГОСТ 57373-2016[]).
+\end{enumerate}
+
+\subsection{Создание геодезических сетей при использовании РРР-алгоритма}
+
+На сегодняшний день можно выделить ряд основных этапов создания геодезических сетей \cite{mak09,src33}.
+
+\begin{enumerate}
+	\item	Предпроектное обследование пунктов и контрольные измерения.
+	\item	Проектирование.
+	\item	Рекогносцировка, обследование и закладка пунктов сети.
+	\item	Полевые наблюдения и предварительная обработка результатов на исходном пункте.
+	\item	Камеральная обработка на исходном пункте.
+	\item	Полевые работы и предварительная обработка на пунктах каркасной сети.
+	\item	Камеральная обработка на каркасных пунктах.
+	\item	Передача данных для включения в состав ГГС.
+	\item	Полевые	и	предварительные	работы	на	пунктах	спутниковой геодезической сети.
+	\item	Камеральная обработка спутниковых измерений на пунктах СГС (спутниковой геодезической сети).
+\end{enumerate}
+
+\subsection{Текущие точностные характеристики, предъявляемые к построению ГГС}
+
+\subsubsection{В случае пунктов ВГС}
+
+\begin{enumerate}
+	\item	Положение пунктов определяется с СКП относительно пунктов ФАГС и других пунктов ВГС с погрешностью в плане не более $3$ мм $+5\cdot10^{-8}\cdot D$; по высоте не более $5+7\cdot 10^{-8}\cdot D$.
+	\item	Пункты должны быть расположены в диапазоне расстояний от $150$ до $200$~км.
+	\item	Относительная погрешность определения линий не грубее $1:1000000$ 
+	
+	Относительная погрешность в статике
+\end{enumerate}
+
+
+\subsubsection{В случае пунктов ВГС}
+
+\begin{enumerate}
+	\item	Положение пунктов определяется с СКП относительно пунктов ВГС с погрешностью в плане не более $3$ мм $+5\cdot10^{-7}\cdot D$; по высоте не более $5+2\cdot 10^{-7}\cdot D$.
+	\item	Пункты должны быть расположены в диапазоне расстояний от $25$ до $35$~км.
+	\item	Относительная погрешность определения линий не грубее $1:1000000$.
+	\item	Относительные погрешности определения линий не зависят от расстояний при использовании РРР-методов. Подробнее было рассмотрено в главе \cref{ch:ch2} диссертационной работы, а также в статьях [ссылки на статьи $\ldots$].
+\end{enumerate}
+
+На рисунке~\cref{fig:pic32} представлен график изменения относительных погрешностей. По оси $X$ приводятся расстояние в \textit{км}. По оси $Y$ знаменатель дроби, представленной в формуле~\cref{eq:eq3.13}.
+
+\begin{equation}\label{eq:eq3.13}
+%	f_{\text{отн}}=\dfrac{1}{\dfrac{\sum{Sd}}{f dx}}=\dfrac{1}{\nicefrac{\sum{Sd}}{f dx}}=\left(\dfrac{\sum{Sd}}{f dx}\right)^{-1}=\dfrac{f dx}{\sum{Sd}}
+	f_{\text{отн}}=\dfrac{f dx}{\sum{Sd}}
 \end{equation}
 
 
 
+\begin{figure}[!h]	
+	\centering
+	\includegraphics[width=0.67\linewidth]{images/pic32}
+	\caption{Изменение относительных погрешностей}
+	\label{fig:pic32}
+\end{figure}
+
+
+Как видно из рисунка~\cref{fig:pic32} точность определения длин линий по РРР-алгоритму значительно выше, чем при классической постобработке.
 
 
 
 
+\subsection{Пункты ВГС и СГС – текущие требования к проведению полевых работ}
+
+В таблице~\cref{tab:tab46} приводятся современные требования к созданию геодезических сетей спутниковыми методами.
+
+
+
+%\newcommand{\colp}[0]{\color{purple}}
+%\newcommand{\colrb}[0]{\color{RoyalBlue}}
+% \DeclareSIUnit\days{\text{суток}} --- отправлено в Dissertation/setup, т.к. должно быть в преамбуле...
+
+
+
+\begin{table} [!btph]
+	\centering\small
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\captionof{table}{Требования к созданию геодезических сетей}\label{tab:tab46}
+		\setlength{\tabcolsep}{5pt}
+		\sisetup{
+			table-figures-integer = 3
+		}
+		
+		\begin{tabular} {lcc}
+						
+			\toprule%
+			\textbf{Параметр}		& \textbf{ВГС}		%
+									& \textbf{СГС-1}		\\% 
+			\midrule%
+			
+			Режим измерения			&  \multicolumn{2}{c}{ Статика }		\\ 
+			Количество приемников	&  \multicolumn{2}{c}{ Не ограничено }	\\ 
+			
+			\begin{minipage}[l][8ex][]{ 0.35\linewidth} % 
+				Минимальное количество 
+				
+				одновременно наблюдаемых 
+				
+				спутников
+			\end{minipage}			&  \multicolumn{2}{c}{ $6$ }	\\ 
+			 
+			\colp PDOP				&	\colp$\leqslant3$	%
+									&	\colp$\leqslant4$			\\
+			\colp
+			Минимальный	%
+			угол возвышения			&	\colp\SI{10}{\degree}	%
+									&	\colp\SI{15}{\degree}		\\
+			
+			Дискретность %
+			(частота записи)		&	\multicolumn{2}{c}{ %
+										\SI{30}{\second} }		\\
+			\colp
+			Продолжительность %
+			измерений				&	\colp Не менее \SI{3}{\days}	%
+									&	\colp Не менее \SI{8}{\hour}	\\
+			
+			Точность центрирования	& 	\multicolumn{2}{c}{ %
+											\begin{minipage}[c][12ex][c]{0.5\linewidth}
+												Устройство для центрирования с погрешностью не более 1 мм %
+												(если отсутствует устройство принудительного центрирования)
+											\end{minipage}
+										 }		\\
+			
+			\begin{minipage}[l][][c]{0.35\linewidth}
+				Характеристика ГНСС 
+				
+				оборудования
+			\end{minipage}			&  \multicolumn{2}{c}{ %
+											Двухчастотное и двухсистемное }	\\ 
+			
+			
+		\end{tabular}
+		
+	\end{threeparttable}
+\end{table}
+
+
+\vfill.
 
 
 
 
+\subsection{Предлагаемые корректировки относительно пунктов ВГС}
+
+\subsubsection{Требования к оборудованию}
+
+В связи с тем, что антенны устанавливаются на продолжительное время, и любое смещение окажет неблагоприятное явление на точность определения координат предлагается устанавливать антенну на специальный	адаптер	с жёсткой фиксацией горизонтирования (приведено на рисунке \cref{fig:pic33}). Горизонтирование происходит с использованием шестигранного ключа.
+
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.33\linewidth]{images/pic33}
+	\caption{Адаптер для установки антенны}
+	\label{fig:pic33}
+\end{figure}
+
+
+\subsubsection{Требования и порядок измерений на пунктах ВГС}
+
+\begin{enumerate}
+	\item На пунктах ВГС возможны измерения только многочастотной и мультисистемой спутниковой аппаратурой.
+	\item Отсутствует необходимость синхронных измерений.
+	\item Минимальное количество наблюдаемых спутников на пункте ВГС: $10$.
+			\footnote{Для достижения необходимой точности значение величины PDOP фактора не должно превышать $3$.}. 
+	\item Минимальный угол возвышения: $10$\textdegree.
+	\item Дискретность (частота записи): $30\text{ с}^{-1}$.
+	\item Продолжительность измерений на пунктах ВГC: 3 часа.
+	\item Перерыв между сеансами измерений: 24 часа.
+	\item Обработка RINEX файлов с использованием интернет-сервисов RTX и CRSR или программных обеспечений: Bernese, Grafnet, GIPSY OASIS, КРЕДО ГНСС \footnote{
+		При обработке данных в КРЕДО ГНСС, в сравнении с другими методами обработки, на сегодняшний день обеспечивается невысокая точность определения по РРР-алгоритму. Но, надеюсь, что в последующих реализациях будет улучшена методика обработки по РРР-алгоритму.} 
+	(в соответствии с главой \cref{ch:ch2}).
+\end{enumerate}
 
 
 
+\subsection{Предлагаемые корректировки относительно пунктов СГС}
+
+\subsubsection{Требования к оборудованию}
+
+Основные требования схожи с предлагаемыми корректировками для пунктов ВГС, однако есть отличия:
+\begin{enumerate}
+	\item Количество наблюдаемых спутников на пункте СГС: не менее 10.
+	\item Продолжительность измерений на пунктах СГC: 1 час.
+\end{enumerate}
 
 
 
+\subsection{Предлагаемая методика построения геодезических сетей с использованием РРР-алгоритма}
+
+\subsubsection{Основные этапы выполнения полевых и камеральных работ}
+
+\begin{enumerate}
+	\item Выполнение полевых работ: 
+	\begin{itemize}
+		\item Измерения происходят в статическом режиме на протяжении трёх часов.
+		\item При проведении полевых работ используется многочастотные и мультисистемные спутниковые приемники.
+	\end{itemize}
+	\item Спутниковые сети могут быть как свободными, так и несвободными.
+	\begin{itemize}
+		\item При построении свободной сети в её состав должен быть включен один твердый (исходный) пункт.
+		\item Для построении несвободной сети в её состав требуется не менее двух опорных пунктов.
+	\end{itemize}
+	\item Измерения должны быть независимыми. В случае спутниковых методов построения геодезических сетей, независимость измерений достигается их проведением в разные сеансы.
+	\item Контрольные измерения на пунктах геодезической сети выполняются не ранее, чем через 12 часов.
+	\item Выполнение камеральных работ:
+	\begin{itemize}
+		\item Получение данных высокоточных эфемерид (ВЭ)
+			\footnote{
+				ВЭ могут быть получены как с сайтов международных сетей: ITRF, SOPAC; или, например, на сайте сети базовых станций EFT COORS. 
+				
+				На сегодняшний день продолжительность ожидания ВЭ составляет от 12 до 18 дней.
+			}.
+		\item Обработка сырых данных измерений
+			\footnote{
+				Обработка происходит с использованием интернет-сервисов: Trimble RTX, CRSR, IGN; либо с применением программных обеспечений: Bernese, Grafnet, GIPSY OASIS, Trimble Business Centre (TBC), КРЕДО ГНСС.
+			}.
+		
+	\end{itemize}
+	\item Уравнительные вычисления:
+	\begin{itemize}
+		\item Обработка данных и уравнивание сети возможны как с использованием интернет-сервисов, так и с применением программных обеспечений.
+		\item Обработка и уравнивание с использованием программных обеспечений происходит в соответствии с заложенной методикой.
+		\item При обработке данных по РРР-алгоритму при использовании интернет-сервисов уравнивание проиcходит стандартным образом в соответствии с МНК, \nomenclature{МНК}{Метод наимньших квадратов \nomrefpage} что приводится в виде формулы \cref{eq:eq3.6}.\newline Более подробно про классический способ уравнивания рассказано в разделе~\cref{УКС}.
+		\item При использовании методов нелинейного программирования существует 2 подхода, применяемых в случае свободной сети:
+
+				
+			\paragraph*{Условный способ.}
+			
+			Для построения свободной спутниковой сети необходимы независимые измерения, т.е. измерения на пунктах сети выполняются в несколько сеансов.
+			
+			Условие описывается системой~\cref{eq:eq3.8}.
+			
+			Более подробно способ описан в разделе~\cref{Условие_Фигур}.
+			
+			\paragraph*{Параметрический способ.}
+			
+			Условия приведены в системе~\cref{eq:eq3.10}.
+			
+			Более подробно способ описан в разделе~\cref{Условие_Координат}.
+			
+
+
+		\item При построении несвободной спутниковой сети возможна только параметрическая форма записи. Условие приведено в виде системы формул~\cref{eq:eq3.35}.
+
+	
+
+			\begin{equation}\label{eq:eq3.35}
+				\!
+				\begin{cases}
+					\begin{aligned}
+						&(dX_{ij} &&+ &&uX_{ij}) &&+ &&X_{j} &&- &&X_{i} &&= &&0 \\
+						&(dY_{ij} &&+ &&uY_{ij}) &&+ &&Y_{j} &&- &&Z_{i} &&= &&0 \\
+						&(dZ_{ij} &&+ &&uZ_{ij}) &&+ &&Z_{j} &&- &&Z_{i} &&= &&0 \\
+					\end{aligned}
+				\end{cases},
+			\end{equation}
+			где: 
+			\begin{description}
+				\item[$dX_{ij},$ $dY_{ij},$ $dZ_{ij}$] ---~ приращения координат; 
+				\item[$uX_{ij},$ $uY_{ij},$ $uZ_{ij}$] ---~ поправки к приращениям координат;
+				\item[$X_{k},$ $Y_{k},$ $Z_{k}$] ---~ приближенные координаты пунктов.
+			\end{description}
+
+	\end{itemize}
+
+
+	\item Контроль и оценка точности.
+
+		Для контроля точности необходимы повторные измерения. 
+	\begin{itemize}		
+		\item Для сетей повышенной точности потребуется не менее трёх сеансов измерений. 
+		\item Для сетей, менее требовательных к точности достаточно выполнить один повторный сеанс.
+	\end{itemize}
+	
+		Можно выделить два подхода к оценке точности:
+	\begin{itemize}
+			\item Метод невязок ---~ происходит поиск невязок по замкнутым фигурам, например, треугольникам.
+			\item Оценка точности геодезической сети происходит по алгоритму оценки разностей двойных измерений.
+	\end{itemize}
+	
+		Для оценки точности может быть применена формула~\cref{eq:eq3.36}.
+			\begin{equation}\label{eq:eq3.36}
+				m_{d}=\sqrt{\dfrac{\sum{d^{2}}}{n}}
+			\end{equation}
+			где: 
+			\begin{description}
+				\item[$d$] ---~ разности двойных измерений; 
+				\item[$n$] ---~ количество пар двойных измерений.
+			\end{description}
+
+		При этом средняя СКО\nomenclature{СКО}{Среднеквадрати́ческое отклонение \nomrefpage} может быть выражена в виде формулы~\cref{eq:eq3.37}.
+			\begin{equation}\label{eq:eq3.37}
+				m_{x_{\text{ср}}}=\dfrac{m_{X}}{\sqrt{2}}=\dfrac{1}{2}\cdot \sqrt{\dfrac{\sum{d^{2}}}{n}}
+			\end{equation}
+
+\end{enumerate}
+
+
+Методику построения геодезических сетей при использовании РРР-алгоритма обработки спутниковых данных условно можно разбить на три основных этапа:
+\begin{enumerate}[label=Этап~\arabic*~--, topsep=0pt, series=A]
+	\item выполнение полевых работ и первичный просмотр RINEX-файлов (рисунок~\cref{fig:pic34});
+	\item первичная обработка, образование векторов (рисунок~\cref{fig:pic35});
+	\item уравнивание сети и финальная оценка точности (рисунок~\cref{fig:pic36}).
+\end{enumerate}
 
 
 
+\begin{figure}[!h]
+	\centering
+	\begin{tikzpicture}[node distance = 1.cm, auto]
+		% Define the node style for boxes
+		\tikzstyle{box} = [rectangle, rounded corners, minimum width=3cm, minimum height=2em,text centered, draw=black, fill=white!30, very thick];
+		\tikzstyle{terminator} = [rectangle, draw, text centered, rounded corners, minimum height=2em, very thick]
+		\tikzstyle{data}=[trapezium, draw, text centered, trapezium left angle=60, trapezium right angle=120, minimum height=2em, very thick]
+		\tikzstyle{connector} = [draw, -latex', very thick]
+		
+		% Place the nodes
+		\node (start) [terminator] {Начало};
+		\node (prep) [data, below=of start] {Подготовка данных};
+		\node (measurements) [box, below=of prep] {Выполнение измерений};
+		\node (check) [box, below=of measurements, minimum width=4cm, align=center] 
+				{Проверка измерений \\ 
+				Количество спутников \(\geq 15\) \\ 
+				Продолжительность \(\geq 2\)~ч \\ 
+				Дискретность \(= 30\)~с \\ 
+				PDOP~\(< 3\)};
+		\node (if) [diamond, below=of check, align=center, draw=black, very thick] {Условия\\выполнены?};
+		\node[draw=none, right=of if, xshift=-1cm, yshift=.25cm]  (no) {Нет};
+		\node[draw=none, right=of if, xshift=-2.25cm, yshift=-2.25cm] (yes) {Да};
+		\node (to_process2) [terminator, below=of if] {К Этапу~2};
+		\node (editing) [box, right=of check, xshift=0cm, yshift=-1.25cm] {Редактирование};
+		\node (from_process2) [box, left=of to_process2] {От Этапа~2 и~3};
+		
+		% Draw the arrows
+		\path[connector] (start) -- (prep);
+		\path[connector] (prep) -- (measurements);
+		\path[connector] (measurements) -- (check);
+		\path[connector] (check) -- (if);
+		\path[connector] (editing.north) |- node {} (measurements.east);
+		\path[connector] (if.east) -| (editing.south);
+		\path[connector] (if.south) -- (to_process2);
+		\path[connector] (from_process2) |- (measurements);
+	\end{tikzpicture}
+	\bigskip
+	\caption{Получение и первичный просмотр данных. Этап~1 }
+	\label{fig:pic34}
+\end{figure}
 
 
+\begin{figure}[!h]
+	\centering
+	\begin{tikzpicture}[node distance = 1.cm, auto]
+		% Define the node style for boxes
+		\tikzstyle{box} = [rectangle, rounded corners, minimum width=3cm, minimum height=2em,text centered, draw=black, fill=white!30, very thick, align=center];
+		\tikzstyle{terminator} = [rectangle, draw, text centered, rounded corners, minimum height=2em, very thick, align=center]
+		\tikzstyle{data}=[trapezium, draw, text centered, trapezium left angle=60, trapezium right angle=120, minimum height=2em, very thick, align=center]
+		\tikzstyle{connector} = [draw, -latex', very thick]
+		
+		% Place the nodes
+		\node (start) [terminator] {От Этапа~1};
+		\node (rinex) [box, below=of start] {Обработка RINEX-файлов\\с использованием интернет-сервисов};
+		\node (check) [box, below=of rinex, minimum width=4cm] 
+		{Проверки условий: \\ 
+			Количество спутников, \\
+			использованных при обработке~\(> 15 \)?\\
+			Сравнение решений, полученных \\другими методами достигнута?
+		};
+		\node (if) [diamond, below=of check, align=center, draw=black, very thick] {Условия\\выполнены?};
+		\node[draw=none, left=of if,  xshift=1cm,     yshift=.25cm]   (no) {Нет};
+		\node[draw=none, right=of if, xshift=-3.25cm, yshift=-2.5cm] (yes) {Да};
+		\node (to_process3) [terminator, below=of if] {К Этапу~3.};
+		\node (return) [terminator, left=of start, xshift=-1.50cm, yshift=0cm] {К Этапу~1};
+		
+		% Draw the arrows
+		\path[connector] (start) -- (rinex);
+		\path[connector] (rinex) -- (check);
+		\path[connector] (check) -- (if);
+		\path[connector] (if.west) -| (return.south);
+		\path[connector] (if.south) -- (to_process3);
+	\end{tikzpicture}
+	\bigskip
+	\caption{Получение и первичный просмотр данных. Этап~2 }
+	\label{fig:pic35}
+\end{figure}
 
 
-\vfill
-\noindent\rule{\textwidth}{.1pt}
-\begin{center}				Конец освоенного текста					\end{center}
-\noindent\rule{\textwidth}{1pt}
-\newpage
-\newpage
+\begin{figure}[!h]
+	\centering
+	\begin{tikzpicture}[node distance = 1.cm, auto]
+		% Define the node style for boxes
+		\tikzstyle{box} = [rectangle, rounded corners, minimum width=3cm, minimum height=2em,text centered, draw=black, fill=white!30, very thick, align=center];
+		\tikzstyle{terminator} = [rectangle, draw, text centered, rounded corners, minimum height=2em, very thick, align=center]
+		\tikzstyle{data}=[trapezium, draw, text centered, trapezium left angle=60, trapezium right angle=120, minimum height=2em, very thick, align=center]
+		\tikzstyle{connector} = [draw, -latex', very thick]
+		
+		% Place the nodes
+		\node (start) [terminator] {От Этапа~2};
+		\node (compute) [box, below=of start] {Уравнивание сети одним\\из доступных методов};
+		\node (accucheck) [diamond, draw=black, very thick, below=of compute, align=center] 
+			{Оценка точности\\удовлетворяет\\требованиям?};
+		\node[draw=none, right=of accucheck, xshift=-1.1cm, yshift=.25cm]   (accu_no) {Нет};
+		\node[draw=none, right=of accucheck, xshift=-4.2cm, yshift=-3.5cm] (accu_yes) {Да};
+		\node (remeasure) [box, below=of accucheck] {Контрольные измерения};
+		\node (renewalg) [box, right=of accucheck, xshift=0cm, yshift=2.5cm] {Выбор другого\\метода уравнивания};
+		\node (if) [diamond, below=of remeasure, align=center, draw=black, very thick] {Результат\\сопоставим?};
+		\node[draw=none, left=of if,  xshift=1cm,     yshift=.25cm]   (no) {Нет};
+		\node[draw=none, right=of if, xshift=-3.25cm, yshift=-2.5cm] (yes) {Да};
+		\node (result) [terminator, below=of if] {Предоставление уравненных результатов};
+		\node (return) [terminator, left=of start, xshift=-1.50cm, yshift=0cm] {К Этапу~1};
+		
+		% Draw the arrows
+		\path[connector] (start) -- (compute);
+		\path[connector] (compute) -- (accucheck);
+		\path[connector] (accucheck.east) -| (renewalg.south);
+		\path[connector] (renewalg.north) |- (compute.east);
+		\path[connector] (accucheck.south) -- (remeasure);
+		\path[connector] (remeasure) -- (if);
+		\path[connector] (if.west) -| (return.south);
+		\path[connector] (if.south) -- (result);
+	\end{tikzpicture}
+	\bigskip
+	\caption{Получение и первичный просмотр данных. Этап~3 }
+	\label{fig:pic36}
+\end{figure}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Так размещается таблица:
+ 
+\section{Построение геодезических сетей при использовании РРР-алгоритма}\label{sec:ch3/sect3}
+ 
+\subsection{Уравнивание сети по исходным данным, полученным с использованием интернет-сервиса Trimble~RTX}\label{subsec:ch3/sec3/sub1}
+ 
+До начала уравнивания происходит процесс обработки спутниковых данных при использовании интернет-сервиса Trimble~RTX. Из отчета об обработке RINEX файлов были взять координаты пунктов в СК~ITRF2014 на эпоху 2010. На основании этих координат высчитываются приращения координат.
+ 
+Уравнивание спутниковой сети упрощенным классическим методом происходит в соответствии с формулами \cref{eq:eq3.6} и \cref{eq:eq3.7}. До начала уравнивания формируется исходная матрица $A$, отвечающая за геометрию спутниковой сети. В дальнейшем находятся приближенные координаты пунктов, матрица невязок ($L$). Далее находятся поправки к приращениям координат. Для оценки получаемой точности удобно применять метод эталонов. В таблицах~\cref{tab:tab47} приводятся разности приращений координат между уравненными и эталонными приращениями координат при времени измерения один, два, три и четыре часа.
 
 \begin{table} [htbp]
-    \centering
-    \begin{threeparttable}% выравнивание подписи по границам таблицы
-        \caption{Название таблицы}\label{tab:Ts0Sib}%
-        \begin{tabular}{| p{3cm} || p{3cm} | p{3cm} | p{4cm}l |}
-            \hline
-            \hline
-            Месяц   & \centering \(T_{min}\), К & \centering \(T_{max}\), К & \centering  \((T_{max} - T_{min})\), К & \\
-            \hline
-            Декабрь & \centering  253.575       & \centering  257.778       & \centering      4.203                  & \\
-            Январь  & \centering  262.431       & \centering  263.214       & \centering      0.783                  & \\
-            Февраль & \centering  261.184       & \centering  260.381       & \centering     \(-\)0.803              & \\
-            \hline
-            \hline
-        \end{tabular}
-    \end{threeparttable}
-\end{table}
+	\centering\small
+	\captionof{table}{Разности приращений координат.}\label{tab:tab47}{
+		%		\hfill
+		\begin{subtable}{.47\linewidth}	
+			\centering
+			\caption*{$\mathbf{t_\text{изм.}=1\,\text{ч}}$}
+			\begin{tabular}{ l
+					S[table-number-alignment = center]
+					S[table-number-alignment = center]
+					S[table-number-alignment = center] }
+				
+				
+				\hline
+				\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+				LOBN-RUZA					&      0,018		& 	   0,013		&      0,033		\\ %\hline
+				DMTR-LOBN					&     -0,040		&     -0,013		&     -0,010		\\ %\hline
+				DMTR-ZHDR					&     -0,016		&     -0,021		&      0,014		\\ %\hline
+				MSK2-ZHDR					&      0,022		&     -0,004		&      0,019		\\ %\hline
+				LOBN-ZHDR					&      0,024		&     -0,008		&      0,024		\\ %\hline
+				ZHDR-RUZA					&     -0,006		&      0,021		&      0,009		\\ %\hline
+				RUZA-MSK2					&     -0,016		&     -0,017		&     -0,028		\\ %\hline
+				RUZA-DMTR					&      0,022		&      0,000		&     -0,023		\\ %\hline
+				DMTR-MSK2					&     -0,038		&     -0,017		&     -0,005		\\ %\hline
+				LOBN-MSK2					&      0,002		&     -0,004		&      0,005		\\ \hline
+				
+			\end{tabular}
+		\end{subtable}%
+		\qquad%
+		\begin{subtable}{.47\linewidth}	
+			\centering
+			\caption*{$\mathbf{t_\text{изм.}=2\,\text{ч}}$}
+			\begin{tabular}{ l
+					S[table-number-alignment = center]
+					S[table-number-alignment = center]
+					S[table-number-alignment = center] }
+				
+				
+				\hline
+				\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+				LOBN-RUZA					&     -0,004		& 	  -0,012		&     -0,018		\\ %\hline
+				DMTR-LOBN					&     -0,004		&     -0,003		&     -0,009		\\ %\hline
+				DMTR-ZHDR					&     -0,016		&     -0,010		&     -0,013		\\ %\hline
+				MSK2-ZHDR					&     -0,006		&     -0,018		&     -0,007		\\ %\hline
+				LOBN-ZHDR					&     -0,004		&     -0,002		&      0,002		\\ %\hline
+				ZHDR-RUZA					&      0,000		&     -0,011		&     -0,020		\\ %\hline
+				RUZA-MSK2					&      0,006		&      0,028		&      0,027		\\ %\hline
+				RUZA-DMTR					&      0,009		&      0,015		&      0,027		\\ %\hline
+				DMTR-MSK2					&     -0,003		&      0,014		&      0,000		\\ %\hline
+				LOBN-MSK2					&      0,001		&      0,016		&      0,009		\\ \hline
+				
+				
+			\end{tabular}
+		\end{subtable}%
+	}
+\end{table}		
+%		\vspace{12pt}
+\begin{table}		
+	\ContinuedFloat
+	\centering\small
+%	\centering\textit{(продолжение)}\\
+	\begin{subtable}{.47\linewidth}	
+		\centering
+		\caption*{$\mathbf{t_\text{изм.}=3\,\text{ч}}$}
+		\begin{tabular}{ l
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			
+			\hline
+			\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+			LOBN-RUZA					&      0,004		& 	   0,011		&      0,018		\\ %\hline
+			DMTR-LOBN					&      0,002		&      0,000		&     0,006			\\ %\hline
+			DMTR-ZHDR					&      0,011		&      0,001		&      0,002		\\ %\hline
+			MSK2-ZHDR					&      0,005		&      0,015		&      0,008		\\ %\hline
+			LOBN-ZHDR					&      0,005		&     -0,001		&     -0,004		\\ %\hline
+			ZHDR-RUZA					&     -0,001		&      0,012		&      0,021		\\ %\hline
+			RUZA-MSK2					&     -0,003		&     -0,027		&     -0,029		\\ %\hline
+			RUZA-DMTR					&     -0,006		&     -0,011		&     -0,023		\\ %\hline
+			DMTR-MSK2					&      0,003		&     -0,016		&     -0,005		\\ %\hline
+			LOBN-MSK2					&      0,001		&     -0,016		&     -0,011		\\ \hline				
+		\end{tabular}
+	\end{subtable}%
+	%
+	\qquad
+	\begin{subtable}{.47\linewidth}	
+		\centering
+		\caption*{$\mathbf{t_\text{изм.}=4\,\text{ч}}$}
+		\begin{tabular}{ l
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			\hline
+			\textbf{Вектор}				& \textbf{δX, м}	& \textbf{δY, м}	& \textbf{δZ, м}	\\ \hline
+			LOBN-RUZA					&      0,004		& 	   0,012		&      0,014		\\ %\hline
+			DMTR-LOBN					&      0,003		&      0,000		&      0,007		\\ %\hline
+			DMTR-ZHDR					&      0,007		&      0,000		&      0,001		\\ %\hline
+			MSK2-ZHDR					&      0,004		&      0,015		&      0,002		\\ %\hline
+			LOBN-ZHDR					&      0,002		&     -0,003		&     -0,014		\\ %\hline
+			ZHDR-RUZA					&      0,002		&      0,015		&      0,028		\\ %\hline
+			RUZA-MSK2					&     -0,006		&     -0,030		&     -0,030		\\ %\hline
+			RUZA-DMTR					&     -0,007		&     -0,012		&     -0,021		\\ %\hline
+			DMTR-MSK2					&      0,001		&     -0,017		&     -0,009		\\ %\hline
+			LOBN-MSK2					&     -0,002		&     -0,018		&     -0,016		\\ \hline
+		\end{tabular}
+	\end{subtable}%
+	\hfill%	
+	%	}
+	\end{table}	
 
-\begin{table} [htbp]% Пример записи таблицы с номером, но без отображаемого наименования
-    \centering
-    \begin{threeparttable}% выравнивание подписи по границам таблицы
-        \caption{}%
-        \label{tab:test1}%
-        \begin{SingleSpace}
-            \begin{tabular}{| c | c | c | c |}
-                \hline
-                Оконная функция & \({2N}\) & \({4N}\) & \({8N}\) \\ \hline
-                Прямоугольное   & 8.72     & 8.77     & 8.77     \\ \hline
-                Ханна           & 7.96     & 7.93     & 7.93     \\ \hline
-                Хэмминга        & 8.72     & 8.77     & 8.77     \\ \hline
-                Блэкмана        & 8.72     & 8.77     & 8.77     \\ \hline
-            \end{tabular}%
-        \end{SingleSpace}
-    \end{threeparttable}
-\end{table}
 
-Таблица~\cref{tab:test2} "--- пример таблицы, оформленной в~классическом книжном
-варианте или~очень близко к~нему. \mbox{ГОСТу} по~сути не~противоречит. Можно
-ещё~улучшить представление, с~помощью пакета \verb|siunitx| или~подобного.
 
-\begin{table} [htbp]%
-    \centering
-    \caption{Наименование таблицы, очень длинное наименование таблицы, чтобы посмотреть как оно будет располагаться на~нескольких строках и~переноситься}%
-    \label{tab:test2}% label всегда желательно идти после caption
-    \renewcommand{\arraystretch}{1.5}%% Увеличение расстояния между рядами, для улучшения восприятия.
-    \begin{SingleSpace}
-        \begin{tabular}{@{}@{\extracolsep{20pt}}llll@{}} %Вертикальные полосы не используются принципиально, как и лишние горизонтальные (допускается по ГОСТ 2.105 пункт 4.4.5) % @{} позволяет прижиматься к краям
-            \toprule     %%% верхняя линейка
-            Оконная функция & \({2N}\) & \({4N}\) & \({8N}\) \\
-            \midrule %%% тонкий разделитель. Отделяет названия столбцов. Обязателен по ГОСТ 2.105 пункт 4.4.5
-            Прямоугольное   & 8.72     & 8.77     & 8.77     \\
-            Ханна           & 7.96     & 7.93     & 7.93     \\
-            Хэмминга        & 8.72     & 8.77     & 8.77     \\
-            Блэкмана        & 8.72     & 8.77     & 8.77     \\
-            \bottomrule %%% нижняя линейка
-        \end{tabular}%
-    \end{SingleSpace}
-\end{table}
+На основании данных, приведенных в таблицах~\cref{tab:tab47} были получены различные значения $\mathbf{m_{\ldots}}$, указываемые в таблице~\cref{tab:tab49}.
 
-\section{Таблица с многострочными ячейками и примечанием}
-
-В таблице \cref{tab:makecell} приведён пример использования команды
-\verb+\multicolumn+ для объединения горизонтальных ячеек таблицы,
-и команд пакета \textit{makecell} для добавления разрыва строки внутри ячеек.
-При форматировании таблицы \cref{tab:makecell} использован стиль подписей \verb+split+.
-Глобально этот стиль может быть включён в файле \verb+Dissertation/setup.tex+ для диссертации и в
-файле \verb+Synopsis/setup.tex+ для автореферата.
-Однако такое оформление не~соответствует ГОСТ.
 
 \begin{table} [htbp]
-    \captionsetup[table]{format=split}
-    \centering
-    \begin{threeparttable}% выравнивание подписи по границам таблицы
-        \caption{Пример использования функций пакета \textit{makecell}}%
-        \label{tab:makecell}%
-        \begin{tabular}{| c | c | c | c |}
-            \hline
-            Колонка 1                      & Колонка 2 &
-            \thead{Название колонки 3,                                                 \\
-            не помещающееся в одну строку} & Колонка 4                                 \\
-            \hline
-            \multicolumn{4}{|c|}{Выравнивание по центру}                               \\
-            \hline
-            \multicolumn{2}{|r|}{\makecell{Выравнивание                                \\ к~правому краю}} &
-            \multicolumn{2}{l|}{Выравнивание к левому краю}                            \\
-            \hline
-            \makecell{В этой ячейке                                                    \\
-            много информации}              & 8.72      & 8.55                   & 8.44 \\
-            \cline{3-4}
-            А в этой мало                  & 8.22      & \multicolumn{2}{c|}{5}        \\
-            \hline
-        \end{tabular}%
-    \end{threeparttable}
+	\centering\small
+	\captionof{table}{Зависимость СКО от продолжительности измерения, м}\label{tab:tab49}
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\setlength{\tabcolsep}{5pt}
+		\sisetup{
+			table-figures-integer = 1,
+			table-figures-decimal = 5
+		}
+		
+		\begin{tabular}{ c
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			\toprule
+			\textbf{Интервал}	& $\mathbf{m_x}$& $\mathbf{m_y}$& $\mathbf{m_z}$& $\mathbf{m_{xy}}$	& $\mathbf{m_{xyz}}$	\\ \midrule%
+			$\mathbf{1}$ ч		&  0,015		&  0,025		&  0,029		&	0,029			&	0,041		\\ %\hline
+			$\mathbf{2}$ ч		&  0,007		&  0,015		&  0,016		&	0,016			&	0,023		\\ %\hline
+			$\mathbf{3}$ ч		&  0,005 		&  0,014		&  0,015		&	0,014			&	0,021		\\ %\hline
+			$\mathbf{4}$ ч		&  0,004		&  0,015		&  0,017		&	0,016			&	0,023		\\ \bottomrule
+		\end{tabular}
+		
+	\end{threeparttable}
 \end{table}
 
-Таблицы~\cref{tab:test3,tab:test4} "--- пример реализации расположения
-примечания в~соответствии с ГОСТ 2.105. Каждый вариант со своими достоинствами
-и~недостатками. Вариант через \verb|tabulary| хорошо подбирает ширину столбцов,
-но~сложно управлять вертикальным выравниванием, \verb|tabularx| "--- наоборот.
-\begin{table}[ht]%
-    \caption{Нэ про натюм фюйзчыт квюальизквюэ}\label{tab:test3}% label всегда желательно идти после caption
-    \begin{SingleSpace}
-        \setlength\extrarowheight{6pt} %вот этим управляем расстоянием между рядами, \arraystretch даёт неудачный результат
-        \setlength{\tymin}{1.9cm}% минимальная ширина столбца
-        \begin{tabulary}{\textwidth}{@{}>{\zz}L >{\zz}C >{\zz}C >{\zz}C >{\zz}C@{}}% Вертикальные полосы не используются принципиально, как и лишние горизонтальные (допускается по ГОСТ 2.105 пункт 4.4.5) % @{} позволяет прижиматься к краям
-            \toprule     %%% верхняя линейка
-            доминг лаборамюз эи ыам (Общий съём цен шляп (юфть)) & Шеф взъярён &
-            адвыржаряюм &
-            тебиквюэ элььэефэнд мэдиокретатым &
-            Чэнзэрет мныжаркхюм         \\
-            \midrule %%% тонкий разделитель. Отделяет названия столбцов. Обязателен по ГОСТ 2.105 пункт 4.4.5
-            Эй, жлоб! Где туз? Прячь юных съёмщиц в~шкаф Плюш изъят. Бьём чуждый цен хвощ! &
-            \({\approx}\) &
-            \({\approx}\) &
-            \({\approx}\) &
-            \( + \) \\
-            Эх, чужак! Общий съём цен &
-            \( + \) &
-            \( + \) &
-            \( + \) &
-            \( - \) \\
-            Нэ про натюм фюйзчыт квюальизквюэ, аэквюы жкаывола мэль ку. Ад
-            граэкйж плььатонэм адвыржаряюм квуй, вим емпыдит коммюны ат, ат шэа
-            одео &
-            \({\approx}\) &
-            \( - \) &
-            \( - \) &
-            \( - \) \\
-            Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч. &
-            \( - \) &
-            \( + \) &
-            \( + \) &
-            \({\approx}\) \\
-            Нэ про натюм фюйзчыт квюальизквюэ, аэквюы жкаывола мэль ку. Ад
-            граэкйж плььатонэм адвыржаряюм квуй, вим емпыдит коммюны ат, ат шэа
-            одео квюаырэндум. Вёртюты ажжынтиор эффикеэнди эож нэ. &
-            \( + \) &
-            \( - \) &
-            \({\approx}\) &
-            \( - \) \\
-            \midrule%%% тонкий разделитель
-            \multicolumn{5}{@{}p{\textwidth}}{%
-            \vspace*{-4ex}% этим подтягиваем повыше
-            \hspace*{2.5em}% абзацный отступ - требование ГОСТ 2.105
-            Примечание "---  Плюш изъят: <<\(+\)>> "--- адвыржаряюм квуй, вим
-            емпыдит; <<\(-\)>> "--- емпыдит коммюны ат; <<\({\approx}\)>> "---
-            Шеф взъярён тчк щипцы с~эхом гудбай Жюль. Эй, жлоб! Где туз?
-            Прячь юных съёмщиц в~шкаф. Экс-граф?
-            }
-            \\
-            \bottomrule %%% нижняя линейка
-        \end{tabulary}%
-    \end{SingleSpace}
+
+На основании таблицы~\cref{tab:tab49} были составлены графики~\cref{fig:pic37a,fig:pic37b} влияния продолжительности измерений на точность определения координат при уравнивании данных по РРР-алгоритму.
+
+
+
+\begin{figure}[!hbt]
+	\centerfloat{
+		\hfill
+		\subcaptionbox[List-of-Figures entry]{$\mathbf{m_x,}\quad\mathbf{m_y,}\quad\mathbf{m_z}$\label{fig:pic37a}}{%
+			\includegraphics[width=0.40\linewidth]{images/pic37a}}
+		\hfill
+		\subcaptionbox{$\mathbf{m_{xy},}\quad\mathbf{m_{xyz}}$\label{fig:pic37b}}{%
+			\includegraphics[width=0.45\linewidth]{images/pic37b}}
+		\hfill
+	}
+	%	\legend{$\bullet-\text{центр масс (ЦМ)}\qquad\circ-\text{фазовый центр (ФЦ)}$\\
+		%	}
+	\caption[Изменение СКО с течением времени]{Изменение СКО с течением времени}\label{fig:pic37}
+\end{figure}
+
+
+Анализируя графики~\cref{fig:pic37a,fig:pic37b} и графики~\cref{fig:pic27,fig:pic28,fig:pic30a,fig:pic30b,fig:pic31a,fig:pic31b}  можно заметить, что точность определения координат при уравнивании данных, полученных по РРР-алгоритму несколько выше, чем при уравнивании статических данных.
+
+Для контроля получаемой точности было выполнено уравнивание данных, полученных по RTX обработке методами нелинейного программирования. В таблице~\cref{tab:tab50} приводятся полученные значения $m_{0}, m_{y}, m_{z}, m_{xy}, m_{s}$.
+
+
+\begin{table} [htbp]
+	\centering\small
+	\captionof{table}{Зависимость СКО от продолжительности измерения, м}\label{tab:tab50}
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\setlength{\tabcolsep}{5pt}
+		\sisetup{
+			table-figures-integer = 1,
+			table-figures-decimal = 5
+		}
+		
+		\begin{tabular}{ c
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			\toprule
+			\textbf{Интервал}	& $\mathbf{m_x}$& $\mathbf{m_y}$& $\mathbf{m_z}$& $\mathbf{m_{xy}}$	& $\mathbf{m_{xyz}}$	\\ \midrule%
+			$\mathbf{1}$ ч		&  0,011		&  0,023		&  0,027		&	0,026			&	0,037		\\ %\hline
+			$\mathbf{2}$ ч		&  0,006		&  0,015		&  0,017		&	0,016			&	0,023		\\ %\hline
+			$\mathbf{3}$ ч		&  0,004 		&  0,014		&  0,016		&	0,014			&	0,022		\\ %\hline
+			$\mathbf{4}$ ч		&  0,005		&  0,015		&  0,018		&	0,016			&	0,024		\\ \bottomrule
+		\end{tabular}
+		
+	\end{threeparttable}
 \end{table}
 
-Если таблица~\cref{tab:test3} не помещается на той же странице, всё
-её~содержимое переносится на~следующую, ближайшую, а~этот текст идёт перед ней.
-\begin{table}[ht]%
-    \caption{Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч}%
-    \label{tab:test4}% label всегда желательно идти после caption
-    \renewcommand{\arraystretch}{1.6}%% Увеличение расстояния между рядами, для улучшения восприятия.
-    \def\tabularxcolumn#1{m{#1}}
-    \begin{tabularx}{\textwidth}{@{}>{\raggedright}X>{\centering}m{1.9cm} >{\centering}m{1.9cm} >{\centering}m{1.9cm} >{\centering\arraybackslash}m{1.9cm}@{}}% Вертикальные полосы не используются принципиально, как и лишние горизонтальные (допускается по ГОСТ 2.105 пункт 4.4.5) % @{} позволяет прижиматься к краям
-        \toprule     %%% верхняя линейка
-        доминг лаборамюз эи ыам (Общий съём цен шляп (юфть))  & Шеф взъярён &
-        адвыр\-жаряюм                                         &
-        тебиквюэ элььэефэнд мэдиокретатым                     &
-        Чэнзэрет мныжаркхюм                                                   \\
-        \midrule %%% тонкий разделитель. Отделяет названия столбцов. Обязателен по ГОСТ 2.105 пункт 4.4.5
-        Эй, жлоб! Где туз? Прячь юных съёмщиц в~шкаф Плюш изъят.
-        Бьём чуждый цен хвощ!                                 &
-        \({\approx}\)                                         &
-        \({\approx}\)                                         &
-        \({\approx}\)                                         &
-        \( + \)                                                               \\
-        Эх, чужак! Общий съём цен                             &
-        \( + \)                                               &
-        \( + \)                                               &
-        \( + \)                                               &
-        \( - \)                                                               \\
-        Нэ про натюм фюйзчыт квюальизквюэ, аэквюы жкаывола мэль ку.
-        Ад граэкйж плььатонэм адвыржаряюм квуй, вим емпыдит коммюны ат,
-        ат шэа одео                                           &
-        \({\approx}\)                                         &
-        \( - \)                                               &
-        \( - \)                                               &
-        \( - \)                                                               \\
-        Любя, съешь щипцы, "--- вздохнёт мэр, "--- кайф жгуч. &
-        \( - \)                                               &
-        \( + \)                                               &
-        \( + \)                                               &
-        \({\approx}\)                                                         \\
-        Нэ про натюм фюйзчыт квюальизквюэ, аэквюы жкаывола мэль ку. Ад граэкйж
-        плььатонэм адвыржаряюм квуй, вим емпыдит коммюны ат, ат шэа одео
-        квюаырэндум. Вёртюты ажжынтиор эффикеэнди эож нэ.     &
-        \( + \)                                               &
-        \( - \)                                               &
-        \({\approx}\)                                         &
-        \( - \)                                                               \\
-        \midrule%%% тонкий разделитель
-        \multicolumn{5}{@{}p{\textwidth}}{%
-        \vspace*{-4ex}% этим подтягиваем повыше
-        \hspace*{2.5em}% абзацный отступ - требование ГОСТ 2.105
-        Примечание "---  Плюш изъят: <<\(+\)>> "--- адвыржаряюм квуй, вим
-        емпыдит; <<\(-\)>> "--- емпыдит коммюны ат; <<\({\approx}\)>> "--- Шеф
-        взъярён тчк щипцы с~эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных
-        съёмщиц в~шкаф. Экс-граф?
-        }
-        \\
-        \bottomrule %%% нижняя линейка
-    \end{tabularx}%
+
+Сравнивания таблицы~\cref{tab:tab49,tab:tab50} можно заметить, что точность при уравнивании РРР-данных по упрощенному классическому методу и методу нелинейного программирования практически совпадает, а наибольшее отличие не превышает 1 мм после 2-х часов измерений. На основании таблицы~\cref{tab:tab50} были созданы графики, приведенные на рисунках~\cref{fig:pic38a,fig:pic38b}.
+ 
+
+
+\begin{figure}[!hbt]
+	\centerfloat{
+		\hfill
+		\subcaptionbox[List-of-Figures entry]{$\mathbf{m_x,}\quad\mathbf{m_y,}\quad\mathbf{m_z}$\label{fig:pic38a}}{%
+			\includegraphics[width=0.40\linewidth]{images/pic38a}}
+		\hfill
+		\subcaptionbox{$\mathbf{m_{xy},}\quad\mathbf{m_{xyz}}$\label{fig:pic38b}}{%
+			\includegraphics[width=0.45\linewidth]{images/pic38b}}
+		\hfill
+	}
+	%	\legend{$\bullet-\text{центр масс (ЦМ)}\qquad\circ-\text{фазовый центр (ФЦ)}$\\
+		%	}
+	\caption[Изменение СКО с течением времени]{Изменение СКО с течением времени}\label{fig:pic38}
+\end{figure}
+
+
+ 
+\subsection{Уравнивание данных полученных в ходе обработки с использованием интернет-сервиса CRSR}\label{subsec:ch3/sec3/sub2}
+ 
+Для контроля точности было выполнено уравнивание данных, полученных в ходе обработки с использованием интернет-сервиса CRSR. В таблице~\cref{tab:tab51} приведены эти результаты.
+
+
+\begin{table} [htbp]
+	\centering\small
+	\captionof{table}{Зависимость СКО от продолжительности измерения}\label{tab:tab51}
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\setlength{\tabcolsep}{5pt}
+		\sisetup{
+			table-figures-integer = 1,
+			table-figures-decimal = 5
+		}
+		
+		\begin{tabular}{ c
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			\toprule
+			\textbf{Интервал}	& $\mathbf{m_x}$& $\mathbf{m_y}$& $\mathbf{m_z}$& $\mathbf{m_{xy}}$	& $\mathbf{m_{xyz}}$	\\ \midrule%
+			$\mathbf{1}$ ч		&  0,011		&  0,023		&  0,027		&	0,026			&	0,037		\\ %\hline
+			$\mathbf{2}$ ч		&  0,006		&  0,015		&  0,017		&	0,016			&	0,023		\\ %\hline
+			$\mathbf{3}$ ч		&  0,004 		&  0,014		&  0,016		&	0,014			&	0,022		\\ %\hline
+			$\mathbf{4}$ ч		&  0,005		&  0,015		&  0,018		&	0,016			&	0,024		\\ \bottomrule
+		\end{tabular}
+		
+	\end{threeparttable}
 \end{table}
 
-\section{Таблицы с форматированными числами}\label{sec:ch3/formatted-numbers}
 
-В таблицах \cref{tab:S:parse,tab:S:align} представлены примеры использования опции
-форматирования чисел \texttt{S}, предоставляемой пакетом \texttt{siunitx}.
+Как видно из таблицы~\cref{tab:tab51}, точность определения координат соответствует точностям, полученным при уравнивании данных по RTX обработке. Для контроля получаемого уровня точности данные были уравнены методами нелинейного программирования и результат оценки точности приведен в таблице~\cref{tab:tab52}.
 
-\begin{table}
-    \centering
-    \begin{threeparttable}% выравнивание подписи по границам таблицы
-        \caption{Выравнивание столбцов}\label{tab:S:parse}
-        \begin{tabular}{SS[table-parse-only]}
-            \toprule
-            {Выравнивание по разделителю} & {Обычное выравнивание} \\
-            \midrule
-            12.345                        & 12.345                 \\
-            6,78                          & 6,78                   \\
-            -88.8(9)                      & -88.8(9)               \\
-            4.5e3                         & 4.5e3                  \\
-            \bottomrule
-        \end{tabular}
-    \end{threeparttable}
+
+\begin{table} [htbp]
+	\centering\small
+	\captionof{table}{Значения СКО при нелинейном программировании}\label{tab:tab52}
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\setlength{\tabcolsep}{5pt}
+		\sisetup{
+			table-figures-integer = 1,
+			table-figures-decimal = 5
+		}
+		
+		\begin{tabular}{ c
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			\toprule
+			\textbf{Интервал}	& $\mathbf{m_x}$& $\mathbf{m_y}$& $\mathbf{m_z}$& $\mathbf{m_{xy}}$	& $\mathbf{m_{xyz}}$	\\ \midrule%
+			$\mathbf{1}$ ч		&  0,016		&  0,016		&  0,025		&	0,016			&	0,016		\\ %\hline
+			$\mathbf{2}$ ч		&  0,013		&  0,012		&  0,023		&	0,013			&	0,012		\\ %\hline
+			$\mathbf{3}$ ч		&  0,009 		&  0,014		&  0,024		&	0,009			&	0,014		\\ %\hline
+			$\mathbf{4}$ ч		&  0,006		&  0,014		&  0,018		&	0,006			&	0,014		\\ \bottomrule
+		\end{tabular}
+		
+	\end{threeparttable}
+\end{table}
+ 
+  
+Результат оценки точности сопоставим с использованием интернет-сервиса Trimble RTX.
+  
+  
+\subsection{Уравнивание данных полученных в ходе обработки с использованием интернет-сервиса IGN}\label{subsec:ch3/sec3/sub3}
+ 
+Для контроля подтверждения получаемой точности выполнена обработка данных с использованием интернет-сервиса IGN. Основную информацию про него можно прочитать в главе \cref{ch:ch2}. В таблице~\cref{tab:tab53} приведена оценка точности с использованием интернет сервиса IGN. В обработке были использованы те же самые RINEX файлы, что и в предыдущих случаях.
+ 
+В таблице~\cref{tab:tab53} приведена оценка точности построения сети с использованием PPP-алгоритма. Уравнивание выполнялось классическим методом.
+  
+
+\begin{table} [htbp]
+	\centering\small
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\captionof{table}{Значения СКО при использовании \\интернет-сервиса IGN}\label{tab:tab53}
+		\setlength{\tabcolsep}{5pt}
+		\sisetup{
+			table-figures-integer = 1,
+			table-figures-decimal = 5
+		}
+		
+		\begin{tabular}{ c
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			\toprule
+			\textbf{Интервал}	& $\mathbf{m_x}$& $\mathbf{m_y}$& $\mathbf{m_z}$& $\mathbf{m_{xy}}$	& $\mathbf{m_{xyz}}$	\\ \midrule%
+			$\mathbf{1}$ ч		&  0,017		&  0,019		&  0,031		&	0,017			&	0,019		\\ %\hline
+			$\mathbf{2}$ ч		&  0,026		&  0,019		&  0,026		&	0,026			&	0,019		\\ %\hline
+			$\mathbf{3}$ ч		&  0,021 		&  0,019		&  0,023		&	0,021			&	0,019		\\ %\hline
+			$\mathbf{4}$ ч		&  0,011		&  0,010		&  0,023		&	0,011			&	0,010		\\ \bottomrule
+		\end{tabular}
+		
+	\end{threeparttable}
 \end{table}
 
-\begin{table}
-    \centering
-    \begin{threeparttable}% выравнивание подписи по границам таблицы
-        \caption{Выравнивание с использованием опции \texttt{S}}\label{tab:S:align}
-        \sisetup{
-            table-figures-integer = 2,
-            table-figures-decimal = 4
-        }
-        \begin{tabular}
-            {SS[table-number-alignment = center]S[table-number-alignment = left]S[table-number-alignment = right]}
-            \toprule
-            {Колонка 1} & {Колонка 2} & {Колонка 3} & {Колонка 4} \\
-            \midrule
-            2.3456      & 2.3456      & 2.3456      & 2.3456      \\
-            34.2345     & 34.2345     & 34.2345     & 34.2345     \\
-            56.7835     & 56.7835     & 56.7835     & 56.7835     \\
-            90.473      & 90.473      & 90.473      & 90.473      \\
-            \bottomrule
-        \end{tabular}
-    \end{threeparttable}
+  
+Для контроля точности было выполнено уравнивание методами нелинейного программирования. Результат оценки точности приведен в таблице~\cref{tab:tab54}.
+
+\begin{table} [htbp]
+	\centering\small
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\captionof{table}{Значения СКО при использовании \\методов нелинейного программирования}\label{tab:tab54}
+		\setlength{\tabcolsep}{5pt}
+		\sisetup{
+			table-figures-integer = 1,
+			table-figures-decimal = 5
+		}
+		
+		\begin{tabular}{ c
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			\toprule
+			\textbf{Интервал}	& $\mathbf{m_x}$& $\mathbf{m_y}$& $\mathbf{m_z}$& $\mathbf{m_{xy}}$	& $\mathbf{m_{xyz}}$	\\ \midrule%
+			$\mathbf{1}$ ч		&  0,014		&  0,023		&  0,031		&	0,014			&	0,023		\\ %\hline
+			$\mathbf{2}$ ч		&  0,024		&  0,019		&  0,028		&	0,024			&	0,019		\\ %\hline
+			$\mathbf{3}$ ч		&  0,021 		&  0,021		&  0,023		&	0,021			&	0,021		\\ %\hline
+			$\mathbf{4}$ ч		&  0,011		&  0,011		&  0,023		&	0,011			&	0,011		\\ \bottomrule
+		\end{tabular}
+		
+	\end{threeparttable}
 \end{table}
 
-\section{Параграф \texorpdfstring{\cyrdash}{---} два}\label{sec:ch3/sect2}
-% Не все (xe|lua)latex совместимые шрифты умеют работать с русским тире "---
 
-Некоторый текст.
+Анализируя таблицы~\cref{tab:tab51,tab:tab52,tab:tab53,tab:tab54} можно заметить, что результат оценки точности сопоставим между ними и, в целом, решение получается точнее, чем при классической обработке в статике.
+  
+  
+\subsection{Уравнивание геодезической сети в диапазоне расстояний \\от~100 до 400~км}\label{subsec:ch3/sec3/sub4}
 
-\section{Параграф с подпараграфами}\label{sec:ch3/sect3}
+Геодезическая сеть состоит из пяти пунктов, находящихся в диапазоне расстояний от~100 до 400~км. На рисунке~\cref{fig:pic39} приведена схема этой сети.
 
-\subsection{Подпараграф \texorpdfstring{\cyrdash}{---} один}\label{subsec:ch3/sect3/sub1}
 
-Некоторый текст.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.90\linewidth]{images/pic39}
+	\caption{Схема сети 100~--~400~км}
+	\label{fig:pic39}
+\end{figure}
 
-\subsection{Подпараграф \texorpdfstring{\cyrdash}{---} два}\label{subsec:ch3/sect3/sub2}
 
-Некоторый текст.
+В таблице~\cref{tab:tab55} приведена основная информация о сети, пункты которой расположены в диапазоне расстояний от~88 до~370~км. Среднее расстояние между пунктами сети составляет 220~км.
 
-\clearpage
+
+\begin{table} [htbp]
+	\setlength{\tabcolsep}{30pt}
+	\centering\small
+	\captionof{table}{Основные параметры сети 100~--~400~км}\label{tab:tab55}{
+	\begin{tabular}{ l
+					S[table-number-alignment = center]
+					S[table-number-alignment = center]
+					S[table-number-alignment = center]
+					S[table-number-alignment = center] }
+		\hline
+		\textbf{Вектор}		& \textbf{dX, м}	& \textbf{dY, м}	& \textbf{dZ, м}	& \textbf{S, м}	\\ \hline
+		MSK-RUZA			&	  60183,752		&	 -64573,259		&	   -6422,520	&	 88504,450	\\
+		MSK-TVER			&	 -18306,494		&	-144692,199		&	   67270,950	&	160612,400	\\
+		MSK-VLM				&	-135538,513		&	 116473,311		&	   21515,040	&	179998,900	\\
+		KOST-MSK			&	 271384,436		&	 -43348,311		&	-1195180,000	&	299688,600	\\
+		TVER-RUZA			&	  78490,245		&	  80118,941		&	  -73693,500	&	134203,200	\\
+		KOST-TVER			&	 253077,942		&	-188040,510		&	  -52247,500	&	319589,500	\\
+		KOST-VLM2			&	 135845,922		&	  73124,999		&	  -98003,400	&	182773,200	\\
+		KOST-RUZA			&	 331568,187		&	-107921,569		&	  -125941,000	&	370736,600	\\
+		RUZA-VLM2			&	-195722,265		&	 181046,569		&	    27937,560	&	268077,500	\\
+		TVER-VLM2			&	-117232,020		&	 261165,510		&	   -45755,900	&	289904,100	\\ \hline
+	\end{tabular}
+	\qquad%
+	}
+\end{table}	
+
+
+В дальнейшем было выполнено уравнивание геодезической сети по такому же алгоритму, как в и случае сети, расположенной в диапазоне расстояний до 100~км. Результаты оценки точности приводятся в таблице~\cref{tab:tab56}.
+
+\begin{table} [htbp]
+	\centering\small
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\captionof{table}{Уравнивание при использовании методов \\нелинейного программирования}\label{tab:tab56}
+		\setlength{\tabcolsep}{5pt}
+		\sisetup{
+			table-figures-integer = 1,
+			table-figures-decimal = 5
+		}
+		
+		\begin{tabular}{ c
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+		\toprule
+		\textbf{Интервал}	& $\mathbf{m_{xy}}$& $\mathbf{m_{z}}$& $\mathbf{m_{xy}}$& $\mathbf{m_{z}}$	& $\mathbf{m_{xy}}$	& $\mathbf{m_{z}}$	\\ \midrule%
+		$\mathbf{1}$ ч	&  0,024	&  0,032	&  0,019	&	0,022	&	0,068	&	0,064		\\ 
+		$\mathbf{2}$ ч	&  0,020	&  0,026	&  0,018	&	0,026	&	0,091	&	0,119		\\ 
+		$\mathbf{3}$ ч	&  0,022	&  0,030	&  0,019	&	0,030	&	0,099	&	0,089		\\ 
+		$\mathbf{4}$ ч	&  0,020	&  0,023	&  0,020	&	0,027	&	0,056	&	0,056		\\ 
+		\bottomrule
+		\end{tabular}
+
+	\qquad%
+
+		\begin{tabular}{ c
+		S[table-number-alignment = center]
+		S[table-number-alignment = center]
+		S[table-number-alignment = center]
+		S[table-number-alignment = center]
+		S[table-number-alignment = center]
+		S[table-number-alignment = center] }
+	
+		\toprule
+		\textbf{Интервал}	& $\mathbf{m_{xy}}$& $\mathbf{m_{z}}$& $\mathbf{m_{xy}}$& $\mathbf{m_{z}}$	& $\mathbf{m_{xy}}$	& $\mathbf{m_{z}}$	\\ \midrule%
+		$\mathbf{1}$ ч	&  0,024	&  0,032	&  0,019	&	0,022	&	0,072	&	0,074		\\ 
+		$\mathbf{2}$ ч	&  0,020	&  0,026	&  0,018	&	0,026	&	0,091	&	0,119		\\ 
+		$\mathbf{3}$ ч	&  0,023	&  0,031	&  0,020	&	0,030	&	0,117	&	0,084		\\ 
+		$\mathbf{4}$ ч	&  0,020	&  0,023	&  0,020	&	0,027	&	0,045	&	0,055		\\ 
+		\bottomrule
+		\end{tabular}
+
+		
+	\end{threeparttable}
+\end{table}
+
+  
+\subsection{Уравнивание геодезической сети в диапазоне расстояний от~400 до 700~км}\label{subsec:ch3/sec3/sub5}
+
+Геодезическая сеть состоит из пяти пунктов, находящихся в диапазоне расстояний от~400 до 700~км. В качестве опорного пункта был выбран пункт MSK-2. На рисунке 40 приведена схема этой сети.
+
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.90\linewidth]{images/pic40}
+	\caption{Схема сети 400~--~700~км}
+	\label{fig:pic40}
+\end{figure}
+
+
+
+
+В таблице~\cref{tab:tab57} приводятся основные параметры сети, пункты которой расположены в диапазоне расстояний от~400 до 700~км. При этом среднее расстояние между пунктами составляет 532~км.
+
+
+\begin{table} [htbp]
+	\setlength{\tabcolsep}{30pt}
+	\centering\small
+	\captionof{table}{Основные параметры сети 100~--~400~км}\label{tab:tab57}{
+		\begin{tabular}{ l
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			\hline
+			\textbf{Вектор}		& \textbf{dX, м}	& \textbf{dY, м}	& \textbf{dZ, м}	& \textbf{S, м}	\\ \hline
+			TVER-TANR			&	-547602,437		&	 122844,779		&	  208751,549	&	598779,156	\\
+			MSK-TANER			&	-565908,930		&	 -21847,420		&	  276022,498	&	630014,799	\\
+			TANER-NNV2			&	 273719,848		&	 291248,264		&	 -245567,156	&	469096,296	\\
+			TANR-SHIL			&	 537455,578		&	 270043,291		&	 -370497,770	&	706435,047	\\
+			TVER-NNV2			&	-273882,589		&	 414093,043		&	  -36815,606	&	497835,424	\\
+			MSK-NNV2			&	-292189,083		&	 269400,844		&	   30455,342	&	398596,039	\\
+			SHIL-TVER			&	 -10146,859		&	 392888,070		&	 -161746,220	&	425000,981	\\ \hline
+		\end{tabular}
+		\qquad%
+	}
+\end{table}	
+
+Последовательность действий при обработке и уравнивании сети аналогична действиями с сетью, пункты которой расположены в диапазоне расстояний от~100 до~400~км. В таблице~\cref{tab:tab58} приводятся точностные характеристики, полученные по результатам оценки точности после уравнивания.
+
+
+\begin{table} [htbp]
+	\centering\small
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\captionof{table}{Уравнивание при использовании методов \\нелинейного программирования}\label{tab:tab58}
+		\setlength{\tabcolsep}{5pt}
+		\sisetup{
+			table-figures-integer = 1,
+			table-figures-decimal = 5
+		}
+		
+		\begin{tabular}{ c
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			\toprule
+			\textbf{Интервал}	& $\mathbf{m_{xy}}$& $\mathbf{m_{z}}$& $\mathbf{m_{xy}}$& $\mathbf{m_{z}}$	& $\mathbf{m_{xy}}$	& $\mathbf{m_{z}}$	\\ \midrule%
+			$\mathbf{1}$ ч	&  0,024	&  0,032	&  0,019	&	0,022	&	0,068	&	0,064		\\ 
+			$\mathbf{2}$ ч	&  0,020	&  0,026	&  0,018	&	0,026	&	0,091	&	0,119		\\ 
+			$\mathbf{3}$ ч	&  0,022	&  0,030	&  0,019	&	0,030	&	0,099	&	0,089		\\ 
+			$\mathbf{4}$ ч	&  0,020	&  0,023	&  0,020	&	0,027	&	0,056	&	0,056		\\ 
+			\bottomrule
+		\end{tabular}
+		
+		\qquad%
+		
+		\begin{tabular}{ c
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center]
+				S[table-number-alignment = center] }
+			
+			\toprule
+			\textbf{Интервал}	& $\mathbf{m_{xy}}$& $\mathbf{m_{z}}$& $\mathbf{m_{xy}}$& $\mathbf{m_{z}}$	& $\mathbf{m_{xy}}$	& $\mathbf{m_{z}}$	\\ \midrule%
+			$\mathbf{1}$ ч	&  0,024	&  0,032	&  0,019	&	0,022	&	0,072	&	0,074		\\ 
+			$\mathbf{2}$ ч	&  0,020	&  0,026	&  0,018	&	0,026	&	0,093	&	0,119		\\ 
+			$\mathbf{3}$ ч	&  0,023	&  0,031	&  0,020	&	0,030	&	0,117	&	0,084		\\ 
+			$\mathbf{4}$ ч	&  0,020	&  0,023	&  0,020	&	0,027	&	0,045	&	0,055		\\ 
+			\bottomrule
+		\end{tabular}
+		
+		
+	\end{threeparttable}
+\end{table}
+
+
+Анализируя таблицу~\cref{tab:tab58} можно заметить, что точность, получаемая при построении сети по РРР-алгоритму несколько выше, чем при использовании классической статики.
+
+  
+\subsection{Заключение по главе}\label{subsec:ch3/sec3/sub6}
+
+ В первой части главы рассмотрены основные этапы создания геодезических сетей классическим методом на примере статики. Приводится эксперимент по уравниванию сети в статике. Далее рассматривается фрагмент современной методики создания сетей по \textit{классической постобработке}.
+ 
+ Во второй части главы предложена методика построения геодезических сетей в три основные этапа.
+ 
+ Предложенная методика создания сети показывает свою актуальность по следующим пунктам:
+ \begin{enumerate}
+ 	\item Уменьшение временных затрат на выполнение полевых работ.
+ 	\item Отсутствие влияния расстояний на точность передачи координат.
+ 	\item Повышение точности определения координат, по сравнению с классической обработкой в статике.
+ \end{enumerate}
+ 
+ Далее в главе рассмотрены эксперименты по исследованию точности построения геодезических сетей с использованием РРР-алгоритма обработки спутниковых данных.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

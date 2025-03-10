@@ -43,7 +43,7 @@
 \setcounter{pgnum}{1}       % 0 --- номера страниц никак не обозначены;
                             % 1 --- Стр. над номерами страниц (дважды
                             %       компилировать после изменения настройки)
-\settocdepth{subsection}    % до какого уровня подразделов выносить в оглавление
+\settocdepth{section}    % до какого уровня подразделов выносить в оглавление
 \setsecnumdepth{subsection} % до какого уровня нумеровать подразделы
 
 
@@ -122,3 +122,8 @@
 %\definecolor{linkcolor}{rgb}{0,0,0} %black
 %\definecolor{citecolor}{rgb}{0,0,0} %black
 %\definecolor{urlcolor}{rgb}{0,0,0} %black
+
+%%% Added by ASM %%%
+\DeclareSIUnit\days{\text{сут}}
+\newcommand{\colp}[0]{\color{purple}}
+\newcommand{\colrb}[0]{\color{RoyalBlue}}
