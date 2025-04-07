@@ -1,17 +1,22 @@
 \pdfbookmark{Общая характеристика работы}{characteristic}             % Закладка pdf
-\section*{Общая характеристика работы}
+\section*{\centering ОБЩАЯ ХАРАКТЕРИСТИКА РАБОТЫ}
 
 \newcommand{\actuality}{\pdfbookmark[1]{Актуальность}{actuality}\underline{\textbf{\actualityTXT}}}
 \newcommand{\progress}{\pdfbookmark[1]{Разработанность темы}{progress}\underline{\textbf{\progressTXT}}}
 \newcommand{\aim}{\pdfbookmark[1]{Цели}{aim}\underline{{\textbf\aimTXT}}}
 \newcommand{\tasks}{\pdfbookmark[1]{Задачи}{tasks}\underline{\textbf{\tasksTXT}}}
+\newcommand{\theoretical}{\pdfbookmark[1]{Теоретическая значимость}{theoretical}\underline{\textbf{\theoreticalTXT}}} % Added by ASM
 \newcommand{\aimtasks}{\pdfbookmark[1]{Цели и задачи}{aimtasks}\aimtasksTXT}
+\newcommand{\researchobj}{\pdfbookmark[1]{Объект исследования}{researchobj}\underline{\textbf{\researchobjTXT}}}
+\newcommand{\researchsubj}{\pdfbookmark[1]{Предмет исследования}{researchsubj}\underline{\textbf{\researchsubjTXT}}}
 \newcommand{\novelty}{\pdfbookmark[1]{Научная новизна}{novelty}\underline{\textbf{\noveltyTXT}}}
 \newcommand{\influence}{\pdfbookmark[1]{Практическая значимость}{influence}\underline{\textbf{\influenceTXT}}}
 \newcommand{\methods}{\pdfbookmark[1]{Методология и методы исследования}{methods}\underline{\textbf{\methodsTXT}}}
 \newcommand{\defpositions}{\pdfbookmark[1]{Положения, выносимые на защиту}{defpositions}\underline{\textbf{\defpositionsTXT}}}
-\newcommand{\reliability}{\pdfbookmark[1]{Достоверность}{reliability}\underline{\textbf{\reliabilityTXT}}}
-\newcommand{\probation}{\pdfbookmark[1]{Апробация}{probation}\underline{\textbf{\probationTXT}}}
+\newcommand{\pasport}{\pdfbookmark[1]{Соответствие паспорту научной специальности}{pasport}\underline{\textbf{\pasportTXT}}} % Почему этого здесь не было?
+%\newcommand{\reliability}{\pdfbookmark[1]{Достоверность}{reliability}\underline{\textbf{\reliabilityTXT}}}
+%\newcommand{\probation}{\pdfbookmark[1]{Апробация}{probation}\underline{\textbf{\probationTXT}}}
+\newcommand{\reliaprobation}{\pdfbookmark[1]{Достоверность и Апробация}{reliaprobation}\underline{\textbf{\reliaprobationTXT}}} % Вместо Достоверности и Апробации вместе...
 \newcommand{\contribution}{\pdfbookmark[1]{Личный вклад}{contribution}\underline{\textbf{\contributionTXT}}}
 \newcommand{\publications}{\pdfbookmark[1]{Публикации}{publications}\underline{\textbf{\publicationsTXT}}}
 
@@ -24,61 +29,73 @@
 %\textbf{ХХХ}~страниц текста с~\textbf{ХХ}~рисунками и~5~таблицами. Список
 %литературы содержит \textbf{ХХX}~наименование.
 
+\underline{\textbf{Объем и структура работы}}: диссертация состоит из~введения, 4 глав, 
+%\ref*{disTotPages}
+%\formbytotal{dis_totalchapter}{глав}{ы}{}{},
+заключения и 3 приложений. 
+%\formbytotal{\ref*{distotalappendix}}{приложен}{ия}{ий}{ий}.
+%% на случай ошибок оставляю исходный кусок на месте, закомментированным
+%Полный объём диссертации составляет  \ref*{TotPages}~страницу
+%с~\totalfigures{}~рисунками и~\totaltables{}~таблицами. Список литературы
+%содержит \total{citenum}~наименований.
+Полный объём диссертации составляет \ref*{disTotPages} страниц,
+включая 43 рисунка и 52 таблицы.
+Список литературы содержит 76 наименований. 
+%\formbytotal{\ref*{disTotPages}}{страниц}{у}{ы}{}, включая
+%\formbytotal{\ref*{distotalcount@figure}}{рисун}{ок}{ка}{ков} и
+%\formbytotal{distotalcount@table}{таблиц}{у}{ы}{}.
+%Список литературы содержит
+%\formbytotal{discitenum}{наименован}{ие}{ия}{ий}.
+
+
+
+
+
 \pdfbookmark{Содержание работы}{description}                          % Закладка pdf
 \section*{Содержание работы}
-Во \underline{\textbf{введении}} обосновывается актуальность
-исследований, проводимых в~рамках данной диссертационной работы,
-приводится обзор научной литературы по~изучаемой проблеме,
-формулируется цель, ставятся задачи работы, излагается научная новизна
-и практическая значимость представляемой работы. В~последующих главах
-сначала описывается общий принцип, позволяющий \dots, а~потом идёт
-апробация на частных примерах: \dots  и~\dots.
+% ВВЕДЕНИЕ
+Во \underline{\textbf{введении}} обосновывается актуальность исследований, проводимых в~рамках данной диссертационной работы. Сформированы цели и задачи диссертационного исследования. Представлены научные положения, выносимые на защиту.
 
+\medskip
+% Глава 1
+В \underline{\textbf{первой главе}} 
+приведены основные положения по РРР-алгоритму. Также выполнен теоретический анализ факторов, влияющих на точность определения координат по РРР-алгоритму.
 
-\underline{\textbf{Первая глава}} посвящена \dots
+\input{Dissertation/part1}
 
-картинку можно добавить так:
-\begin{figure}[ht]
-    \centerfloat{
-        \hfill
-        \subcaptionbox{\LaTeX}{%
-            \includegraphics[scale=0.27]{latex}}
-        \hfill
-        \subcaptionbox{Knuth}{%
-            \includegraphics[width=0.25\linewidth]{knuth1}}
-        \hfill
-    }
-    \caption{Подпись к картинке.}\label{fig:latex}
-\end{figure}
+\medskip
+% Глава 2
+Во \underline{\textbf{второй главе}} диссертационной работы рассмотрены современные методы обработки спутниковых измерений по РРР-алгоритму. 
+\input{Dissertation/part2}
 
-Формулы в строку без номера добавляются так:
-\[
-    \lambda_{T_s} = K_x\frac{d{x}}{d{T_s}}, \qquad
-    \lambda_{q_s} = K_x\frac{d{x}}{d{q_s}},
-\]
+\medskip
+%Глава3
+\underline{\textbf{Третья глава}} посвящена разработке методики создания геодезических сетей при использовании РРР-алгоритма обработки спутниковых данных.
 
-\underline{\textbf{Вторая глава}} посвящена исследованию
+\input{Dissertation/part3}
 
-\underline{\textbf{Третья глава}} посвящена исследованию
+\medskip
+% Глава 4
+В \underline{\textbf{четвёртой главе}} приведены результаты для сетей, построенных, в диапазоне расстояний: 
+ от~700 до~1000~км; от~1000 до~1300~км; от~1300 до~1700~км. 
+\input{Dissertation/part4}
 
-Можно сослаться на свои работы в автореферате. Для этого в файле
-\verb!Synopsis/setup.tex! необходимо присвоить положительное значение
-счётчику \verb!\setcounter{usefootcite}{1}!. В таком случае ссылки на
-работы других авторов будут подстрочными.
-Изложенные в третьей главе результаты опубликованы в~\cite{vakbib1, vakbib2}.
-Использование подстрочных ссылок внутри таблиц может вызывать проблемы.
-
-В \underline{\textbf{четвертой главе}} приведено описание
+\medskip
 
 \FloatBarrier
+% ЗАКЛЮЧЕНИЕ
 \pdfbookmark{Заключение}{conclusion}                                  % Закладка pdf
-В \underline{\textbf{заключении}} приведены основные результаты работы, которые заключаются в следующем:
+\section*{Заключение}
+
+%\input{Dissertation/conclusion}
 \input{common/concl}
 
+
+
+
+
 \pdfbookmark{Литература}{bibliography}                                % Закладка pdf
-При использовании пакета \verb!biblatex! список публикаций автора по теме
-диссертации формируется в разделе <<\publications>>\ файла
-\verb!common/characteristic.tex!  при помощи команды \verb!\nocite!
+
 
 \ifdefmacro{\microtypesetup}{\microtypesetup{protrusion=false}}{} % не рекомендуется применять пакет микротипографики к автоматически генерируемому списку литературы
 \urlstyle{rm}                               % ссылки URL обычным шрифтом
@@ -94,28 +111,38 @@
     %  * Если цитировать каждый источник отдельной командой --- найти некоторые ошибки будет проще.
     %
     %% authorvak
-    \nocite{vakbib1}%
-    \nocite{vakbib2}%
+    \nocite{mak02}%
+    \nocite{mak06}%
+    \nocite{mak07}%
+    \nocite{mak08}%
+    \nocite{mak11}%
+%    \nocite{mak0}%
     %
     %% authorwos
-    \nocite{wosbib1}%
+%    \nocite{wosbib1}%
     %
     %% authorscopus
-    \nocite{scbib1}%
+%    \nocite{scbib1}%
     %
     %% authorpathent
-    \nocite{patbib1}%
+%    \nocite{patbib1}%
     %
     %% authorprogram
-    \nocite{progbib1}%
+%    \nocite{progbib1}%
     %
     %% authorconf
-    \nocite{confbib1}%
-    \nocite{confbib2}%
+    \nocite{mak01}%
+    \nocite{mak03}%
+    \nocite{mak04}%
+    \nocite{mak05}%
+    \nocite{mak09}%
+    \nocite{mak10}%
+    \nocite{mak99}%
+%    \nocite{mak0}%
     %
     %% authorother
-    \nocite{bib1}%
-    \nocite{bib2}%
+%    \nocite{bib1}%
+%    \nocite{bib2}%
 
     \ifnumgreater{\value{usefootcite}}{0}{
         \begin{refcontext}[labelprefix={}]

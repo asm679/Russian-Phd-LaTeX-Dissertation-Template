@@ -1,4 +1,31 @@
+% Этот пакет позволит ссылаться на нумерованные объекты во внешних документах
+% в нашем случае -- на счётчики страниц, таблиц, рисунков и т.д.
+\usepackage{xr} %
+\usepackage{refcount}
+
 %%% Микротипографика %%%
 %\ifnumequal{\value{draft}}{0}{% Только если у нас режим чистовика
 %    \usepackage[final]{microtype}[2016/05/14] % улучшает представление букв и слов в строках, может помочь при наличии отдельно висящих слов
 %}{}
+\usepackage{fr-longtable}    %ради \endlasthead
+\usepackage{tablefootnote}
+
+% Листинги с исходным кодом программ
+\usepackage{fancyvrb}
+\usepackage{listings}
+\lccode`\~=0\relax %Без этого хака из-за особенностей пакета listings перестают работать конструкции с \MakeLowercase и т. п. в (xe|lua)latex
+
+% Русская традиция начертания греческих букв
+\usepackage{upgreek} % прямые греческие ради русской традиции
+
+
+
+\ifnumequal{\value{draft}}{1}{% Черновик
+	\IfFileExists{.git/gitHeadInfo.gin}{
+		\usepackage[mark,pcount]{gitinfo2}
+		\renewcommand{\gitMark}{rev.\gitAbbrevHash\quad\gitCommitterEmail\quad\gitAuthorIsoDate}
+		\renewcommand{\gitMarkFormat}{\rmfamily\color{Gray}\small\bfseries}
+	}{}
+}{}
+
+\usepackage{nicefrac} % для "косых" дробей типа 1/2

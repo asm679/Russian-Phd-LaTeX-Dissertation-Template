@@ -12,7 +12,7 @@
 \makeatletter
 \@ifundefined{c@usefootcite}{
   \newcounter{usefootcite}
-  \setcounter{usefootcite}{0} % 0 --- два списка литературы;
+  \setcounter{usefootcite}{1} % 0 --- два списка литературы;
                               % 1 --- список публикаций автора + цитирование
                               %       других работ в сносках
 }{}
@@ -98,3 +98,4 @@
 %\definecolor{linkcolor}{rgb}{0,0,0} %black
 %\definecolor{citecolor}{rgb}{0,0,0} %black
 %\definecolor{urlcolor}{rgb}{0,0,0} %black
+\externaldocument[dis]{dissertation}

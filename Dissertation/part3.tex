@@ -1,3 +1,259 @@
+% Выбор текста для реферата и основоного текста диссертации
+\ifsynopsis % для реферата
+В существующих нормативных документах указано, что продолжительность измерений должна быть трое суток при создании Высокоточной геодезической сети (далее <<ВГС>>). При создании Спутниковой геодезической сети второго разряда (далее <<СГС>>) продолжительность измерений должна быть не менее $8$~часов. При создании ВГС и СГС минимальное количество используемых спутников должно быть не менее шести при величине pdop не более $2.0$.
+
+С точки зрения общих требований предлагается внести следующие корректировки: продолжительность измерений для сетей СГС --- $2$~часа при количестве повторений измерений: $2$~раза. Для сетей ВГС --- $3$~часа при количестве повторных измерений: $3$~раза. В обоих случаях минимальное количество спутников должно составлять не менее $15$. Перерывы между сеансами измерений не менее $12$~часов, что подтверждается проведенными исследованиями.
+
+На основании выполненных теоретических и практических изысканий, подробно описанных в главах~\cref*{disch:ch1,disch:ch2,disch:ch3} диссертации была разработана методика создания геодезических сетей при использовании РРР-алгоритма.
+
+Разработанную методику можно разделить на 3 основные блока:
+\begin{description}
+	\item[Блок~1] --- сбор и предварительная обработка данных по РРР-алгоритму.
+	\item[Блок~2] --- этап обработки спутниковых измерений.
+	\item[Блок~3] --- уравнивание и предоставление данных.
+\end{description}
+
+Блок-схема первого блока разработанной методики построения геодезических сетей с использованием РРР-алгоритма представлена на рисунке~\cref{fig:refpic04}.
+
+
+\begin{figure}[!h]
+	\centering
+	\begin{tikzpicture}[node distance = 1.cm, auto]
+		% Define the node style for boxes
+		\tikzstyle{box} = [rectangle, rounded corners, minimum width=3cm, minimum height=2em,text centered, draw=black, fill=white!30, very thick];
+		\tikzstyle{terminator} = [rectangle, draw, text centered, rounded corners, minimum height=2em, very thick]
+		\tikzstyle{data}=[trapezium, draw, text centered, trapezium left angle=60, trapezium right angle=120, minimum height=2em, very thick]
+		\tikzstyle{connector} = [draw, -latex', very thick]
+		
+		% Place the nodes
+		\node (start) [terminator] {Начало};
+		\node (prep) [data, below=of start] {Подготовка данных};
+		\node (measurements) [box, below=of prep] {Выполнение измерений};
+		\node (check) [box, below=of measurements, minimum width=4cm, align=center] 
+		{Проверка измерений \\ 
+			Количество спутников \(\geq 15\) \\ 
+			Продолжительность \(\geq 2\)~ч \\ 
+			Дискретность \(= 30\)~с \\ 
+			PDOP~\(< 3\)};
+		\node (if) [diamond, below=of check, align=center, draw=black, very thick] {Условия\\выполнены?};
+		\node[draw=none, right=of if, xshift=-1cm, yshift=.25cm]  (no) {Нет};
+		\node[draw=none, right=of if, xshift=-2.50cm, yshift=-1.55cm] (yes) {Да};
+		\node (to_process2) [terminator, below=of if] {К Блоку~2};
+		\node (editing) [box, right=of check, xshift=0cm, yshift=-1.25cm] {Редактирование};
+		\node (from_process2) [box, left=of to_process2] {От Блока~2 и~3};
+		
+		% Draw the arrows
+		\path[connector] (start) -- (prep);
+		\path[connector] (prep) -- (measurements);
+		\path[connector] (measurements) -- (check);
+		\path[connector] (check) -- (if);
+		\path[connector] (editing.north) |- node {} (measurements.east);
+		\path[connector] (if.east) -| (editing.south);
+		\path[connector] (if.south) -- (to_process2);
+		\path[connector] (from_process2) |- (measurements);
+	\end{tikzpicture}
+	\bigskip
+	\caption{Блок~1 разработанной методики }
+	\label{fig:refpic04}
+\end{figure}
+
+На этом этапе построения геодезических сетей происходит сбор данных с их первичной проверкой на корректность. Для выполнения спутниковых измерений должна использоваться современная спутниковая геодезическая аппаратура. ГНСС приемники должны быть многочастотными и мультисистемными.
+
+По результатам исследований, при соблюдении ряда условий, продолжительности измерений, не превышающей трёх часов, достаточно для достижения оптимальной точности определения координат.
+
+При увеличении продолжительности измерений свыше трёх часов, точность практически неизменна. При этом обязательным условием являются: pdop фактор должен быть менее~$3,0$, а количество спутников свыше~$15$. Также продолжительность измерений должна составлять $3$~часа с перерывами между сеансами измерений $12$~часов. 
+Далее на рисунке~\cref{fig:refpic05} приведен второй блок разработанной методики.
+
+
+
+\begin{figure}[!h]
+	\centering
+	\begin{tikzpicture}[node distance = 1.cm, auto]
+		% Define the node style for boxes
+		\tikzstyle{box} = [rectangle, rounded corners, minimum width=3cm, minimum height=2em,text centered, draw=black, fill=white!30, very thick, align=center];
+		\tikzstyle{terminator} = [rectangle, draw, text centered, rounded corners, minimum height=2em, very thick, align=center]
+		\tikzstyle{data}=[trapezium, draw, text centered, trapezium left angle=60, trapezium right angle=120, minimum height=2em, very thick, align=center]
+		\tikzstyle{connector} = [draw, -latex', very thick]
+		
+		% Place the nodes
+		\node (start) [terminator] {От Блока~1};
+		\node (rinex) [box, below=of start] {Обработка RINEX-файлов\\с использованием интернет-сервисов};
+		\node (check) [box, below=of rinex, minimum width=4cm] 
+		{Проверки условий: \\ 
+			Количество спутников, \\
+			использованных при обработке~\(> 15 \)?\\
+			Сравнение решений, полученных \\другими методами достигнута?
+		};
+		\node (if) [diamond, below=of check, align=center, draw=black, very thick] {Условия\\выполнены?};
+		\node[draw=none, left=of if,  xshift=1cm,     yshift=.25cm]   (no) {Нет};
+		\node[draw=none, right=of if, xshift=-3.25cm, yshift=-1.55cm] (yes) {Да};
+		\node (to_process3) [terminator, below=of if] {К Блоку~3.};
+		\node (return) [terminator, left=of start, xshift=-1.50cm, yshift=0cm] {К Блоку~1};
+		
+		% Draw the arrows
+		\path[connector] (start) -- (rinex);
+		\path[connector] (rinex) -- (check);
+		\path[connector] (check) -- (if);
+		\path[connector] (if.west) -| (return.south);
+		\path[connector] (if.south) -- (to_process3);
+	\end{tikzpicture}
+	\bigskip
+	\caption{Блок~2 разработанной методики }
+	\label{fig:refpic05}
+\end{figure}
+
+Для обработки данных по РРР-алгоритму реализованы различные интернет-сервисы и программные обеспечения. Точность обработки при использовании различных методов может разниться. В главе~\cref*{disch:ch2} диссертационной работы указано, что точность определения координат у некоторых способов обработки сопоставима между собой. Согласно проведенным исследованиям, наиболее оптимальный результат получается при использовании интернет-сервисов Trimble RTX и CSRS. 
+%Предлагается использовать их. 
+Для контроля точности получаемого результата рекомендуется выполнять обработку несколькими независимыми способами, включающими интернет-сервисы и программные обеспечения.
+%Для контроля точности получаемого результата и с целью убедиться, что в интернет-сервисы не внесены какие-либо изменения, рекомендуется параллельно выполнять обработку с использованием программного обеспечения. 
+В случае сходимости решений, полученных при обеих видах обработки необходимо перейти к блоку~$3$: уравнивание и оценка точности. На рисунке~\cref{fig:refpic06} приведена блок схема третьего блока разработанной методики.
+
+
+\begin{figure}[!h]
+	\centering
+	\begin{tikzpicture}[node distance = 1.cm, auto]
+		% Define the node style for boxes
+		\tikzstyle{box} = [rectangle, rounded corners, minimum width=3cm, minimum height=2em,text centered, draw=black, fill=white!30, very thick, align=center];
+		\tikzstyle{terminator} = [rectangle, draw, text centered, rounded corners, minimum height=2em, very thick, align=center]
+		\tikzstyle{data}=[trapezium, draw, text centered, trapezium left angle=60, trapezium right angle=120, minimum height=2em, very thick, align=center]
+		\tikzstyle{connector} = [draw, -latex', very thick]
+		
+		% Place the nodes
+		\node (start) [terminator] {От Блока~2};
+		\node (compute) [box, below=of start] {Уравнивание сети одним\\из доступных методов};
+		\node (accucheck) [diamond, draw=black, very thick, below=of compute, align=center] 
+		{Оценка точности\\удовлетворяет\\требованиям?};
+		\node[draw=none, right=of accucheck, xshift=-1.1cm, yshift=.25cm]   (accu_no) {Нет};
+		\node[draw=none, right=of accucheck, xshift=-3.05cm, yshift=-2.25cm] (accu_yes) {Да};
+		\node (remeasure) [box, below=of accucheck] {Контрольные измерения};
+		\node (renewalg) [box, right=of accucheck, xshift=0cm, yshift=2.5cm] {Выбор другого\\метода уравнивания};
+		\node (if) [diamond, below=of remeasure, align=center, draw=black, very thick] {Результат\\сопоставим?};
+		\node[draw=none, left=of if,  xshift=1cm,     yshift=.25cm]   (no) {Нет};
+		\node[draw=none, right=of if, xshift=-2.50cm, yshift=-1.65cm] (yes) {Да};
+		\node (result) [terminator, below=of if] {Предоставление уравненных результатов};
+		\node (return) [terminator, left=of start, xshift=-1.50cm, yshift=0cm] {К Блоку~1};
+		
+		% Draw the arrows
+		\path[connector] (start) -- (compute);
+		\path[connector] (compute) -- (accucheck);
+		\path[connector] (accucheck.east) -| (renewalg.south);
+		\path[connector] (renewalg.north) |- (compute.east);
+		\path[connector] (accucheck.south) -- (remeasure);
+		\path[connector] (remeasure) -- (if);
+		\path[connector] (if.west) -| (return.south);
+		\path[connector] (if.south) -- (result);
+	\end{tikzpicture}
+	\bigskip
+	\caption{Блок~3 разработанной методики }
+	\label{fig:refpic06}
+\end{figure}
+
+На сегодняшний день существует достаточно обширное количество методов уравнивания геодезических данных. 
+%Для уравнивания геодезических сетей, построенных с использованием РРР-алгоритма рекомендуется использовать следующе: классический метод и методы нелинейного программирования. 
+Для уравнивания геодезических сетей, построенных с использованием РРР-алгоритма рекомендуется использовать следующие методы уравнивания сетей: классический метод, в основе которого лежит МНК; и методы нелинейного программирования (на примере поиска решения в программе Excel). 
+Также стоит отметить, что в некоторых программных обеспечениях (например, в Bernsese) сразу реализована возможность уравнивания. При использовании как классического, так и методов нелинейного программирования, существует возможность уравнивания только вручную.
+
+%После уравнивания необходимо выполнить оценку точности. 
+В качестве оценки точности результатов уравнивания могут быть использованы два способа: 
+\begin{enumerate}
+	\item Поиск невязок внутри замкнутых фигур (например, треугольников).
+	\item Оценка точности по формуле Бесселя~\cref{eq:refeq03}.
+\end{enumerate}
+
+
+Если результат оценки точности удовлетворяет заданным требованиям, то необходимо выполнить контрольные измерения. При создании сети СГС, необходимо выполнить контрольные измерения не менее одного раза. При создании сети ВГС необходимо выполнить контрольные измерения не менее двух-трёх раз. При сопоставлении результатов.
+
+На рисунке~\cref{fig:refpic07} приведен пример одной из сетей, рассмотренных в диссертационной работе.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.99\linewidth]{images/pic25}
+	\caption{Cпутниковая сеть в диапазоне расстояний от~5 до 100~км }
+	\label{fig:refpic07}
+\end{figure}
+
+Далее было выполнено уравнивание этой сети. Уравнивание выполнялось как классическим методом, так и методами нелинейного программирования. Результаты уравнивания приведены в таблице~\cref{tab:ref_tab04}.
+\begin{table} [!htbp]
+	\centering\tiny%\small
+	\captionof{table}{сравнительная оценка точности при уравнивании различными \\методами  для сети 5\,--\,100~км  }\label{tab:ref_tab04}{%
+		\setlength\tabcolsep{2.5pt}
+		\def\arraystretch{1.5}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			\multirow{2}{*}{$\mathbf{t_{\text{изм}}}$} & \multicolumn{2}{c|}{\textbf{RTX нелин.}} & \multicolumn{2}{c|}{\textbf{RTX классич.}} & \multicolumn{2}{c|}{\textbf{CRSR нелин.}} & \multicolumn{2}{c|}{\textbf{CRSR классич.}} & \multicolumn{2}{c|}{\textbf{Статика КРЕДО}} & \multicolumn{2}{c|}{\textbf{статика  нелин.}} \\ \cline{2-13}%\hline
+			\textit{ч.}						& $\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
+											  $\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
+											  $\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
+											  $\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
+											  $\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
+											  $\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	\\ \hline
+			1 & $0,026$ & $0,027$ & $0,029$ & $0,029$ & $0,038$ & $0,028$ & $0,042$ & $0,030$ & $0,111$ & $0,169$ & $0,081$ & $0,136$ \\ %\hline
+			2 & $0,016$ & $0,017$ & $0,016$ & $0,016$ & $0,016$ & $0,022$ & $0,017$ & $0,021$ & $0,139$ & $0,177$ & $0,102$ & $0,146$ \\ %\hline
+			3 & $0,014$ & $0,016$ & $0,015$ & $0,015$ & $0,016$ & $0,020$ & $0,016$ & $0,019$ & $0,038$ & $0,018$ & $0,030$ & $0,014$ \\ %\hline
+			4 & $0,014$ & $0,016$ & $0,015$ & $0,015$ & $0,016$ & $0,019$ & $0,016$ & $0,019$ & $0,044$ & $0,034$ & $0,034$ & $0,018$ \\ 
+			\hline
+		\end{tabular}
+	}
+\end{table}
+%Из этой таблицы видно, что точность определения координат при использовании РРР-алгоритма несколько выше, чем при классической обработке в статике (на примере \textbf{dd}). \textbf{???}
+
+%Для контроля получаемой точности было выполнено построение сетей в различных диапазонах расстояний. Также было рассмотрено построение как свободных, так и не свободных сетей, а результаты оценки точности представлены в таблице 5...
+
+%Из данной таблицы видно, что точность построения геодезических сетей при использовании РРР-алгоритма обработки спутниковых данных.
+
+В таблицах~\cref{tab:ref_tab05,tab:ref_tab06} 5,6 приведены результаты оценки точности для сетей, стороны которых находятся в диапазоне расстояний от~100 до~400~км и  от~400 до~700~км.
+\begin{table} [!htbp]
+	\centering\tiny%\small
+	\captionof{table}{сравнительная оценка точности при уравнивании различными \\методами для сети 100\,--\,400~км }\label{tab:ref_tab05}{%
+		\setlength\tabcolsep{2.5pt}
+		\def\arraystretch{1.5}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			\multirow{2}{*}{$\mathbf{t_{\text{изм}}}$} & \multicolumn{2}{c|}{\textbf{RTX нелин.}} & \multicolumn{2}{c|}{\textbf{RTX классич.}} & \multicolumn{2}{c|}{\textbf{CRSR нелин.}} & \multicolumn{2}{c|}{\textbf{CRSR классич.}} & \multicolumn{2}{c|}{\textbf{Статика КРЕДО}} & \multicolumn{2}{c|}{\textbf{статика  нелин.}} \\ \cline{2-13}%\hline
+			\textit{ч.}						& $\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
+			$\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
+			$\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
+			$\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
+			$\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
+			$\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	\\ \hline
+			1 & $0,024$ & $0,032$ & $0,024$ & $0,032$ & $0,024$ & $0,022$ & $0,023$ & $0,022$ & $0,099$ & $0,119$ & $0,099$ & $0,119$ \\ %\hline
+			2 & $0,018$ & $0,023$ & $0,019$ & $0,024$ & $0,020$ & $0,026$ & $0,022$ & $0,026$ & $0,091$ & $0,110$ & $0,091$ & $0,110$ \\ %\hline
+			3 & $0,017$ & $0,021$ & $0,018$ & $0,022$ & $0,019$ & $0,030$ & $0,019$ & $0,030$ & $0,068$ & $0,089$ & $0,068$ & $0,089$ \\ %\hline
+			4 & $0,017$ & $0,021$ & $0,018$ & $0,022$ & $0,019$ & $0,027$ & $0,019$ & $0,027$ & $0,056$ & $0,056$ & $0,056$ & $0,056$ \\ 
+			\hline
+		\end{tabular}
+	}
+\end{table}
+
+\begin{table} [!htbp]
+	\centering\tiny%\small
+	\captionof{table}{сравнительная оценка точности при уравнивании различными \\методами  для сети 400\,--\,700~км }\label{tab:ref_tab06}{%
+		\setlength\tabcolsep{2.5pt}
+		\def\arraystretch{1.5}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			\multirow{2}{*}{$\mathbf{t_{\text{изм}}}$} & \multicolumn{2}{c|}{\textbf{RTX нелин.}} & \multicolumn{2}{c|}{\textbf{RTX классич.}} & \multicolumn{2}{c|}{\textbf{CRSR нелин.}} & \multicolumn{2}{c|}{\textbf{CRSR классич.}} & \multicolumn{2}{c|}{\textbf{Статика КРЕДО}} & \multicolumn{2}{c|}{\textbf{статика  нелин.}} \\ \cline{2-13}%\hline
+			\textit{ч.}						& $\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
+			$\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
+			$\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
+			$\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
+			$\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
+			$\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	\\ \hline
+			1 & $0,024$ & $0,032$ & $0,024$ & $0,032$ & $0,019$ & $0,022$ & $0,019$ & $0,022$ & $0,068$ & $0,064$ & $0,072$ & $0,074$ \\ %\hline
+			2 & $0,020$ & $0,026$ & $0,020$ & $0,026$ & $0,018$ & $0,026$ & $0,018$ & $0,026$ & $0,091$ & $0,119$ & $0,093$ & $0,119$ \\ %\hline
+			3 & $0,022$ & $0,030$ & $0,023$ & $0,031$ & $0,019$ & $0,030$ & $0,020$ & $0,030$ & $0,099$ & $0,089$ & $0,117$ & $0,084$ \\ %\hline
+			4 & $0,020$ & $0,023$ & $0,020$ & $0,023$ & $0,020$ & $0,027$ & $0,020$ & $0,027$ & $0,056$ & $0,056$ & $0,045$ & $0,055$ \\ 
+			\hline
+		\end{tabular}
+	}
+\end{table}
+
+
+
+
+
+
+\else % Текст главы:
 \chapter{ИССЛЕДОВАНИЕ ТОЧНОСТИ ПОСТРОЕНИЯ ГЕОДЕЗИЧЕСКИХ СЕТЕЙ ПРИ УРАВНИВАНИИ СЕТЕЙ В ДИАПАЗОНАХ РАССТОЯНИЙ ОТ~5 ДО 700~КМ}\label{ch:ch3}
 
 \section{Исследование точности определения координат в диапазоне расстояний от~5 до 100~км}\label{sec:ch3/sect1}
@@ -35,7 +291,7 @@
 	\end{threeparttable}
 \end{table}
 
-Основываясь на таблице \cref{tab:tab24} были получены эталонные координаты, приведенные в таблице \cref{tab:tab25}.
+Основываясь на таблице \cref{tab:tab24} были получены эталонные приращения координат, приведенные в таблице \cref{tab:tab25}.
 
 \begin{table} [htbp]
 	\centering\small
@@ -55,7 +311,7 @@
 			
 				
 				\toprule
-				\textbf{Вектор)}			& \textbf{dX, м}	& \textbf{dY, м}	& \textbf{dZ, м}	\\ \midrule
+				\textbf{Вектор)}			& \textbf{ΔX, м}	& \textbf{ΔY, м}	& \textbf{ΔZ, м}	\\ \midrule
 				DMTR-LOBN					&  25685,616		&   7382,794		& -16565,138		\\ %\hline
 				DMTR-MSK2					&  35633,005		&  33537,351		& -32644,583		\\ %\hline
 				DMTR-RUZA					&  95816,757		& -31035,908		& -39067,104		\\ %\hline
@@ -147,7 +403,7 @@
 \end{table}
 
 \label{УКС}
-Уравнивание упрощённым классическим способом можно записать в виде формулы~\cref{eq:eq3.6}
+Уравнивание классическим способом можно записать в виде формулы~\cref{eq:eq3.6}
 
 \begin{equation}
 	\label{eq:eq3.6}
@@ -291,7 +547,7 @@ A=	\begin{pmatrix}
 \end{array}
 \end{equation}
 
-Далее вычисляется обратная матрица для произведения $A^{T}A$. %После этого найдена обратная матрица $(A^{T}A)^{-1}$. 
+Далее вычисляется ковариационная матрица. % обратная матрица для произведения $A^{T}A$. %После этого найдена обратная матрица $(A^{T}A)^{-1}$. 
 Полученные результаты представлены формулами~\cref{eq:eq3.31,eq:eq3.32}.
 
 \setcounter{MaxMatrixCols}{20}
@@ -550,13 +806,13 @@ A^{T}\cdot A= \begin{pmatrix*}[r] %
 	\end{threeparttable}
 \end{table}
 
-На рисунках~\cref{fig:pic27} и \cref{fig:pic28} графически проиллюстрировано изменение СКО с течением времени.
+На рисунках~\cref{fig:pic27} и \cref{fig:pic28} графически проиллюстрировано изменение СКП с течением времени.
 
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.75\linewidth]{images/pic27}
-	\caption{Изменение СКО с течением времени }
+	\caption{Изменение СКП с течением времени }
 	\label{fig:pic27}
 \end{figure}
 
@@ -698,7 +954,7 @@ A^{T}\cdot A= \begin{pmatrix*}[r] %
 
 
 
-В процессе оптимизационного уравнивания находятся исправленные приращения координат. В качестве примера в таблице~\cref{tab:tab39} 39 приведены исправленные приращения на примере сети, сформированной при продолжительности измерений 1 час.
+В процессе оптимизационного уравнивания находятся исправленные приращения координат. В качестве примера в таблице~\cref{tab:tab39} приведены исправленные приращения на примере сети, сформированной при продолжительности измерений 1 час.
 
 
 \begin{table} [htbp]
@@ -904,7 +1160,7 @@ A^{T}\cdot A= \begin{pmatrix*}[r] %
 	}
 %	\legend{$\bullet-\text{центр масс (ЦМ)}\qquad\circ-\text{фазовый центр (ФЦ)}$\\
 %	}
-	\caption[Изменение СКО с течением времени]{Изменение СКО с течением времени}\label{fig:pic30}
+	\caption[Изменение СКП с течением времени]{Изменение СКП с течением времени}\label{fig:pic30}
 \end{figure}
 
 
@@ -913,7 +1169,7 @@ A^{T}\cdot A= \begin{pmatrix*}[r] %
 \subsection{Уравнивание спутниковой сети с использованием КРЕДО ГНСС}\label{subsec:ch3/sec1/sub4}
 
 
-Для контроля точности уравнивания методом нелинейного программирования и упрощённым классическим методом было выполнено уравнивание с использованием программного обеспечения КРЕДО~ГНСС версии~$2.0$. В таблицах~\cref{tab:tab43} приводятся разности приращений координат между уравненными значениями и эталонными.
+Для контроля точности уравнивания методом нелинейного программирования и классическим методом было выполнено уравнивание с использованием программного обеспечения КРЕДО~ГНСС версии~$2.0$. В таблицах~\cref{tab:tab43} приводятся разности приращений координат между уравненными значениями и эталонными.
 \begin{table} [htbp]
 	\centering\small
 	\captionof{table}{Разности приращений координат.}\label{tab:tab43}{
@@ -2098,30 +2354,4 @@ A^{T}\cdot A= \begin{pmatrix*}[r] %
  Далее в главе рассмотрены эксперименты по исследованию точности построения геодезических сетей с использованием РРР-алгоритма обработки спутниковых данных.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\fi % Конец выбора Реферат | Основной текст диссертации
