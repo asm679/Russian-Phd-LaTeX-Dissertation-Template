@@ -19,7 +19,12 @@ git fetch
 git status
 git add .
 git commit -m %first% -a
+git show --name-only
 git push origin Makarov
+
+:: далее используем GitHub CLI
+:: https://cli.github.com/
+
 goto Exit
 
 :ErrorMessage
