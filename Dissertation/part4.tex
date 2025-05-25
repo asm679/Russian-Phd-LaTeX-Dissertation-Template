@@ -1,29 +1,68 @@
+% Макрос для таблиц "Результаты оценки точности ... в диапазоне расстояний"
+% Оценка точночти -> Accuracy assessment
+% Параметры вызова:
+%     #1 -- диапазон расстояний для заголовка, например, "от~$1300$ до $1700$~км"
+%     #2 -- № таблицы для формирования ссылки, например, "61"
+%     #3 -- имя csv-файла с данными таблицы, например, "DataFiles/tab61dis.csv"
+\newcommand{\tabAccAss}[3]{ %
+%	\renewcommand{\lengthrange}{#1} % диапазон расстояний сети для заголовка таблицы
+%	\renewcommand{\tabnumber}{#2}   % номер таблицы для ссылки
+	\DTLsetseparator{;} % Разделитель столбцов в CSV
+	\DTLloaddb{tablezdata}{#3} % имя csv-файла с данными таблицы
+%	\DTLdisplaydb{tablezdata}  % отладочный вывод прочитанных данных 
+	
+\begin{table} [htbp]
+	\centering\small
+	\begin{threeparttable}% выравнивание подписи по границам таблицы
+		\captionof{table}{Результаты оценки точности при уравнивании различными способами для сети  в диапазоне расстояний #1}\label{tab:tab#2}
+		\ifsynopsis
+			\setlength{\tabcolsep}{8pt}
+		\else
+			\setlength{\tabcolsep}{15pt}
+		\fi
+		\sisetup{
+			table-figures-integer = 3
+		}{
+			\begin{tabular}{ccccccc}
+				\toprule %
+				\textbf{Интервал,}	& %
+				\multicolumn{2}{c}{ \textbf{RTX-TBC} }	& %
+				\multicolumn{2}{c}{ \textbf{CRSR} }	& %
+				\multicolumn{2}{c}{ \textbf{статика кредо} }	\\ %\hline
+				\textit{ч.}	& 	%
+				$\mathbf{m_{xy}}$\textit{, м}	& $\mathbf{m_{z}}$\textit{, м}	& %
+				$\mathbf{m_{xy}}$\textit{, м}	& $\mathbf{m_{z}}$\textit{, м}	& %
+				$\mathbf{m_{xy}}$\textit{, м}	& $\mathbf{m_{z}}$\textit{, м}	\\ %\hline
+				\midrule
+				\DTLforeach{tablezdata}{\intT=intT, \RTXmxy=RTXmxy, \RTXmz=RTXmz, %
+													\CSRSmxy=CSRSmxy, \CSRSmz=CSRSmz, %
+													\CREDOmxy=CREDOmxy, \CREDOmz=CREDOmz}%
+				{ $\mathbf{\intT}$	& $\RTXmxy$	& $\RTXmz$	& $\CSRSmxy$	& $\CSRSmz$	& $\CREDOmxy$	& $\CREDOmz$	\DTLiflastrow{}{\tabularnewline}}%
+				\tabularnewline	\bottomrule%				
+			\end{tabular}
+		}
+	\end{threeparttable}
+\end{table}
+\DTLdeletedb{tablezdata}
+
+} % конец шаблона таблицы
+
 % Выбор текста для реферата и основоного текста диссертации
 \ifsynopsis % для реферата
-В качестве примера приведена таблица~\cref{tab:ref_tab07} для сети с длинами сторон от~700 до~1000~км. Анализируя таблицы~\cref{tab:ref_tab04,tab:ref_tab05,tab:ref_tab06,tab:ref_tab07} можно заметить, что точность определения координат практически неизменна для всех сетей, рассмотренных в диссертационной работе, и соответствуют требованиям ГНИНП (ОНТА)-01-271-03 <<Руководство по созданию и реконструкции геодезических сетей с использованием спутниковых систем ГЛОНАСС/GPS>>.
+В таблицах~\cref{tab:tab07ref,tab:tab08ref,tab:tab09ref} приведены результаты оценки точности уравнивания протяженных геодезических сетей. 
+%В качестве примера приведена таблица~\cref{tab:ref_tab07} для сети с длинами сторон от~700 до~1000~км. Анализируя таблицы~\cref{tab:ref_tab04,tab:ref_tab05,tab:ref_tab06,tab:ref_tab07} можно заметить, что точность определения координат практически неизменна для всех сетей, рассмотренных в диссертационной работе, и соответствуют требованиям ГНИНП (ОНТА)-01-271-03 <<Руководство по созданию и реконструкции геодезических сетей с использованием спутниковых систем ГЛОНАСС/GPS>>.
 
 
-\begin{table} [!htbp]
-	\centering\small
-	\captionof{table}{Результаты оценки точности при уравнивании различными \\методами  для сети 700\,--\,1000~км }\label{tab:ref_tab07}{%
-		\setlength\tabcolsep{9pt}
-		\def\arraystretch{1.25}
-		\begin{tabular}{|c|c|c|c|c|c|c|}
-			\hline
-			\multirow{2}{*}{$\mathbf{t_{\text{изм}}}$} & \multicolumn{2}{c|}{\textbf{RTX\,--\,TBC}} & \multicolumn{2}{c|}{\textbf{CRSR}} & \multicolumn{2}{c|}{\textbf{Статика КРЕДО}} \\ \cline{2-7}%\hline
-			\textit{ч.}						& $\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
-											  $\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	&
-											  $\mathbf{m_{XY}}$\textit{,\,м}	& $\mathbf{m_{Z}}$\textit{,\,м}	\\ \hline
-			1 & $0,023$ & $0,032$ & $0,021$ & $0,029$ & $0,095$ & $0,119$ \\ %\hline
-			2 & $0,022$ & $0,031$ & $0,019$ & $0,027$ & $0,093$ & $0,115$ \\ %\hline
-			3 & $0,021$ & $0,030$ & $0,018$ & $0,026$ & $0,089$ & $0,102$ \\ %\hline
-			4 & $0,021$ & $0,030$ & $0,018$ & $0,026$ & $0,086$ & $0,097$ \\ 
-			\hline
-		\end{tabular}
-	}
-\end{table}
+\tabAccAss{от~700 до 1000~км}{07ref}{DataFiles/tab59dis.csv}
 
-Таким образом, можно сделать вывод, что разработанная методика может применяться для построения геодезических сетей в различном диапазоне расстояний (от нескольких до двух тысяч км) без потери точности.
+
+\tabAccAss{от~1000 до 1300~км}{08ref}{DataFiles/tab60dis.csv}
+
+
+\tabAccAss{от~1300 до 1700~км}{09ref}{DataFiles/tab61dis.csv}
+
+
+Анализируя таблицы~\cref{tab:tab04ref,tab:tab05ref,tab:tab06ref,tab:tab07ref,tab:tab08ref,tab:tab09ref} можно заметить, что точность определения координат практически неизменна для всех сетей, рассмотренных в диссертационной работе, и соответствуют требованиям ГНИНП (ОНТА)-01-271-03 <<Руководство по созданию и реконструкции геодезических сетей с использованием спутниковых систем ГЛОНАСС/GPS>>.
 
 
 
@@ -51,32 +90,8 @@
 
 Как и прежде, происходила обработка RINEX файлов с использованием интернет-сервиса CSRS. Для контроля получаемой точности выполнена обработка в программном обеспечении Trimble Business Centre (далее «TBC») и в статике с использованием ПО~«КРЕДО ГНСС». В последствии получены вектора и выполнено уравнивание с оценкой точности, результаты которой приведены в таблице \cref{tab:tab59}.
 
+\tabAccAss{от~700 до 1000~км}{59}{DataFiles/tab59dis.csv}
 
-\begin{table} [htbp]
-	\centering\small
-	\begin{threeparttable}% выравнивание подписи по границам таблицы
-		\captionof{table}{Оценка точности при уравнивании}\label{tab:tab59}
-		\setlength{\tabcolsep}{15pt}
-		\sisetup{
-			table-figures-integer = 3
-		}{
-			\begin{tabular}{lcccccc}
-				\toprule %\hline
-				\textbf{~}	& \multicolumn{2}{c}{ \textbf{RTX-TBC} }	& \multicolumn{2}{c}{ \textbf{CRSR} }	& \multicolumn{2}{c}{ \textbf{статика кредо} }	\\ %\hline
-				\textbf{Интервал}	& 	$\mathbf{m_{xy}}$\textbf{, м}	& $\mathbf{m_{z}}$\textbf{, м}	&
-							  			$\mathbf{m_{xy}}$\textbf{, м}	& $\mathbf{m_{z}}$\textbf{, м}	& 
-							  			$\mathbf{m_{xy}}$\textbf{, м}	& $\mathbf{m_{z}}$\textbf{, м}	\\ %\hline
-				\midrule
-				$\mathbf{1}$~ч.	& $0,023$	& $0,032$	& $0,021$	& $0,029$	& $0,095$	& $0,119$	\\ %\hline
-				$\mathbf{2}$~ч.	& $0,022$	& $0,031$	& $0,019$	& $0,027$	& $0,093$	& $0,115$	\\ %\hline
-				$\mathbf{3}$~ч.	& $0,021$	& $0,030$	& $0,018$	& $0,026$	& $0,089$	& $0,102$	\\ %\hline
-				$\mathbf{4}$~ч.	& $0,021$	& $0,030$	& $0,018$	& $0,026$	& $0,086$	& $0,097$	\\ %\hline
-				
-				\bottomrule
-			\end{tabular}
-		}
-	\end{threeparttable}
-\end{table}
 
 Как видно из таблицы \cref{tab:tab59} точность определения по РРР-алгоритму сопоставима между собой и несколько превосходит точность, получаемую в статике.
 
@@ -98,32 +113,8 @@
 
 Как и прежде, происходила обработка RINEX файлов с использованием интернет-сервиса CSRS. Для контроля получаемой точности выполнена обработка в программном обеспечении TBC и в статике с использованием ПО~«КРЕДО ГНСС». Подробнее с процессами обработки можно ознакомиться [$\ldots$]. В таблице \cref{tab:tab60} приводится оценка точности.
 
+\tabAccAss{от~1000 до 1300~км}{60}{DataFiles/tab60dis.csv}
 
-\begin{table} [htbp]
-	\centering\small
-	\begin{threeparttable}% выравнивание подписи по границам таблицы
-		\captionof{table}{Оценка точности при уравнивании}\label{tab:tab60}
-		\setlength{\tabcolsep}{15pt}
-		\sisetup{
-			table-figures-integer = 3
-		}{
-			\begin{tabular}{lcccccc}
-				\toprule %\hline
-				\textbf{~}	& \multicolumn{2}{c}{ \textbf{RTX-TBC} }	& \multicolumn{2}{c}{ \textbf{CRSR} }	& \multicolumn{2}{c}{ \textbf{статика кредо} }	\\ %\hline
-				\textbf{Интервал}	& 	$\mathbf{m_{xy}}$\textbf{, м}	& $\mathbf{m_{z}}$\textbf{, м}	&
-				$\mathbf{m_{xy}}$\textbf{, м}	& $\mathbf{m_{z}}$\textbf{, м}	& 
-				$\mathbf{m_{xy}}$\textbf{, м}	& $\mathbf{m_{z}}$\textbf{, м}	\\ %\hline
-				\midrule
-				$\mathbf{1}$~ч.	& $0,040$	& $0,041$	& $0,040$	& $0,042$	& $0,252$	& $0,407$	\\ %\hline
-				$\mathbf{2}$~ч.	& $0,037$	& $0,038$	& $0,039$	& $0,039$	& $0,243$	& $0,337$	\\ %\hline
-				$\mathbf{3}$~ч.	& $0,036$	& $0,038$	& $0,037$	& $0,038$	& $0,196$	& $0,290$	\\ %\hline
-				$\mathbf{4}$~ч.	& $0,033$	& $0,037$	& $0,037$	& $0,038$	& $0,185$	& $0,246$	\\ %\hline
-				
-				\bottomrule
-			\end{tabular}
-		}
-	\end{threeparttable}
-\end{table}
 
 Как видно из таблицы \cref{tab:tab60} точность при уравнивании по РРР-алгоритму, по-прежнему, сопоставима между собой и на порядок выше, чем при классической обработке в статике.
 
@@ -142,38 +133,14 @@
 	\label{fig:pic43}
 \end{figure}
 
-Геодезическая сеть состоит из пяти пунктов, равномерно расположенных в диапазоне расстояний от~$1\mathbf{4}00$ до $1900$~км. 
-\footnote{Так до какого, всётаки расстояния? 1700~км, как в заголовке раздела? Или 1600~км, как в заголовке Главы? Или 1900~км, здесь? ;) }
+Геодезическая сеть состоит из пяти пунктов, равномерно расположенных в диапазоне расстояний от~$1300$ до $1700$~км. 
 В рамках сети происходит определение восьми векторов. Для выполнения работ требуется два сеанса измерений для обеспечения их независимости.
 
 Как и прежде, происходила обработка RINEX файлов с использованием интернет-сервиса CSRS. Для контроля получаемой точности выполнена обработка в программном обеспечении TBC и в статике с использованием ПО~«КРЕДО ГНСС». Подробнее с процессами обработки можно ознакомиться [$\ldots$]. В таблице \cref{tab:tab61} приводится оценка точности.
 
 
-\begin{table} [htbp]
-	\centering\small
-	\begin{threeparttable}% выравнивание подписи по границам таблицы
-		\captionof{table}{Оценка точности при уравнивании}\label{tab:tab61}
-		\setlength{\tabcolsep}{15pt}
-		\sisetup{
-			table-figures-integer = 3
-		}{
-			\begin{tabular}{lcccccc}
-				\toprule %\hline
-				\textbf{~}	& \multicolumn{2}{c}{ \textbf{RTX-TBC} }	& \multicolumn{2}{c}{ \textbf{CRSR} }	& \multicolumn{2}{c}{ \textbf{статика кредо} }	\\ %\hline
-				\textbf{Интервал}	& 	$\mathbf{m_{xy}}$\textbf{, м}	& $\mathbf{m_{z}}$\textbf{, м}	&
-				$\mathbf{m_{xy}}$\textbf{, м}	& $\mathbf{m_{z}}$\textbf{, м}	& 
-				$\mathbf{m_{xy}}$\textbf{, м}	& $\mathbf{m_{z}}$\textbf{, м}	\\ %\hline
-				\midrule
-				$\mathbf{1}$~ч.	& $0,048$	& $0,051$	& $0,049$	& $0,052$	& $0,402$	& $0,290$	\\ %\hline
-				$\mathbf{2}$~ч.	& $0,047$	& $0,050$	& $0,048$	& $0,049$	& $0,368$	& $0,263$	\\ %\hline
-				$\mathbf{3}$~ч.	& $0,046$	& $0,049$	& $0,047$	& $0,048$	& $0,335$	& $0,242$	\\ %\hline
-				$\mathbf{4}$~ч.	& $0,046$	& $0,049$	& $\mathbf{0,037} - ?$	& $0,048$	& $0,290$	& $0,215$	\\ %\hline
-				
-				\bottomrule
-			\end{tabular}
-		}
-	\end{threeparttable}
-\end{table}
+\tabAccAss{от~1300 до 1700~км}{61}{DataFiles/tab61dis.csv}
+
 
 Как видно из таблицы \cref{tab:tab61} точность при уравнивании по РРР-алгоритму, по-прежнему, сопоставима между собой и на порядок выше, чем при классической обработке в статике.
 
