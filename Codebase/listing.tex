@@ -1,0 +1,242 @@
+% Добавить в преамбулу!
+%\usepackage{fontawesome5} %[2018]  % для логотипа Python, twitter etc.
+
+%\usepackage{xcolor,listings}     % подсветка YAML
+%\lstdefinelanguage{YAML}{
+%	morekeywords={true,false,null},
+%	sensitive=false,
+%	morecomment=[l]{\#},
+%	morestring=[b]",
+%	morestring=[d]',
+%	morekeywords={true,false,null}
+%}
+%\lstset{language=YAML,
+%	basicstyle=\ttfamily,
+%	commentstyle=\color{gray},
+%	stringstyle=\color{blue},
+%	breaklines=true}
+%\lstdefinelanguage{YAML}{
+
+
+
+\setcounter{page}{2}
+
+\vspace{10cm}
+
+
+%\chapter*{<<Программа для геодезического контроля и мониторинга объектов инфраструктуры на базе цифрового двойника и оптико-электронных систем измерений>>. Листинги исходного кода}\label{lst:listing}
+
+%\vfill
+	
+%\faBtc \faEthereum \faMonero 
+
+%\faHdd \faHdd[0]
+
+%\faCodeBranch \faGit* \faGit \faGithub \faGithub* \faGithubSquare \faGitlab \faGitSquare
+
+%\faCode
+
+%\faCogs \faWhmcs
+
+%\faProjectDiagram
+
+%\faPython
+
+%\faRoute \faSatellite \faSatelliteDish \faSearchLocation
+
+
+
+
+%\newpage
+\section*{Модуль сбора и первичной обработки данных датчиков} \label{lst:BBBSoft}
+
+
+% main.py
+\begingroup
+\captiondelim{ } % разделитель идентификатора с номером от наименования
+\lstinputlisting[
+	language=Python,
+%	caption={файл main.py},
+	title={Файл BBBsoft/src/\textbf{main.py}},
+	label={lst:BBBSoft.src.main.py},
+%	basicstyle=\small
+]{Codebase/BBBsoft/src/main.py}
+\endgroup
+
+
+%\newpage
+\vspace{12mm}
+
+% adc.py
+\begingroup
+\captiondelim{ } % разделитель идентификатора с номером от наименования
+\lstinputlisting[
+	language=Python,
+%	caption={Листинг файла adc.py},
+	title={Файл BBBsoft/src/sensors/\textbf{adc.py}},
+	label={lst:BBBSoft.src.sensors.adc.py}
+]{Codebase/BBBsoft/src/sensors/adc.py}
+\endgroup
+
+
+%\newpage
+\vspace{12mm}
+
+% inclinometer.py
+\begingroup
+\captiondelim{ } % разделитель идентификатора с номером от наименования
+\lstinputlisting[
+	language=Python,
+%	caption={Листинг файла inclinometer.py},
+	title={Файл BBBsoft/src/sensors/\textbf{inclinometer.py}},
+	label={lst:BBBSoft.src.sensors.inclinometer.py}
+]{Codebase/BBBsoft/src/sensors/inclinometer.py}
+\endgroup
+
+
+
+%\newpage
+\vspace{12mm}
+
+% zmq_handler.py
+\begingroup
+\captiondelim{ } % разделитель идентификатора с номером от наименования
+\lstinputlisting[
+	language=Python,
+%	caption={Листинг файла zmq\_handler.py},
+	title={Файл BBBsoft/src/communication/\textbf{zmq\_handler.py}},
+	label={lst:BBBSoft.src.communication.zmq-handler.py}
+]{Codebase/BBBsoft/src/communication/zmq_handler.py}
+\endgroup
+
+
+%\newpage
+\vspace{12mm}
+
+% system_config.yaml
+\begingroup
+\captiondelim{ } % разделитель идентификатора с номером от наименования
+\lstinputlisting[
+	language=YAML,
+%	language=Python,
+%	caption={Листинг файла конфигурации модуля system\_config.yaml}, 
+	title={Файл конфигурации BBBsoft/config/\textbf{system\_config.yaml}},
+	label={lst:BBBSoft.system-config}
+]{Codebase/BBBsoft/config/system_config.yaml}
+\endgroup
+
+
+
+
+
+
+
+\newpage
+
+\section*{Модуль пользовательского интерфейса и управления}\label{lst:HMI-Tah}
+
+
+%\newpage
+% gui.py
+\begingroup
+\captiondelim{ } % разделитель идентификатора с номером от наименования
+\lstinputlisting[
+	language=Python,
+%	caption={Листинг файла gui.py}, 
+	title={Файл HMI-Tah/src/\textbf{gui.py}},
+	label={lst:HMI-Tah.src.gui.py}
+]{Codebase/HMI-Tah/src/gui.py}
+\endgroup
+
+
+\newpage
+% pygeocom.py
+\begingroup
+\captiondelim{ } % разделитель идентификатора с номером от наименования
+\lstinputlisting[
+	language=Python,
+	%	caption={Листинг файла pygeocom.py}, 
+	title={Файл HMI-Tah/src/\textbf{pygeocom.py}},
+	label={lst:HMI-Tah.src.pygeocom.py}
+]{Codebase/HMI-Tah/src/pygeocom.py}
+\endgroup
+
+
+%\newpage
+\vspace{12mm}
+
+% config.txt
+\begingroup
+\captiondelim{ } % разделитель идентификатора с номером от наименования
+\lstinputlisting[
+	language=YAML,
+	%	caption={Листинг файла config.txt}, 
+	title={Файл HMI-Tah/src/\textbf{config.txt}},
+	label={lst:HMI-Tah.src.config.txt}
+]{Codebase/HMI-Tah/resources/config.txt}
+\endgroup
+
+
+
+
+
+\newpage
+\section*{Модуль математических расчетов и анализа}\label{lst:shiftsCalculation}
+
+
+%\newpage
+% main.py
+\begingroup
+\captiondelim{ } % разделитель идентификатора с номером от наименования
+\lstinputlisting[
+	language=Python,
+	%	caption={Листинг файла main.py}, 
+	title={Файл shiftsCalculation/src/\textbf{main.py}},
+	label={lst:shiftsCalculation.src.main.py}
+]{Codebase/shiftsCalculation/src/main.py}
+\endgroup
+
+
+%\newpage
+\vspace{12mm}
+
+% landXMLParser.py
+\begingroup
+\captiondelim{ } % разделитель идентификатора с номером от наименования
+\lstinputlisting[
+	language=Python,
+	%	caption={Листинг файла landXMLParser.py}, 
+	title={Файл shiftsCalculation/src/\textbf{landXMLParser.py}},
+	label={lst:shiftsCalculation.src.landXMLParser.py}
+]{Codebase/shiftsCalculation/src/landXMLParser.py}
+\endgroup
+
+
+\newpage
+% calculateSpiral.py
+\begingroup
+\captiondelim{ } % разделитель идентификатора с номером от наименования
+\lstinputlisting[
+	language=Python,
+	%	caption={Листинг файла calculateSpiral.py}, 
+	title={Файл shiftsCalculation/src/\textbf{calculateSpiral.py}},
+	label={lst:shiftsCalculation.src.calculateSpiral.py}
+]{Codebase/shiftsCalculation/src/calculateSpiral.py}
+\endgroup
+
+
+%\newpage
+\vspace{12mm}
+
+% zmqProcessor.py
+\begingroup
+\captiondelim{ } % разделитель идентификатора с номером от наименования
+\lstinputlisting[
+	language=Python,
+	%	caption={Листинг файла zmqProcessor.py}, 
+	title={Файл shiftsCalculation/src/\textbf{zmqProcessor.py}},
+	label={lst:shiftsCalculation.src.zmqProcessor.py}
+]{Codebase/shiftsCalculation/src/zmqProcessor.py}
+\endgroup
+
+

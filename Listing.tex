@@ -56,39 +56,39 @@
 \input{common/renames}
 
 %%% Структура диссертации (ГОСТ Р 7.0.11-2011, 4)
-\include{Dissertation/title}           % Титульный лист
-\include{Dissertation/contents}        % Оглавление
+%\include{Dissertation/title}           % Титульный лист
+%\include{Dissertation/contents}        % Оглавление
 \ifnumequal{\value{contnumfig}}{1}{}{\counterwithout{figure}{chapter}}
 \ifnumequal{\value{contnumtab}}{1}{}{\counterwithout{table}{chapter}}
-\include{Dissertation/introduction}    % Введение
+%\include{Dissertation/introduction}    % Введение
 \ifnumequal{\value{contnumfig}}{1}{\counterwithout{figure}{chapter}
 }{\counterwithin{figure}{chapter}}
 \ifnumequal{\value{contnumtab}}{1}{\counterwithout{table}{chapter}
 }{\counterwithin{table}{chapter}}
-\include{Dissertation/part1}           % Глава 1
-\include{Dissertation/part2}           % Глава 2
-\include{Dissertation/part3}           % Глава 3
-\include{Dissertation/part4}           % Глава 4
-\include{Dissertation/conclusion}      % Заключение
-\include{Dissertation/acronyms}        % Список сокращений и условных обозначений
-\include{Dissertation/dictionary}      % Словарь терминов
-\include{Dissertation/references}      % Список литературы
-\include{Dissertation/lists}           % Списки таблиц и изображений (иллюстративный материал)
+%\include{Dissertation/part1}           % Глава 1
+%\include{Dissertation/part2}           % Глава 2
+%\include{Dissertation/part3}           % Глава 3
+%\include{Dissertation/part4}           % Глава 4
+%\include{Dissertation/conclusion}      % Заключение
+%\include{Dissertation/acronyms}        % Список сокращений и условных обозначений
+%\include{Dissertation/dictionary}      % Словарь терминов
+%\include{Dissertation/references}      % Список литературы
+%\include{Dissertation/lists}           % Списки таблиц и изображений (иллюстративный материал)
 
 
-\include{Dissertation/listing}         % Листинг
+\include{Codebase/listing}         % Листинг
 
-\setcounter{totalchapter}{\value{chapter}} % Подсчёт количества глав
+%\setcounter{totalchapter}{\value{chapter}} % Подсчёт количества глав
 
 %%% Настройки для приложений
-\appendix
+%\appendix
 % Оформление заголовков приложений ближе к ГОСТ:
-\setlength{\midchapskip}{20pt}
-\renewcommand*{\afterchapternum}{\par\nobreak\vskip \midchapskip}
-\renewcommand\thechapter{\Asbuk{chapter}} % Чтобы приложения русскими буквами нумеровались
+%\setlength{\midchapskip}{20pt}
+%\renewcommand*{\afterchapternum}{\par\nobreak\vskip \midchapskip}
+%\renewcommand\thechapter{\Asbuk{chapter}} % Чтобы приложения русскими буквами нумеровались
 
-\include{Dissertation/appendix}        % Приложения
+%\include{Dissertation/appendix}        % Приложения
 
-\setcounter{totalappendix}{\value{chapter}} % Подсчёт количества приложений
+%\setcounter{totalappendix}{\value{chapter}} % Подсчёт количества приложений
 
 \end{document}

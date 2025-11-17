@@ -1,0 +1,8 @@
+{
+	Bluetooth_COM: "COM3",   LandXML_Name: "1", 
+	Calculation_Name: "result", 
+	Raw_tacheometer_data_Name: "raw_data", 
+	Raw_sensor_data_Name: "raw_Beagle_data", 
+	DSHK_scale: 0.000054656,     DSHK_offset: 1.4215, 
+	INC_roll_offset: -0.225205,  INC_pitch_offset: 0
+}

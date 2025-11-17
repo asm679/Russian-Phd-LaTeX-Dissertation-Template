@@ -224,7 +224,7 @@
 {Verb}{Verbatim}
 {fontsize=\fontsize{12pt}{14pt}\selectfont}
 
-\newfloat[chapter]{ListingEnv}{lol}{Листинг}
+%\newfloat[chapter]{ListingEnv}{lol}{Листинг}
 
 \renewcommand{\lstlistingname}{Листинг}
 
@@ -302,3 +302,87 @@
 \renewcommand{\chi}{\upchi}
 \renewcommand{\psi}{\uppsi}
 \renewcommand{\omega}{\upomega}
+
+
+\lstdefinelanguage{YAML}{
+		sensitive=false,
+		morecomment=[l]{\#},
+		morestring=[b]",
+		morestring=[d]',
+		morekeywords={true,false,null,
+			logging,level,file,max_size,backup_count,
+			sensors,adc,channel,frequency_hz,
+					inclinometer,device,baudrate,message_header_hex,
+			communication,zmq,host,sim_host,port,identity,socket_type,
+			processing,aggregation_period_sec,
+		Bluetooth_COM, LandXML_Name, Calculation_Name, Raw_tacheometer_data_Name, 
+		Raw_sensor_data_Name, DSHK_scale, DSHK_offset, INC_roll_offset, INC_pitch_offset
+			}
+	}
+
+\lstset{language=YAML,
+		basicstyle=\ttfamily,
+		commentstyle=\color{gray},
+		stringstyle=\color{blue},
+		breaklines=true}
+
+% Базовое определение JSON
+\lstdefinelanguage{json}{
+	basicstyle=\ttfamily\small,
+	showstringspaces=false,
+	breaklines=true,
+	frame=single,
+	morestring=[b]",
+	stringstyle=\color{string},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+}
+
+% Базовые цвета
+\definecolor{keycolor}{RGB}{0,102,153}
+\definecolor{stringcolor}{RGB}{196,26,22}
+\definecolor{numbercolor}{RGB}{25,144,25}
+
+% Минимальное определение
+\lstdefinelanguage{config}{%
+	basicstyle=\ttfamily\small,
+	frame=single,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	breaklines=true,
+	showstringspaces=false,
+	morestring=[b]",
+	stringstyle=\color{stringcolor},
+	% Минимальный набор literate
+	literate={0}{{\color{numbercolor}0}}{1}%
+	{1}{{\color{numbercolor}1}}{1}%
+	{2}{{\color{numbercolor}2}}{1}%
+	{3}{{\color{numbercolor}3}}{1}%
+	{4}{{\color{numbercolor}4}}{1}%
+	{5}{{\color{numbercolor}5}}{1}%
+	{6}{{\color{numbercolor}6}}{1}%
+	{7}{{\color{numbercolor}7}}{1}%
+	{8}{{\color{numbercolor}8}}{1}%
+	{9}{{\color{numbercolor}9}}{1}%
+}
+
+\setminted{%
+	frame=leftline,       % рисует только левую вертикальную линию
+	framesep=2mm,         % отступ кода от линии
+	baselinestretch=1.1,  % межстрочный интервал
+	bgcolor=white,        % белый фон
+%	fontsize=\small,      % размер шрифта
+	linenos,              % включить номера строк
+	stepnumber=5,         % пронумеровать каждую 5-ю строку
+	numbersep=5pt,        % отступ номеров от текста
+	%numberstyle=\tiny\color{black}, % стиль номеров (чёрный, мелкий)
+	breaklines,           % переносить слишком длинные строки
+	breakautoindent,      % сохранять отступ после переноса
+	tabsize=4,            % размер табуляции
+	showspaces=true,     % не показывать пробелы
+	showtabs=true,       % не показывать табуляцию
+	%keywordstyle=,        % без цветовой подсветки
+	%commentstyle=,        % без цветовой подсветки
+	%stringstyle=,         % без цветовой подсветки
+}
+
