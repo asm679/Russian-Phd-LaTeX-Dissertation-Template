@@ -99,18 +99,18 @@
 \end{tabularx}
 \vspace{0.008\paperheight plus1fill}
 
-\noindent Защита состоится \defenseDate~на~заседании диссертационного совета \defenseCouncilNumber~при \defenseCouncilTitle~по адресу: \defenseCouncilAddress, зал заседаний Ученого совета.
+\noindent Защита состоится \defenseDate~на~заседании диссертационного совета \defenseCouncilNumber~при \defenseCouncilTitle~по адресу: \defenseCouncilAddress.
 
 \vspace{0.008\paperheight plus1fill}
-\noindent С диссертацией можно ознакомиться в библиотеке \synopsisLibrary.
+\noindent С диссертацией можно ознакомиться в библиотеке $\ldots$ %\synopsisLibrary.
 
 \vspace{0.008\paperheight plus1fill}
-\noindent Отзывы на автореферат в двух экземплярах, заверенные печатью учреждения, просьба направлять по адресу: \defenseCouncilAddress, ученому секретарю диссертационного совета~\defenseCouncilNumber.
+%\noindent Отзывы на автореферат в двух экземплярах, заверенные печатью учреждения, просьба направлять по адресу: \defenseCouncilAddress, ученому секретарю диссертационного совета~\defenseCouncilNumber.
 
 \vspace{0.008\paperheight plus1fill}
-\noindent{Автореферат разослан \synopsisDate.}
+\noindent{Автореферат разослан~\synopsisDate.}
 
-\noindent Телефон для справок: \defenseCouncilPhone.
+%\noindent Телефон для справок: \defenseCouncilPhone.
 
 \vspace{0.008\paperheight plus1fill}
 \noindent%
@@ -125,8 +125,14 @@ r
     \defenseSecretaryRegalia
     &
     \ifnumequal{\value{showsecrsign}}{0}{}{%
-        \includegraphics[width=2cm]{secretary-signature.png}%
+%        \includegraphics[width=2cm]{secretary-signature.png}% подпись уч.секретаря
     }%
     &
     \defenseSecretaryFio
 \end{tabularx}
+
+\vspace{0.008\paperheight plus1fill}
+
+\begin{center}
+	\colophon
+\end{center}
