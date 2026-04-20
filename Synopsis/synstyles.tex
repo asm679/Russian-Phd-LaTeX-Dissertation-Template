@@ -2,7 +2,8 @@
 \graphicspath{{images/}{Synopsis/images/}}         % Пути к изображениям
 
 %%% Макет страницы %%%
-\geometry{a5paper, top=14mm, bottom=14mm, inner=18mm, outer=10mm, footskip=5mm, nomarginpar}%, showframe
+%\geometry{a5paper, top=14mm, bottom=14mm, inner=18mm, outer=10mm, footskip=5mm, nomarginpar}%, showframe
+\geometry{a4paper, top=27mm, bottom=20mm, inner=20mm, outer=20mm, footskip=5mm, nomarginpar}%, showframe
 \setlength{\topskip}{0pt}   %размер дополнительного верхнего поля
 
 %%% Интервалы %%%
@@ -11,7 +12,7 @@
 %\DoubleSpacing*     % Двойной интервал
 %\OnehalfSpacing*    % Полуторный интервал
 \SingleSpacing      % Одинарный интервал
-%\setSpacing{1.42}   % Полуторный интервал, подобный Ворду (возможно, стоит включать вместе с предыдущей строкой)
+\setSpacing{1.42}   % Полуторный интервал, подобный Ворду (возможно, стоит включать вместе с предыдущей строкой)
 
 %%% Выравнивание и переносы %%%
 %% http://tex.stackexchange.com/questions/241343/what-is-the-meaning-of-fussy-sloppy-emergencystretch-tolerance-hbadness
@@ -27,10 +28,16 @@
 \widowpenalty=10000     % Запрещаем разрыв страницы после последней строки абзаца
 
 %%% Колонтитулы %%%
-\makeevenhead{plain}{}{}{}
-\makeoddhead{plain}{}{}{}
-\makeevenfoot{plain}{}{\thepage}{}
-\makeoddfoot{plain}{}{\thepage}{}
+%\makeevenhead{plain}{}{}{}
+%\makeoddhead{plain}{}{}{}
+%\makeevenfoot{plain}{}{\thepage}{}
+%\makeoddfoot{plain}{}{\thepage}{}
+%\pagestyle{plain}
+%%% Колонтитулы как в диссертации... для бумаги А4 %%%
+\makeevenhead{plain}{}{\rmfamily\thepage}{}
+\makeoddhead{plain}{}{\rmfamily\thepage}{}
+\makeevenfoot{plain}{}{}{}
+\makeoddfoot{plain}{}{}{}
 \pagestyle{plain}
 
 %%% Размеры заголовков %%%

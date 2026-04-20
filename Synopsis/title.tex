@@ -3,7 +3,7 @@
 \noindent%
 \begin{tabularx}{\textwidth}{@{}lXr@{}}%
     & & \large{На правах рукописи}\\
-    \IfFileExists{images/logo.pdf}{\includegraphics[height=2.5cm]{logo}}{\rule[0pt]{0pt}{2.5cm}}  & &
+    \IfFileExists{images/logo~.pdf}{\includegraphics[height=2.5cm]{logo}}{\rule[0pt]{0pt}{2.5cm}}  & &
     \ifnumequal{\value{showperssign}}{0}{%
         \rule[0pt]{0pt}{1.5cm}
     }{
@@ -36,7 +36,7 @@
 \vspace{0pt plus4fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
 {\centering\thesisCity~--- \thesisYear\par}
 
-\newpage
+\newpage%\small
 % оборотная сторона обложки
 \thispagestyle{empty}
 \noindent Работа выполнена в {\thesisInOrganization}.
@@ -66,20 +66,28 @@
                               \framebox{\textbf{\supervisorFio}}
                               \else
                               \textbf{\supervisorFio}
-                              \fi
+                              \fi \\
                               \vspace{0.013\paperheight}\\
     \fi
-    Официальные оппоненты:  &
-    \ifnumequal{\value{showopplead}}{0}{\vspace{13\onelineskip plus1fill}}{%
-        \textbf{\opponentOneFio,}\par
-        \opponentOneRegalia,\par
-        \opponentOneJobPlace,\par
-        \opponentOneJobPost\par
-        \vspace{0.01\paperheight}
-        \textbf{\opponentTwoFio,}\par
-        \opponentTwoRegalia,\par
-        \opponentTwoJobPlace,\par
-        \opponentTwoJobPost
+    Официальные оппоненты:  & 
+    \ifnumequal{\value{showopplead}}{0}{\vspace{13\onelineskip plus1fill}}{~%
+%        \textbf{\opponentOneFio}\par
+%        \opponentOneRegalia\par
+%        \opponentOneJobPlace\par
+%        \opponentOneJobPost\par \\
+    }
+\end{tabularx}
+
+		\textbf{\opponentOneFio, } %\par
+		\opponentOneRegalia, %\par
+		\opponentOneJobPlace, %\par
+		\opponentOneJobPost;%
+		
+        \vspace{0.01\paperheight} %
+        \textbf{\opponentTwoFio,} %\par
+        \opponentTwoRegalia, %\par
+        \opponentTwoJobPlace, %\par
+        \opponentTwoJobPost.
     \ifdefined\opponentThreeFio
         \par
         \vspace{0.01\paperheight}
@@ -88,15 +96,17 @@
         \opponentThreeJobPlace,\par
         \opponentThreeJobPost
     \fi
-    }%
-    \vspace{0.013\paperheight} \\
+%    }%
+    \vspace{0.013\paperheight} 
+%	\\
     \ifdefined\leadingOrganizationTitle
-    Ведущая организация:    &
+    
+    \noindent Ведущая организация:    %&
     \ifnumequal{\value{showopplead}}{0}{\vspace{6\onelineskip plus1fill}}{%
         \leadingOrganizationTitle
     }%
     \fi
-\end{tabularx}
+%\end{tabularx}
 \vspace{0.008\paperheight plus1fill}
 
 \noindent Защита состоится \defenseDate~на~заседании диссертационного совета \defenseCouncilNumber~при \defenseCouncilTitle~по адресу: \defenseCouncilAddress.
@@ -113,13 +123,15 @@
 %\noindent Телефон для справок: \defenseCouncilPhone.
 
 \vspace{0.008\paperheight plus1fill}
-\noindent%
+%\noindent%
+%Ученый секретарь диссертационного совета \defenseCouncilNumber,\par
+\noindent
 \begin{tabularx}{\textwidth}{@{}%
 >{\raggedright\arraybackslash}b{18em}@{}
 >{\centering\arraybackslash}X
 r
 @{}}
-    Ученый секретарь\par
+    Ученый секретарь \par
     диссертационного совета %\par
     \defenseCouncilNumber,\par
     \defenseSecretaryRegalia
@@ -131,8 +143,9 @@ r
     \defenseSecretaryFio
 \end{tabularx}
 
-\vspace{0.008\paperheight plus1fill}
+%\vspace{0.008\paperheight plus1fill}
 
-\begin{center}
-	\colophon
-\end{center}
+%\begin{center}
+%	\colophon
+%\end{center}
+\normalsize
